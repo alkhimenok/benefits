@@ -8,7 +8,9 @@
 		"ios": "expo start --ios",
 		"web": "expo start --web",
 		"eject": "expo eject",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"lint": "eslint --ignore-path .gitignore .",
+		"lint:fix": "eslint --ignore-path .gitignore . --fix"
 	},
 	"dependencies": {
 		"expo": "~44.0.0",
@@ -23,6 +25,9 @@
 	"devDependencies": {
 		"@babel/core": "^7.12.9",
 		"babel-plugin-module-resolver": "^4.1.0",
+		"eslint": "^8.9.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-prettier": "^4.0.0",
 		"prettier": "2.5.1"
 	},
 	"private": true
