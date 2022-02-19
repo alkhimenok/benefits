@@ -5,10 +5,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Discount from 'screens/discount/Discount'
 import Favorites from 'screens/favorites/Favorites'
 import Account from 'screens/account/Account'
-import CustomTabBarIcon from './CustomTabBarIcon'
+import CustomTab from './CustomTab'
 
-
-const BottomTabs = () => {
+const BottomTabBar = () => {
 	const { Navigator, Screen } = createBottomTabNavigator()
 
 	return (
@@ -22,11 +21,11 @@ const BottomTabs = () => {
 					tabBarStyle: {
 						height: 55,
 						paddingTop: 7.5,
-						paddingBottom: 6.5,
+						paddingBottom: 6.5
 						// backgroundColor: COLORS.lightTransparent
 					},
 					tabBarIcon: ({ focused }) => (
-						<CustomTabBarIcon name={name} focused={focused} />
+						<CustomTab name={name} focused={focused} />
 					)
 				})}
 			>
@@ -38,4 +37,4 @@ const BottomTabs = () => {
 	)
 }
 
-export default BottomTabs
+export default BottomTabBar

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { View, Text } from 'react-native'
 
 import DiscountIcon from 'components/svg/DiscountIcon'
@@ -8,7 +9,7 @@ import AccountIcon from 'components/svg/AccountIcon'
 import UNITS from 'constants/units'
 import COLORS from 'constants/colors'
 
-const CustomTabBarIcon = ({ name, focused }) => {
+const CustomTab = ({ name, focused }) => {
 	const currentColor = focused ? COLORS.primary : COLORS.paragraph
 	const currentIcon = getCurrentIcon(name, currentColor)
 
@@ -41,4 +42,9 @@ const getCurrentIcon = (name, color) => {
 	}
 }
 
-export default CustomTabBarIcon
+CustomTab.propTypes = {
+	name: PropTypes.string.isRequired,
+	focused: PropTypes.bool.isRequired
+}
+
+export default CustomTab

@@ -3,7 +3,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { StatusBar } from 'expo-status-bar'
 import AppLoading from 'expo-app-loading'
 
-import BottomTabs from 'navigation/BottomTabs'
+import BottomTabBar from 'navigation/BottomTabBar'
 
 import { loadFonts } from 'utils/load/fonts'
 
@@ -12,7 +12,7 @@ export const App = () => {
 
 	return loaded ? (
 		<SafeAreaView style={{ flex: 1 }}>
-			<BottomTabs />
+			<BottomTabBar />
 			<StatusBar />
 		</SafeAreaView>
 	) : (
