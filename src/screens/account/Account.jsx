@@ -5,7 +5,6 @@ const Account = () => {
 	return (
 		<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
 			<Text>Account</Text>
-			<Discount />
 		</View>
 	)
 }

@@ -1,18 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { StatusBar } from 'expo-status-bar'
-import { useFonts } from 'expo-font'
+import AppLoading from 'expo-app-loading'
 
-import MainTabs from 'navigation/MainTabs'
+import BottomTabs from 'navigation/BottomTabs'
 
-export default function App() {
-	// const [loaded] = useFonts({
-	//   Montserrat: require('./assets/fonts/Montserrat.ttf'),
-	// });
-	return (
+import { loadFonts } from 'utils/load/fonts'
+
+export const App = () => {
+	const [loaded, setLoaded] = useState(false)
+
+	return loaded ? (
 		<SafeAreaView style={{ flex: 1 }}>
-			<MainTabs />
+			<BottomTabs />
 			<StatusBar />
 		</SafeAreaView>
+	) : (
+		<AppLoading
+			startAsync={loadFonts}
+			onFinish={() => setLoaded(true)}
+			onError={console.warn}
+		/>
 	)
 }
+
+export default App

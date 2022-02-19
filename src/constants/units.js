@@ -1,8 +1,8 @@
 export default {
-  xs: '',
-  sm: '12px',
-  md: '14px',
-  lg: '16px',
-  xl: '20px',
-  xxl: '28px'
+	xs: '',
+	sm: 12,
+	md: 14,
+	lg: 16,
+	xl: 20,
+	xxl: 28
 }

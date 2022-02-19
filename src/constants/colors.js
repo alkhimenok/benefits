@@ -25,4 +25,5 @@ export default {
   neutral: '#F0F0F5', // background
   neutralDark: '#D1D4E0', // natural
   neutralTransparent: 'rgba(209, 212, 224, 0.4)', // natural-40
+  paragraph: '#989BB3' // paragraph
 }
