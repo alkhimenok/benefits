@@ -6,7 +6,7 @@ export default {
   light: '#ffffff', // white
   lightTransparent: 'rgba(255, 255, 255, 0.9)', // white-90
   dark: '#19224C', // dark
-  darkTransparent: 'rgba(25, 34, 76, 0.9)', // dark-90
+  darkTransparent: 'rgba(25, 34, 76, 0.4)', // dark-90 // 0.9
   primary: '#2F50F4', // primary
   primaryDark: '#102DBC', // primary-dark
   primaryTransparent: 'rgba(51, 82, 238, 0.3)', // primary-30
