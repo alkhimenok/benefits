@@ -1,31 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { View, Text } from 'react-native'
 
-import DiscountIcon from 'components/svg/DiscountIcon'
-import FavoritesIcon from 'components/svg/FavoritesIcon'
-import AccountIcon from 'components/svg/AccountIcon'
+import DiscountIcon from 'components/svg/navigation/DiscountIcon'
+import FavoritesIcon from 'components/svg/navigation/FavoritesIcon'
+import AccountIcon from 'components/svg/navigation/AccountIcon'
 
-import UNITS from 'constants/units'
 import COLORS from 'constants/colors'
+
+import * as Styled from './styledCustomTab'
 
 const CustomTab = ({ name, focused }) => {
 	const currentColor = focused ? COLORS.primary : COLORS.paragraph
 	const currentIcon = getCurrentIcon(name, currentColor)
 
 	return (
-		<View style={{ alignItems: 'center' }}>
-			<View style={{ marginBottom: 3 }}>{currentIcon}</View>
-			<Text
-				style={{
-					fontFamily: 'primarySemiBold',
-					fontSize: UNITS.sm,
-					color: currentColor
-				}}
-			>
-				{name}
-			</Text>
-		</View>
+		<Styled.TabWrapper>
+			<Styled.TabIconWrapper>{currentIcon}</Styled.TabIconWrapper>
+			<Styled.TabName color={currentColor}>{name}</Styled.TabName>
+		</Styled.TabWrapper>
 	)
 }
 

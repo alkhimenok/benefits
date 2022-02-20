@@ -5,7 +5,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Discount from 'screens/discount/Discount'
 import Favorites from 'screens/favorites/Favorites'
 import Account from 'screens/account/Account'
+
 import CustomTab from './CustomTab'
+import { navigatorOptions } from './options'
 
 const BottomTabBar = () => {
 	const { Navigator, Screen } = createBottomTabNavigator()
@@ -16,14 +18,7 @@ const BottomTabBar = () => {
 				initialRouteName={'discount'}
 				backBehavior={'history'}
 				screenOptions={({ route: { name } }) => ({
-					headerShown: false,
-					tabBarShowLabel: false,
-					tabBarStyle: {
-						height: 55,
-						paddingTop: 7.5,
-						paddingBottom: 6.5
-						// backgroundColor: COLORS.lightTransparent
-					},
+					...navigatorOptions,
 					tabBarIcon: ({ focused }) => (
 						<CustomTab name={name} focused={focused} />
 					)

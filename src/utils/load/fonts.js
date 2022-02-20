@@ -1,7 +1,7 @@
 import * as Font from 'expo-font'
 
 export const loadFonts = () => {
-	Font.loadAsync({
+	return Font.loadAsync({
 		primaryRegular: require('assets/fonts/SFUIDisplay-Regular.ttf'),
 		primaryMedium: require('assets/fonts/SFUIDisplay-Medium.ttf'),
 		primarySemiBold: require('assets/fonts/SFUIDisplay-Semibold.ttf'),
