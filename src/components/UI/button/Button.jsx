@@ -20,15 +20,6 @@ const Button = ({
 		isDisabled,
 		isWhite
 	)
-	const icon = isImportant && (
-		<Icon
-			name={'important'}
-			width={14}
-			height={16}
-			color={color}
-			isOnlyIcon={true}
-		/>
-	)
 
 	return (
 		<Styled.ButtonWrapper disabled={isDisabled} onPress={onPress}>
@@ -37,7 +28,17 @@ const Button = ({
 				isWhite={isWhite}
 				backgroundColor={backgroundColor}
 			>
-				<Styled.ButtonIconWrapper>{icon}</Styled.ButtonIconWrapper>
+				{isImportant ? (
+					<Styled.ButtonIconWrapper>
+						<Icon
+							name={'important'}
+							width={14}
+							height={16}
+							color={color}
+							isOnlyIcon={true}
+						/>
+					</Styled.ButtonIconWrapper>
+				) : null}
 				<Styled.ButtonText color={color}>{title}</Styled.ButtonText>
 			</Styled.ButtonBody>
 		</Styled.ButtonWrapper>
@@ -45,7 +46,7 @@ const Button = ({
 }
 
 Button.prototype = {
-	title: PropTypes.bool.isRequired,
+	title: PropTypes.string.isRequired,
 	isImportant: PropTypes.bool,
 	isFocused: PropTypes.bool,
 	isDisabled: PropTypes.bool,
