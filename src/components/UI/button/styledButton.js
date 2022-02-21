@@ -22,7 +22,7 @@ const ButtonText = styled.Text`
 	color: ${({ color }) => color};
 `
 const ButtonIconWrapper = styled.View`
-	margin-right: 7.5px; ///
+	margin-right: 7.5px;
 `
 
 export { ButtonWrapper, ButtonBody, ButtonText, ButtonIconWrapper }

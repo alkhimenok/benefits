@@ -1,14 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import ImportantIcon from 'components/svg/filter/ImportantIcon'
+import Icon from 'components/UI/icon/Icon'
 
-import COLORS from 'constants/colors'
-
+import { getCurrentButtonColors } from './buttonColors'
 import * as Styled from './styledButton'
 
 const Button = ({
-	id,
 	title,
 	isImportant,
 	isFocused,
@@ -17,15 +15,27 @@ const Button = ({
 	isLarge,
 	onPress
 }) => {
-	const [color, background] = getCurrentColors(isFocused, isDisabled, isWhite)
-	const icon = isImportant && <ImportantIcon color={color} />
+	const [color, backgroundColor] = getCurrentButtonColors(
+		isFocused,
+		isDisabled,
+		isWhite
+	)
+	const icon = isImportant && (
+		<Icon
+			name={'important'}
+			width={14}
+			height={16}
+			color={color}
+			isOnlyIcon={true}
+		/>
+	)
 
 	return (
-		<Styled.ButtonWrapper id={id} disabled={isDisabled} onPress={onPress}>
+		<Styled.ButtonWrapper disabled={isDisabled} onPress={onPress}>
 			<Styled.ButtonBody
 				isLarge={isLarge}
 				isWhite={isWhite}
-				backgroundColor={background}
+				backgroundColor={backgroundColor}
 			>
 				<Styled.ButtonIconWrapper>{icon}</Styled.ButtonIconWrapper>
 				<Styled.ButtonText color={color}>{title}</Styled.ButtonText>
@@ -34,24 +44,7 @@ const Button = ({
 	)
 }
 
-const getCurrentColors = (isFocused, isDisabled, isWhite) => {
-	if (isFocused && isDisabled) {
-		return [COLORS.light, COLORS.primaryTransparent]
-	} else if (isDisabled && isWhite) {
-		return [COLORS.darkTransparent, COLORS.light]
-	} else if (isFocused) {
-		return [COLORS.light, COLORS.primary]
-	} else if (isDisabled) {
-		return [COLORS.darkTransparent, COLORS.neutralTransparent]
-	} else if (isWhite) {
-		return [COLORS.dark, COLORS.light]
-	} else {
-		return [COLORS.dark, COLORS.neutral]
-	}
-}
-
 Button.prototype = {
-	id: PropTypes.string,
 	title: PropTypes.bool.isRequired,
 	isImportant: PropTypes.bool,
 	isFocused: PropTypes.bool,

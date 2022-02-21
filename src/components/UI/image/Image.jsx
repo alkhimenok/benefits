@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import { geCurrentImageSource } from './imageSource'
-
 import * as Styled from './styledImage'
 
 const Image = ({ name, width, height, isContain, isRounded }) => {
@@ -25,6 +24,7 @@ Image.propTypes = {
 	name: PropTypes.string.isRequired,
 	width: PropTypes.number,
 	height: PropTypes.number,
+	isContain: PropTypes.bool,
 	isRequired: PropTypes.bool
 }
 

@@ -2,18 +2,17 @@ import React from 'react'
 
 import Container from 'components/common/Container'
 import Button from 'components/UI/button/Button'
+import Icon from 'components/UI/icon/Icon'
 
 import { buttonList } from './buttonList'
 import * as Styled from './styledFilterBar'
-
-import Icon from 'components/UI/icon/Icon'
 
 const FilterBar = () => {
 	return (
 		<Styled.FilterBarWrapper>
 			<Container>
 				<Styled.FilterBarContent>
-					<Icon iconName={'search'} />
+					<Icon name={'search'} color={'#000000'} isStroke={true}/>
 					<Styled.FilterBarScroll
 						horizontal={true}
 						showsHorizontalScrollIndicator={false}
@@ -22,7 +21,6 @@ const FilterBar = () => {
 						<Styled.FilterBartList>
 							{buttonList.map(
 								({
-									id,
 									title,
 									isImportant,
 									isFocused,
@@ -30,10 +28,9 @@ const FilterBar = () => {
 									isWhite,
 									isLarge,
 									onPress
-								}) => (
-									<Styled.FilterBarButtonWrapper key={id}>
+								}, i) => (
+									<Styled.FilterBarButtonWrapper key={i}>
 										<Button
-											id={id}
 											title={title}
 											isImportant={isImportant}
 											isFocused={isFocused}

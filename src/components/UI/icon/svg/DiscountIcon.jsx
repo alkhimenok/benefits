@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Svg, Path } from 'react-native-svg'
 
-const DiscountIcon = ({ color, width = 20, height = 20, isStroke }) => {
+const DiscountIcon = ({ width = 20, height = 20, color, isStroke }) => {
 	return (
 		<Svg width={width} height={height} viewBox='0 0 22 23'>
 			<Path
@@ -27,9 +27,9 @@ const DiscountIcon = ({ color, width = 20, height = 20, isStroke }) => {
 }
 
 DiscountIcon.propTypes = {
-	color: PropTypes.string.isRequired,
 	width: PropTypes.number,
 	height: PropTypes.number,
+	color: PropTypes.string.isRequired,
 	isStroke: PropTypes.bool
 }
 

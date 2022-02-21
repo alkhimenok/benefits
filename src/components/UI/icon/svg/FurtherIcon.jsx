@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Svg, Path } from 'react-native-svg'
 
-const FurtherIcon = ({ color, width = 20, height = 20, isStroke }) => {
+const FurtherIcon = ({ width = 20, height = 20, color, isStroke }) => {
 	return (
 		<Svg width={width} height={height} viewBox='0 0 6 10'>
 			<Path
@@ -15,9 +15,9 @@ const FurtherIcon = ({ color, width = 20, height = 20, isStroke }) => {
 }
 
 FurtherIcon.propTypes = {
-	color: PropTypes.string.isRequired,
 	width: PropTypes.number,
 	height: PropTypes.number,
+	color: PropTypes.string.isRequired,
 	isStroke: PropTypes.bool
 }
 

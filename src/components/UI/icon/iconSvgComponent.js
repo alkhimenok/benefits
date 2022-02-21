@@ -15,40 +15,40 @@ import NavigationIcon from './svg/NavigationIcon'
 import PhoneIcon from './svg/PhoneIcon'
 import SearchIcon from './svg/SearchIcon'
 
-const getCurrentIconSvgComponent = (name, color, width, height, isStroke) => {
+const getCurrentIconSvgComponent = (name, width, height, color, isStroke) => {
 	switch (name) {
 		case 'account':
-			return <AccountIcon color={color} width={width} height={height} isStroke={isStroke} />
+			return <AccountIcon width={width} height={height} color={color} isStroke={isStroke} />
 		case 'back':
-			return <BackIcon color={color} width={width} height={height} isStroke={isStroke} />
+			return <BackIcon width={width} height={height} color={color} isStroke={isStroke} />
 		case 'connection':
-			return <ConnectionIcon color={color} width={width} height={height} isStroke={isStroke} />
+			return <ConnectionIcon width={width} height={height} color={color} isStroke={isStroke} />
 		case 'danger':
-			return <DangerIcon color={color} width={width} height={height} isStroke={isStroke} />
+			return <DangerIcon width={width} height={height} color={color} isStroke={isStroke} />
 		case 'Denied':
-			return <DeniedIcon color={color} width={width} height={height} isStroke={isStroke} />
+			return <DeniedIcon width={width} height={height} color={color} isStroke={isStroke} />
 		case 'discount':
-			return <DiscountIcon color={color} width={width} height={height} isStroke={isStroke} />
+			return <DiscountIcon width={width} height={height} color={color} isStroke={isStroke} />
 		case 'favorites':
-			return <FavoritesIcon color={color} width={width} height={height} isStroke={isStroke} />
+			return <FavoritesIcon width={width} height={height} color={color} isStroke={isStroke} />
 		case 'fine':
-			return <FineIcon color={color} width={width} height={height} isStroke={isStroke} />
+			return <FineIcon width={width} height={height} color={color} isStroke={isStroke} />
 		case 'further':
-			return <FurtherIcon color={color} width={width} height={height} isStroke={isStroke} />
+			return <FurtherIcon width={width} height={height} color={color} isStroke={isStroke} />
 		case 'important':
-			return <ImportantIcon color={color} width={width} height={height} isStroke={isStroke} />
+			return <ImportantIcon width={width} height={height} color={color} isStroke={isStroke} />
 		case 'instagram':
-			return <InstagramIcon color={color} width={width} height={height} isStroke={isStroke} />
+			return <InstagramIcon width={width} height={height} color={color} isStroke={isStroke} />
 		case 'location':
-			return <LocationIcon color={color} width={width} height={height} isStroke={isStroke} />
+			return <LocationIcon width={width} height={height} color={color} isStroke={isStroke} />
 		case 'more':
-			return <MoreIcon color={color} width={width} height={height} isStroke={isStroke} />
+			return <MoreIcon width={width} height={height} color={color} isStroke={isStroke} />
 		case 'navigation':
-			return <NavigationIcon color={color} width={width} height={height} isStroke={isStroke} />
+			return <NavigationIcon width={width} height={height} color={color} isStroke={isStroke} />
 		case 'Phone':
-			return <PhoneIcon color={color} width={width} height={height} isStroke={isStroke} />
+			return <PhoneIcon width={width} height={height} color={color} isStroke={isStroke} />
 		case 'search':
-			return <SearchIcon color={color} width={width} height={height} isStroke={isStroke} />
+			return <SearchIcon width={width} height={height} color={color} isStroke={isStroke} />
 		default:
 	}
 }

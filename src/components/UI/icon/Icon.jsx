@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import { getCurrentIconSvgComponent } from './iconSvgComponent'
-
 import * as Styled from './styledIcon'
 
 const Icon = ({
@@ -19,9 +18,9 @@ const Icon = ({
 }) => {
 	const currentIconSvgComponent = getCurrentIconSvgComponent(
 		name,
-		color,
 		width,
 		height,
+		color,
 		isStroke
 	)
 
