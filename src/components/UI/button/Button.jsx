@@ -8,6 +8,7 @@ import COLORS from 'constants/colors'
 import * as Styled from './styledButton'
 
 const Button = ({
+	id,
 	title,
 	isImportant,
 	isFocused,
@@ -20,7 +21,7 @@ const Button = ({
 	const icon = isImportant && <ImportantIcon color={color} />
 
 	return (
-		<Styled.ButtonWrapper disabled={isDisabled} onPress={onPress}>
+		<Styled.ButtonWrapper id={id} disabled={isDisabled} onPress={onPress}>
 			<Styled.ButtonBody
 				isLarge={isLarge}
 				isWhite={isWhite}
@@ -50,6 +51,7 @@ const getCurrentColors = (isFocused, isDisabled, isWhite) => {
 }
 
 Button.prototype = {
+	id: PropTypes.string,
 	title: PropTypes.bool.isRequired,
 	isImportant: PropTypes.bool,
 	isFocused: PropTypes.bool,

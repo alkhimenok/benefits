@@ -30,7 +30,7 @@ const getCurrentIcon = (name, color) => {
 		case 'Аккаунт':
 			return <AccountIcon color={color} />
 		default:
-			return ''
+			return
 	}
 }
 

@@ -16,13 +16,13 @@ const ButtonBody = styled.View`
 	background-color: ${({ backgroundColor }) => backgroundColor};
 	border-radius: ${BORDERS.radiusSuperellipse};
 	${({ isWhite }) => isWhite && `border: ${BORDERS.thin} ${COLORS.neutralDark}`}
-	${({ isLarge }) => isLarge && `padding: ${UNITS.lg}; font-size: ${UNITS.lg}`};
+	${({ isLarge }) => isLarge && `padding: ${UNITS.lg}; font-size: ${UNITS.lg}`}
 `
 const ButtonText = styled.Text`
 	color: ${({ color }) => color};
 `
 const ButtonIconWrapper = styled.View`
-	margin-right: 7.5px;
+	margin-right: 7.5px; ///
 `
 
 export { ButtonWrapper, ButtonBody, ButtonText, ButtonIconWrapper }
