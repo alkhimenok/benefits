@@ -4,6 +4,8 @@ import Container from 'components/common/Container'
 import Button from 'components/UI/button/Button'
 import Icon from 'components/UI/icon/Icon'
 
+import COLORS from 'constants/colors'
+
 import { buttonList } from './buttonList'
 import * as Styled from './styledFilterBar'
 
@@ -12,7 +14,15 @@ const FilterBar = () => {
 		<Styled.FilterBarWrapper>
 			<Container>
 				<Styled.FilterBarContent>
-					<Icon name={'search'} color={'#000000'} isStroke={true}/>
+					<Icon
+						name={'search'}
+						width={15}
+						height={15}
+						color={COLORS.dark}
+						backgroundColor={COLORS.neutral}
+						isLarge={true}
+						isStroke={true}
+					/>
 					<Styled.FilterBarScroll
 						horizontal={true}
 						showsHorizontalScrollIndicator={false}
@@ -20,15 +30,18 @@ const FilterBar = () => {
 					>
 						<Styled.FilterBartList>
 							{buttonList.map(
-								({
-									title,
-									isImportant,
-									isFocused,
-									isDisabled,
-									isWhite,
-									isLarge,
-									onPress
-								}, i) => (
+								(
+									{
+										title,
+										isImportant,
+										isFocused,
+										isDisabled,
+										isWhite,
+										isLarge,
+										onPress
+									},
+									i
+								) => (
 									<Styled.FilterBarButtonWrapper key={i}>
 										<Button
 											title={title}

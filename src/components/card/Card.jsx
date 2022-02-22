@@ -1,4 +1,4 @@
-import React, { lazy } from 'react'
+import React from 'react'
 
 import ImportantIcon from 'components/svg/common/ImportantIcon'
 import FavoritesIcon from 'components/svg/common/FavoritesIcon'

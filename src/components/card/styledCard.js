@@ -34,8 +34,8 @@ const CardLabelIconWrapper = styled.View`
 const CardLabelText = styled.Text`
 	font-family: 'primarySemiBold';
 	font-size: ${UNITS.xs};
-	color: ${COLORS.light}
-	${({ isImportant }) => isImportant && `font-size: ${UNITS.md};`}
+	color: ${COLORS.light};
+	${({ isImportant }) => isImportant && `font-size: ${UNITS.md};`};
 `
 const CardFavoritesIconWrapper = styled.View`
 	position: absolute;
