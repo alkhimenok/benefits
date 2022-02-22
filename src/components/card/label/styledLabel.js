@@ -13,10 +13,6 @@ const LabelWrapper = styled.View`
 	${({ isImportant, isFixed }) => {
 		let styles = ''
 
-    if (!isFixed) {
-      styles += 'position: absolute; bottom: 12px; left: 12px;'
-    }
-
 		if (isImportant) {
 			styles += 'padding: 6px 16px;'
 		} else if (isFixed) {
@@ -25,21 +21,19 @@ const LabelWrapper = styled.View`
 			styles += 'padding: 4px 8px;'
 		}
 
-    if (isImportant || isFixed) {
-      styles += `font-size: ${UNITS.md};`
-    } else {
-      styles += `font-size: ${UNITS.xs};`
-    }
-
-    return styles
+		return styles
 	}}
 `
 const LabelIconWrapper = styled.View`
 	margin: 0 7.5px 0 0;
 `
 const LabelText = styled.Text`
-	font-size: ${UNITS.xs};
+	font-family: 'primarySemiBold';
 	color: ${COLORS.light};
+	${({ isImportant, isFixed }) =>
+		isImportant || isFixed
+			? `font-size: ${UNITS.md};`
+			: `font-size: ${UNITS.xs};`}
 `
 
 export { LabelWrapper, LabelIconWrapper, LabelText }

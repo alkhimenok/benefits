@@ -14,7 +14,8 @@ module.exports = function (api) {
 						utils: './src/utils',
 						components: './src/components',
 						screens: './src/screens',
-						navigation: './src/navigation'
+						navigation: './src/navigation',
+						database: './src/database.json'
 					}
 				}
 			]

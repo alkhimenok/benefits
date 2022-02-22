@@ -1,1 +1,63 @@
-{}
+[
+	{
+		"title": "Еда и напитки",
+		"data": [
+			{
+				"name": "odin",
+				"title": "EMBARGO Coctail Bar",
+				"label": "-25%",
+				"isImportant": false,
+				"isFavorites": false,
+				"isContainsMore": false
+			},
+			{
+				"name": "odin",
+				"title": "EMBARGO Coctail Bar",
+				"label": "-25%",
+				"isImportant": false,
+				"isFavorites": false,
+				"isContainsMore": false
+			},
+			{
+				"name": "odin",
+				"title": "EMBARGO Coctail Bar",
+				"label": "-25%",
+				"isImportant": false,
+				"isFavorites": false,
+				"isContainsMore": false
+			},
+			{
+				"name": "odin",
+				"title": "EMBARGO Coctail Bar",
+				"label": "-25%",
+				"isImportant": false,
+				"isFavorites": false,
+				"isContainsMore": false
+			},
+			{
+				"name": "odin",
+				"title": "EMBARGO Coctail Bar",
+				"label": "-25%",
+				"isImportant": false,
+				"isFavorites": false,
+				"isContainsMore": false
+			},
+			{
+				"name": "odin",
+				"title": "EMBARGO Coctail Bar",
+				"label": "-25%",
+				"isImportant": false,
+				"isFavorites": false,
+				"isContainsMore": false
+			},
+			{
+				"name": "odin",
+				"title": "EMBARGO Coctail Bar",
+				"label": "-25%",
+				"isImportant": false,
+				"isFavorites": false,
+				"isContainsMore": false
+			}
+		]
+	}
+]

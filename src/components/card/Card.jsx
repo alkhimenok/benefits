@@ -1,30 +1,59 @@
 import React from 'react'
 
-import ImportantIcon from 'components/svg/common/ImportantIcon'
-import FavoritesIcon from 'components/svg/common/FavoritesIcon'
+import Image from 'components/UI/image/Image'
+import Icon from 'components/UI/icon/Icon'
+import Label from './label/Label'
 
 import COLORS from 'constants/colors'
 
 import * as Styled from './styledCard'
 
-const Card = ({ id, img, label, isImportant, isFavorites }) => {
-	const importantIcon = isImportant && <ImportantIcon color={COLORS.light} />
-	const favoritesIcon = isFavorites && <FavoritesIcon color={COLORS.primary} />
-
+const Card = ({
+	name,
+	title,
+	label,
+	width,
+	height,
+	isImportant,
+	isFavorites,
+	isContainsMore,
+	onPress
+}) => {
 	return (
-		<Styled.CardWrapper id={id}>
-			<Styled.CardBackground/>
-			<Styled.CardLabel isImportant={isImportant}>
-				<Styled.CardLabelIconWrapper>
-					{importantIcon}
-				</Styled.CardLabelIconWrapper>
-				<Styled.CardLabelText isImportant={isImportant}>
-					{label}
-				</Styled.CardLabelText>
-			</Styled.CardLabel>
-			<Styled.CardFavoritesIconWrapper>
-				{favoritesIcon}
-			</Styled.CardFavoritesIconWrapper>
+		<Styled.CardWrapper width={width} onPress={onPress}>
+			<Styled.CardContent>
+				<Styled.CardImageWrapper width={width} height={height}>
+					<Image name={name} isRounded={true} />
+				</Styled.CardImageWrapper>
+				<Styled.CardLabelsWrapper>
+					<Label title={label} isImportant={isImportant} isFixed={false} />
+					{isContainsMore ? (
+						<Styled.CardMoreIconWrapper>
+							<Icon
+								name={'more'}
+								width={13}
+								height={13}
+								color={COLORS.light}
+								backgroundColor={COLORS.dark}
+							/>
+						</Styled.CardMoreIconWrapper>
+					) : null}
+				</Styled.CardLabelsWrapper>
+				{isFavorites ? (
+					<Styled.CardFavoritesIconWrapper>
+						<Icon
+							name={'favorites'}
+							width={15}
+							height={15}
+							color={COLORS.primary}
+							backgroundColor={COLORS.lightTransparent}
+							isCircle={true}
+							isLarge={true}
+						/>
+					</Styled.CardFavoritesIconWrapper>
+				) : null}
+			</Styled.CardContent>
+			<Styled.CardTitle>{title}</Styled.CardTitle>
 		</Styled.CardWrapper>
 	)
 }
