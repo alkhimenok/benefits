@@ -6,13 +6,13 @@ import * as Styled from './styledImage'
 
 const Image = ({ name, width, height, isContain, isRounded }) => {
 	const currentImageSource = geCurrentImageSource(name)
-  const resizeMode = isContain && 'contain'
+	const resizeMode = isContain && 'contain'
 
 	return (
 		<Styled.ImageWrapper
 			source={currentImageSource}
 			accessibilityLabel={name}
-      resizeMode={resizeMode}
+			resizeMode={resizeMode}
 			width={width}
 			height={height}
 			isRounded={isRounded}

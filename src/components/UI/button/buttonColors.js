@@ -11,9 +11,9 @@ const getCurrentButtonColors = (isFocused, isDisabled, isWhite) => {
 		return [COLORS.light, COLORS.primary]
 	} else if (isWhite) {
 		return [COLORS.dark, COLORS.light]
-	} else {
-		return [COLORS.dark, COLORS.neutral]
 	}
+
+	return [COLORS.dark, COLORS.neutral]
 }
 
 export { getCurrentButtonColors }

@@ -6,7 +6,8 @@ const ImageWrapper = styled.Image`
 	width: ${({ width }) => width ?? '100%'};
 	height: ${({ height }) => height ?? '100%'};
 	margin: auto; /* to hide in the center */
-	${({ isRounded }) => isRounded && `border-radius: ${BORDERS.radiusSuperellipse}`}
+	${({ isRounded }) =>
+		isRounded && `border-radius: ${BORDERS.radiusSuperellipse}`}
 `
 
 export { ImageWrapper }

@@ -6,7 +6,7 @@ import * as Styled from './styledCustomTab'
 
 const CustomTab = ({ name, focused }) => {
 	const { currentColor, currentIcon } = getTabOptions(name, focused)
-	
+
 	return (
 		<Styled.TabWrapper>
 			<Styled.TabIconWrapper>{currentIcon}</Styled.TabIconWrapper>

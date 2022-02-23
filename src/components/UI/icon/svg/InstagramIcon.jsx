@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { Svg, Path } from 'react-native-svg'
 
 const InstagramIcon = ({ width = 20, height = 20, color, isStroke }) => {
-
 	return (
 		<Svg width={width} height={height} viewBox='0 0 18 18'>
 			<Path

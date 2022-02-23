@@ -3,7 +3,7 @@ import styled from 'styled-components/native'
 import FONTS from 'constants/fonts'
 
 const ListWrapper = styled.SafeAreaView`
-	padding: 0 0 48px 0 ; // remove !!!!!!!!
+	padding: 0 0 48px 0; // remove !!!!!!!!
 `
 const ListSections = styled.SectionList``
 const ListSection = styled.View`
@@ -16,7 +16,7 @@ const ListSectionTitle = styled.Text`
 `
 const ListSectionList = styled.FlatList``
 const ListCardWrapper = styled.View`
-  ${({index}) => index !== 0 && `margin: 0 0 0 8px;`}
+	${({ index }) => index !== 0 && 'margin: 0 0 0 8px;'}
 `
 
 export {

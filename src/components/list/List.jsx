@@ -7,7 +7,6 @@ import data from 'database'
 
 import * as Styled from './styledList'
 
-
 const List = () => {
 	return (
 		<Container>
