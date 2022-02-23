@@ -12,18 +12,17 @@ const Card = ({
 	name,
 	title,
 	label,
-	width,
-	height,
 	isImportant,
 	isFavorites,
+	isLarge,
 	isContainsMore,
 	onPress
 }) => {
 	return (
-		<Styled.CardWrapper width={width} onPress={onPress}>
+		<Styled.CardWrapper isLarge={isLarge} onPress={onPress}>
 			<Styled.CardContent>
-				<Styled.CardImageWrapper width={width} height={height}>
-					<Image name={name} isRounded={true} />
+				<Styled.CardImageWrapper>
+					<Image name={name} isRounded={true} isLarge={isLarge} />
 				</Styled.CardImageWrapper>
 				<Styled.CardLabelsWrapper>
 					<Label title={label} isImportant={isImportant} isFixed={false} />

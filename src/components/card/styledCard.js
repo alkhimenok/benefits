@@ -4,12 +4,12 @@ import COLORS from 'constants/colors'
 import UNITS from 'constants/units'
 
 const CardWrapper = styled.TouchableOpacity`
-	max-width: ${({ width }) => width || '224px'};
+	max-width: ${({ isLarge }) => isLarge ? '304px' : '224px'};
 `
 const CardContent = styled.View``
 const CardImageWrapper = styled.View`
-	width: ${({ width }) => width || '224px'};
-	height: ${({ height }) => height || '127px'};
+	width: ${({ isLarge }) => isLarge ? '304px' : '224px'};
+	height: ${({ isLarge }) => isLarge ? '170px' : '127px'};
 `
 const CardLabelsWrapper = styled.View`
 	align-items: center;
