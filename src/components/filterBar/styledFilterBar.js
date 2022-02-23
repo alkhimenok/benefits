@@ -20,5 +20,5 @@ export {
 	FilterBarWrapper,
 	FilterBarBody,
 	FilterBarIconWrapper,
-	FilterBarScroll,
+	FilterBarScroll
 }
