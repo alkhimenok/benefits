@@ -3,57 +3,104 @@
 		"title": "Еда и напитки",
 		"data": [
 			{
-				"name": "odin",
+				"name": "embargo",
 				"title": "EMBARGO Coctail Bar",
-				"label": "-25%",
+				"label": "-20%",
+				"isImportant": true,
+				"isFavorites": false,
+				"isContainsMore": false
+			},
+			{
+				"name": "myata",
+				"title": "Мята-центр кальянная",
+				"label": "-20%",
 				"isImportant": false,
 				"isFavorites": false,
 				"isContainsMore": false
 			},
 			{
-				"name": "odin",
-				"title": "EMBARGO Coctail Bar",
-				"label": "-25%",
+				"name": "sprintBar",
+				"title": "SpiritВar (СпиритБар)",
+				"label": "Сет бесплатно",
 				"isImportant": false,
 				"isFavorites": false,
 				"isContainsMore": false
 			},
 			{
-				"name": "odin",
-				"title": "EMBARGO Coctail Bar",
+				"name": "dominosPizza",
+				"title": "Доминос Пицца",
 				"label": "-25%",
+				"isImportant": false,
+				"isFavorites": false,
+				"isContainsMore": false
+			}
+		]
+	},
+	{
+		"title": "Здоровье",
+		"data": [
+			{
+				"name": "evo",
+				"title": "EVO wellness club",
+				"label": "-20%",
 				"isImportant": false,
 				"isFavorites": false,
 				"isContainsMore": false
 			},
 			{
-				"name": "odin",
-				"title": "EMBARGO Coctail Bar",
-				"label": "-25%",
+				"name": "voka",
+				"title": "VOKA центр микрохирургии глаза",
+				"label": "-10%",
+				"isImportant": false,
+				"isFavorites": false,
+				"isContainsMore": false
+			}
+		]
+	},
+	{
+		"title": "Обучение и хобби",
+		"data": [
+			{
+				"name": "skyeng",
+				"title": "Курсы иностранных языков SKYENG английский, немецкий...",
+				"label": "До -45%",
 				"isImportant": false,
 				"isFavorites": false,
 				"isContainsMore": false
 			},
 			{
-				"name": "odin",
-				"title": "EMBARGO Coctail Bar",
-				"label": "-25%",
+				"name": "robolab",
+				"title": "ROBOLAB Школа робототехники",
+				"label": "-10%",
 				"isImportant": false,
 				"isFavorites": false,
 				"isContainsMore": false
 			},
 			{
-				"name": "odin",
-				"title": "EMBARGO Coctail Bar",
-				"label": "-25%",
+				"name": "fasol",
+				"title": "FASOL музыкальная качалка",
+				"label": "-20%",
 				"isImportant": false,
 				"isFavorites": false,
 				"isContainsMore": false
 			},
 			{
+				"name": "onlineClass",
+				"title": "Online Class",
+				"label": "-7%",
+				"isImportant": false,
+				"isFavorites": false,
+				"isContainsMore": false
+			}
+		]
+	},
+	{
+		"title": "Одежда",
+		"data": [
+			{
 				"name": "odin",
-				"title": "EMBARGO Coctail Bar",
-				"label": "-25%",
+				"title": "ODIN",
+				"label": "−10% по промокоду",
 				"isImportant": false,
 				"isFavorites": false,
 				"isContainsMore": false

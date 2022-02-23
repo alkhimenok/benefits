@@ -1,11 +1,13 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+
+import Screen from 'components/common/Screen'
+import Image from 'components/UI/image/Image'
 
 const Favorites = () => {
 	return (
-		<View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-			<Text>Favorites</Text>
-		</View>
+		<Screen>
+			{/* <Image /> */}
+		</Screen>
 	)
 }
 

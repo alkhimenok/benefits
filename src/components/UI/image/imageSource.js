@@ -28,9 +28,9 @@ const geCurrentImageSource = (name) => {
 		case 'voka':
 			return require('assets/images/services/health/voka.png')
 		// service
+		// sport
 		default:
 			return require('assets/images/undefined/service.png')
-		// sport
 	}
 }
 
