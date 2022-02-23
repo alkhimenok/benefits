@@ -21,7 +21,7 @@ const Label = ({ title, isImportant, isFixed }) => {
 					/>
 				</Styled.LabelIconWrapper>
 			) : null}
-			<Styled.LabelText>{title}</Styled.LabelText>
+			<Styled.LabelTitle>{title}</Styled.LabelTitle>
 		</Styled.LabelWrapper>
 	)
 }

@@ -2,9 +2,9 @@ import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
-import Discount from 'screens/discount/Discount'
-import Favorites from 'screens/favorites/Favorites'
-import Account from 'screens/account/Account'
+import Discount from 'screens/Discount'
+import Favorites from 'screens/Favorites'
+import Account from 'screens/Account'
 
 import CustomTab from './CustomTab'
 import { navigatorOptions } from './options'
@@ -20,7 +20,7 @@ const BottomTabBar = () => {
 				screenOptions={({ route: { name } }) => ({
 					...navigatorOptions,
 					tabBarIcon: ({ focused }) => (
-						<CustomTab name={name} focused={focused} />
+						<CustomTab name={name} isFocused={focused} />
 					)
 				})}
 			>

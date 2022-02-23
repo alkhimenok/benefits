@@ -4,12 +4,14 @@ import PropTypes from 'prop-types'
 import { getTabOptions } from './tabOptions'
 import * as Styled from './styledCustomTab'
 
-const CustomTab = ({ name, focused }) => {
-	const { currentColor, currentIcon } = getTabOptions(name, focused)
+const CustomTab = ({ name, isFocused }) => {
+	const { currentIcon, currentColor } = getTabOptions(name, isFocused)
 
 	return (
 		<Styled.TabWrapper>
-			<Styled.TabIconWrapper>{currentIcon}</Styled.TabIconWrapper>
+			<Styled.TabIconWrapper pointerEvents='none'>
+				{currentIcon}
+			</Styled.TabIconWrapper>
 			<Styled.TabName color={currentColor}>{name}</Styled.TabName>
 		</Styled.TabWrapper>
 	)
@@ -17,7 +19,7 @@ const CustomTab = ({ name, focused }) => {
 
 CustomTab.propTypes = {
 	name: PropTypes.string.isRequired,
-	focused: PropTypes.bool.isRequired
+	isFocused: PropTypes.bool.isRequired
 }
 
 export default CustomTab

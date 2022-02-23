@@ -1,6 +1,7 @@
 import styled from 'styled-components/native'
 
 import UNITS from 'constants/units'
+import FONTS from 'constants/fonts'
 import COLORS from 'constants/colors'
 import BORDERS from 'constants/borders'
 
@@ -27,8 +28,8 @@ const LabelWrapper = styled.View`
 const LabelIconWrapper = styled.View`
 	margin: 0 7.5px 0 0;
 `
-const LabelText = styled.Text`
-	font-family: 'primarySemiBold';
+const LabelTitle = styled.Text`
+	font-family: ${FONTS.primarySemiBold};
 	color: ${COLORS.light};
 	${({ isImportant, isFixed }) =>
 		isImportant || isFixed
@@ -36,4 +37,4 @@ const LabelText = styled.Text`
 			: `font-size: ${UNITS.xs};`}
 `
 
-export { LabelWrapper, LabelIconWrapper, LabelText }
+export { LabelWrapper, LabelIconWrapper, LabelTitle }

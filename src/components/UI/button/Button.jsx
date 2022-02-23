@@ -22,25 +22,25 @@ const Button = ({
 	)
 
 	return (
-		<Styled.ButtonWrapper disabled={isDisabled} onPress={onPress}>
-			<Styled.ButtonBody
-				isLarge={isLarge}
-				isWhite={isWhite}
-				backgroundColor={backgroundColor}
-			>
-				{isImportant ? (
-					<Styled.ButtonIconWrapper>
-						<Icon
-							name={'important'}
-							width={14}
-							height={16}
-							color={color}
-							isOnlyIcon={true}
-						/>
-					</Styled.ButtonIconWrapper>
-				) : null}
-				<Styled.ButtonText color={color}>{title}</Styled.ButtonText>
-			</Styled.ButtonBody>
+		<Styled.ButtonWrapper
+			disabled={isDisabled}
+			onPress={onPress}
+			isLarge={isLarge}
+			isWhite={isWhite}
+			backgroundColor={backgroundColor}
+		>
+			{isImportant ? (
+				<Styled.ButtonIconWrapper>
+					<Icon
+						name={'important'}
+						width={14}
+						height={16}
+						color={color}
+						isOnlyIcon={true}
+					/>
+				</Styled.ButtonIconWrapper>
+			) : null}
+			<Styled.ButtonTitle color={color}>{title}</Styled.ButtonTitle>
 		</Styled.ButtonWrapper>
 	)
 }

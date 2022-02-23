@@ -9,21 +9,21 @@ import * as Styled from './styledList'
 
 const List = () => {
 	return (
-		<Container>
-			<Styled.ListWrapper>
-				<Styled.ListSections
-					stickySectionHeadersEnabled={false}
+		<Styled.ListWrapper>
+			<Container>
+				<Styled.ListServiceSections
 					sections={data}
-					keyExtractor={(item, index) => item + index}
+					stickySectionHeadersEnabled={false}
 					showsVerticalScrollIndicator={false}
+					keyExtractor={(item, index) => item + index}
 					renderSectionHeader={({ section }) => (
-						<Styled.ListSection>
-							<Styled.ListSectionTitle>{section.title}</Styled.ListSectionTitle>
-							<Styled.ListSectionList
+						<Styled.ListService>
+							<Styled.ListServiceTitle>{section.title}</Styled.ListServiceTitle>
+							<Styled.ListServiceItems
 								data={section.data}
-								horizontal
-								keyExtractor={(item, index) => item + index}
+								horizontal={true}
 								showsHorizontalScrollIndicator={false}
+								keyExtractor={(item, index) => item + index}
 								renderItem={({ item, index }) => (
 									<Styled.ListCardWrapper index={index}>
 										<Card
@@ -37,12 +37,12 @@ const List = () => {
 									</Styled.ListCardWrapper>
 								)}
 							/>
-						</Styled.ListSection>
+						</Styled.ListService>
 					)}
 					renderItem={({ item }) => null}
 				/>
-			</Styled.ListWrapper>
-		</Container>
+			</Container>
+		</Styled.ListWrapper>
 	)
 }
 

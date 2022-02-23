@@ -2,11 +2,11 @@ import Icon from 'components/UI/icon/Icon'
 
 import COLORS from 'constants/colors'
 
-const getTabOptions = (name, focused) => {
-	const currentColor = focused ? COLORS.primary : COLORS.paragraph
+const getTabOptions = (name, isFocused) => {
+	const currentColor = isFocused ? COLORS.primary : COLORS.paragraph
 	const currentIcon = getCurrentIcon(name, currentColor)
 
-	return { currentColor, currentIcon }
+	return { currentIcon, currentColor }
 }
 
 const getCurrentIcon = (name, color) => {
@@ -32,7 +32,15 @@ const getCurrentIcon = (name, color) => {
 				/>
 			)
 		case 'Аккаунт':
-			return <Icon name={'account'} width={22} height={22} color={color} />
+			return (
+				<Icon
+					name={'account'}
+					width={22}
+					height={22}
+					color={color}
+					isStroke={false}
+				/>
+			)
 		default:
 			return
 	}
