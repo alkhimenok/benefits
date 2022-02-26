@@ -6,7 +6,7 @@ import * as Styled from './styledImage'
 
 const Image = ({ name, width, height, isContain, isRounded }) => {
 	const currentImageSource = geCurrentImageSource(name)
-	const resizeMode = isContain && 'contain'
+	const resizeMode = isContain ? 'contain' : 'cover'
 
 	return (
 		<Styled.ImageWrapper

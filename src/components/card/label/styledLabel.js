@@ -14,10 +14,10 @@ const LabelWrapper = styled.View`
 	${({ isImportant, isFixed }) => {
 		let styles = ''
 
-		if (isImportant) {
-			styles += 'padding: 6px 16px;'
-		} else if (isFixed) {
+		if (isFixed) {
 			styles += 'padding: 10px 16px;'
+		} else if (isImportant) {
+			styles += 'padding: 6px 16px;'
 		} else {
 			styles += 'padding: 4px 8px;'
 		}
