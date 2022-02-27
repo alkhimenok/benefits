@@ -12,10 +12,9 @@ const getCurrentCardIcon = (name, condition, onPress) => {
 					name={'more'}
 					width={13}
 					height={13}
-					color={condition ? COLORS.dark : COLORS.light}
-					backgroundColor={condition ? COLORS.neutral : COLORS.dark}
+					color={COLORS.light}
+					backgroundColor={COLORS.dark}
 					isCircle={true}
-					isLarge={condition}
 					onPress={onPress}
 				/>
 			)

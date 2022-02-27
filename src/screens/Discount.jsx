@@ -4,11 +4,11 @@ import Screen from 'components/common/Screen'
 import FilterBar from 'components/filterBar/FilterBar'
 import List from 'components/list/List'
 
-const Discount = () => {
+const Discount = ({ navigation }) => {
 	return (
 		<Screen>
 			<FilterBar />
-			<List />
+			<List navigation={navigation} />
 		</Screen>
 	)
 }

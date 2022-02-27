@@ -2,7 +2,9 @@ import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
-import Discount from 'screens/Discount'
+import StackNavigator from './stackNavigator/StackNavigator'
+
+// import Discount from 'screens/Discount'
 import Favorites from 'screens/Favorites'
 import Account from 'screens/Account'
 
@@ -15,7 +17,7 @@ const BottomTabBar = () => {
 	return (
 		<NavigationContainer>
 			<Navigator
-				initialRouteName={'discount'}
+				initialRouteName={'Скидки'}
 				backBehavior={'history'}
 				screenOptions={({ route: { name } }) => ({
 					...navigatorOptions,
@@ -24,7 +26,7 @@ const BottomTabBar = () => {
 					)
 				})}
 			>
-				<Screen name='Скидки' component={Discount} />
+				<Screen name='Скидки' component={StackNavigator} />
 				<Screen name='Избраное' component={Favorites} />
 				<Screen name='Аккаунт' component={Account} />
 			</Navigator>

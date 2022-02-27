@@ -12,82 +12,35 @@ const Card = ({
 	title,
 	label,
 	description,
-	more,
-	conditionList,
-	linkList,
-	photoList,
 	isFavorites,
 	isImportant,
 	isContainsMore,
 	isLarge,
 	isFull,
-	isDeployed,
 	onPress
 }) => {
-	const isRounded = !isDeployed
-
 	return (
-		<Styled.CardWrapper
-			isLarge={isLarge}
-			isFull={isFull}
-			isDeployed={isDeployed}
-			onPress={onPress}
-		>
-			<Styled.CardImageWrapper
-				isLarge={isLarge}
-				isFull={isFull}
-				isDeployed={isDeployed}
-			>
-				<Image name={name} isContain={false} isRounded={isRounded} />
+		<Styled.CardWrapper isLarge={isLarge} isFull={isFull} onPress={onPress}>
+			<Styled.CardImageWrapper isLarge={isLarge} isFull={isFull}>
+				<Image name={name} isContain={false} isRounded={true} />
 				{isFavorites || isFull ? (
-					<Styled.CardFavoritesIconWrapper
-						isLarge={isLarge}
-						isFull={isFull}
-						isDeployed={isDeployed}
-					>
+					<Styled.CardFavoritesIconWrapper isLarge={isLarge} isFull={isFull}>
 						{getCurrentCardIcon('favorites', isFavorites)}
 					</Styled.CardFavoritesIconWrapper>
 				) : null}
 				<Styled.CardLabelsWrapper isLarge={isLarge} isFull={isFull}>
-					<Label title={label} isImportant={isImportant} isFixed={isDeployed} />
+					<Label title={label} isImportant={isImportant} />
 					{isContainsMore ? (
 						<Styled.CardMoreIconWrapper>
-							{getCurrentCardIcon('more', isDeployed)}
+							{getCurrentCardIcon('more')}
 						</Styled.CardMoreIconWrapper>
 					) : null}
 				</Styled.CardLabelsWrapper>
 			</Styled.CardImageWrapper>
-			<Styled.CardAbout isDeployed={isDeployed}>
-				{isLarge ? null : (
-					<Styled.CardTitle isFull={isFull} isDeployed={isDeployed}>
-						{title}
-					</Styled.CardTitle>
-				)}
-				{isFull ? (
-					<Styled.CardDescription>{description}</Styled.CardDescription>
-				) : null}
-			</Styled.CardAbout>
-
-			{/* <Styled.CardImageWrapper>
-			<Image name={name} isRounded={true} isLarge={isLarge} isDeployed={isDeployed} />
-			<Styled.CardLabelsWrapper>
-				<Label title={label} isImportant={isImportant} isFixed={false} />
-				{isContainsMore ? (
-					<Styled.CardMoreIconWrapper>
-						{getCurrentCardIcon('more')}
-					</Styled.CardMoreIconWrapper>
-				) : null}
-			</Styled.CardLabelsWrapper>
-			{isFavorites ? (
-				<Styled.CardFavoritesIconWrapper>
-					{getCurrentCardIcon('favorites')}
-				</Styled.CardFavoritesIconWrapper>
+			<Styled.CardTitle>{title}</Styled.CardTitle>
+			{isFull ? (
+				<Styled.CardDescription>{description}</Styled.CardDescription>
 			) : null}
-		</Styled.CardImageWrapper>
-		<Styled.CardTitle>{title}</Styled.CardTitle>
-		{isDeployed ? (
-			<Styled.CardDescription>{description}</Styled.CardDescription>
-		) : null} */}
 		</Styled.CardWrapper>
 	)
 }
@@ -96,10 +49,12 @@ Card.prototype = {
 	name: PropTypes.string.isRequired,
 	title: PropTypes.string.isRequired,
 	label: PropTypes.string.isRequired,
-	isImportant: PropTypes.bool,
+	description: PropTypes.string,
 	isFavorites: PropTypes.bool,
-	isLarge: PropTypes.bool,
+	isImportant: PropTypes.bool,
 	isContainsMore: PropTypes.bool,
+	isLarge: PropTypes.bool,
+	isFull: PropTypes.bool,
 	onPress: PropTypes.func
 }
 

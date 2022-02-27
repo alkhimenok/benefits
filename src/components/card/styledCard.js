@@ -5,12 +5,11 @@ import FONTS from 'constants/fonts'
 import COLORS from 'constants/colors'
 
 const CardWrapper = styled.TouchableOpacity`
-	height: 100%;
-	background-color: red;
-	width: ${({ isLarge, isFull, isDeployed }) => {
+	/* height: 100%; */
+	width: ${({ isLarge, isFull }) => {
 		if (isLarge) {
 			return '304px;'
-		} else if (isFull || isDeployed) {
+		} else if (isFull) {
 			return '100%;'
 		} else {
 			return '224px;'
@@ -18,73 +17,38 @@ const CardWrapper = styled.TouchableOpacity`
 	}};
 `
 const CardImageWrapper = styled.View`
-	height: ${({ isLarge, isFull, isDeployed }) => {
+	height: ${({ isLarge, isFull }) => {
 		if (isLarge) {
 			return '170px;'
 		} else if (isFull) {
-			return '200px;'
-		} else if (isDeployed) {
-			return '30%;'
+			return '30%'
 		} else {
 			return '127px;'
 		}
 	}};
 `
-const CardAbout = styled.View`
-	${({ isDeployed }) => isDeployed && `padding: 24px 16px; border-top-left-radius: 24px;border-top-right-radius: 24px;`}
-	background-color: ${COLORS.light};
-`
 const CardLabelsWrapper = styled.View`
 	position: absolute;
-	bottom: 8px;
-	left: 8px;
 	align-items: center;
 	justify-content: center;
 	flex-direction: row;
+	${({ isLarge, isFull }) =>
+		isLarge || isFull ? 'bottom: 12px; left: 12px;' : 'bottom: 8px; left: 8px;'}
 `
 const CardMoreIconWrapper = styled.View`
 	margin: 0 0 0 10px;
 `
 const CardFavoritesIconWrapper = styled.View`
 	position: absolute;
-	${({ isLarge, isFull, isDeployed }) => {
-		if (isLarge || isFull) {
-			return 'top: 12px; right: 12px;'
-		} else if (isDeployed) {
-			return 'top: 16px; right: 16px;'
-		} else {
-			return 'top: 4px; right: 4px;'
-		}
-	}}
+	${({ isLarge, isFull }) =>
+		isLarge || isFull ? 'top: 12px; right: 12px;' : 'top: 4px; right: 4px;'}
 `
 const CardTitle = styled.Text`
-	margin: ${({ isFull, isDeployed }) => {
-			if (isFull) {
-				return '16px'
-			} else if (isDeployed) {
-				return '0'
-			} else {
-				return '8px'
-			}
-		}}
-		0 0 0;
-	font-family: ${({ isFull, isDeployed }) => {
-		if (isFull || isDeployed) {
-			return FONTS.primaryBold
-		} else {
-			return FONTS.primarySemiBold
-		}
-	}};
-	font-size: ${({ isFull, isDeployed }) => {
-		if (isFull) {
-			return UNITS.lg
-		} else if (isDeployed) {
-			return UNITS.xxl
-		} else {
-			return UNITS.md
-		}
-	}};
 	color: ${COLORS.dark};
+	${({ isFull }) =>
+		isFull
+			? `margin: 16px 0 0 0; font-family: ${FONTS.primaryBold}; font-size: ${UNITS.lg}`
+			: `margin: 8px 0 0 0; font-family: ${FONTS.primarySemiBold}; font-size: ${UNITS.md}`}
 `
 const CardDescription = styled.Text`
 	margin: 4px 0 0 0;
@@ -95,7 +59,6 @@ const CardDescription = styled.Text`
 export {
 	CardWrapper,
 	CardImageWrapper,
-	CardAbout,
 	CardLabelsWrapper,
 	CardMoreIconWrapper,
 	CardFavoritesIconWrapper,
