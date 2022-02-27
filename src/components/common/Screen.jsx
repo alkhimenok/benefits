@@ -13,7 +13,7 @@ const Screen = ({ children }) => {
 
 const ScreenWrapper = styled.View`
 	flex: 1;
-	padding: 0 0 ${({ barHeight }) => `${barHeight}px`} 0;
+	/* padding: 0 0 ${({ barHeight }) => `${barHeight}px`} 0; */
 	background-color: ${COLORS.light};
 `
 

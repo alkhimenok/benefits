@@ -143,7 +143,7 @@ const getCurrentIconSvgComponent = (name, width, height, color, isStroke) => {
 					isStroke={isStroke}
 				/>
 			)
-		case 'Phone':
+		case 'phone':
 			return (
 				<PhoneIcon
 					width={width}
