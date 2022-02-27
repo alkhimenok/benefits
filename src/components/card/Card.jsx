@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Image from 'components/UI/image/Image'
-import Label from './label/Label'
+import Label from 'components/UI/label/Label'
 
 import { getCurrentCardIcon } from './cardIcon'
 import * as Styled from './styledCard'

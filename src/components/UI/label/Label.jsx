@@ -7,9 +7,9 @@ import COLORS from 'constants/colors'
 
 import * as Styled from './styledLabel'
 
-const Label = ({ title, isImportant }) => {
+const Label = ({ title, isImportant, isFixed }) => {
 	return (
-		<Styled.LabelWrapper isImportant={isImportant}>
+		<Styled.LabelWrapper isImportant={isImportant} isFixed={isFixed}>
 			{isImportant ? (
 				<Styled.LabelIconWrapper>
 					<Icon
