@@ -1,24 +1,18 @@
 import React from 'react'
+import { observer } from 'mobx-react-lite'
 
 import Button from 'components/UI/button/Button'
 
-import { buttonList } from './buttonList'
+import filter from '../../../store/filter/filter'
+
 import * as Styled from './styledFilterList'
 
-const FilterList = () => {
+const FilterList = observer(() => {
 	return (
 		<Styled.FilterListWrapper>
-			{buttonList.map(
+			{filter.filterList.map(
 				(
-					{
-						title,
-						isImportant,
-						isFocused,
-						isDisabled,
-						isWhite,
-						isLarge,
-						onPress
-					},
+					{ id, title, isImportant, isFocused, isDisabled, isWhite, isLarge },
 					i
 				) => (
 					<Styled.FilterListButtonWrapper key={i} index={i}>
@@ -29,13 +23,13 @@ const FilterList = () => {
 							isDisabled={isDisabled}
 							isWhite={isWhite}
 							isLarge={isLarge}
-							onPress={onPress}
+							onPress={() => filter.focused(id)}
 						/>
 					</Styled.FilterListButtonWrapper>
 				)
 			)}
 		</Styled.FilterListWrapper>
 	)
-}
+})
 
 export default FilterList

@@ -21,7 +21,7 @@ const CardImageWrapper = styled.View`
 		if (isLarge) {
 			return '170px;'
 		} else if (isFull) {
-			return '30%'
+			return '200px'
 		} else {
 			return '127px;'
 		}

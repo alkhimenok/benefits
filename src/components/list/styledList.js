@@ -13,6 +13,8 @@ const ListServiceTitle = styled.Text`
 	margin: 0 0 16px 0;
 	font-family: ${FONTS.primaryBold};
 	font-size: 20px; /* fix */
+
+	${({ isMain }) => isMain && `font-size: 28px; margin: 24px 0;`}
 `
 const ListServiceItems = styled.FlatList``
 const ListCardWrapper = styled.View`

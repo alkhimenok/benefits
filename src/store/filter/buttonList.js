@@ -7,9 +7,6 @@ export const buttonList = [
 		isDisabled: false,
 		isWhite: false,
 		isLarge: false,
-		onPress() {
-			console.log('hello')
-		}
 	},
 	{
 		id: 'foodAndDrink',
@@ -19,9 +16,6 @@ export const buttonList = [
 		isDisabled: false,
 		isWhite: false,
 		isLarge: false,
-		onPress() {
-			console.log('hello')
-		}
 	},
 	{
 		id: 'health',
@@ -31,9 +25,6 @@ export const buttonList = [
 		isDisabled: false,
 		isWhite: false,
 		isLarge: false,
-		onPress() {
-			console.log('hello')
-		}
 	},
 	{
 		id: 'educationAndHobbies',
@@ -43,33 +34,24 @@ export const buttonList = [
 		isDisabled: false,
 		isWhite: false,
 		isLarge: false,
-		onPress() {
-			console.log('hello')
-		}
 	},
 	{
 		id: 'beauty',
 		title: 'Красота',
 		isImportant: false,
 		isFocused: false,
-		isDisabled: false,
+		isDisabled: true,
 		isWhite: false,
 		isLarge: false,
-		onPress() {
-			console.log('hello')
-		}
 	},
 	{
 		id: 'sports',
 		title: 'Спорт',
 		isImportant: false,
 		isFocused: false,
-		isDisabled: false,
+		isDisabled: true,
 		isWhite: false,
 		isLarge: false,
-		onPress() {
-			console.log('hello')
-		}
 	},
 	{
 		id: 'cloth',
@@ -79,21 +61,15 @@ export const buttonList = [
 		isDisabled: false,
 		isWhite: false,
 		isLarge: false,
-		onPress() {
-			console.log('hello')
-		}
 	},
 	{
 		id: 'services',
 		title: 'Услуги',
 		isImportant: false,
 		isFocused: false,
-		isDisabled: false,
+		isDisabled: true,
 		isWhite: false,
 		isLarge: false,
-		onPress() {
-			console.log('hello')
-		}
 	}
 	// {
 	// 	id: 'allDiscounts',

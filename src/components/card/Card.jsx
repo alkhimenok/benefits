@@ -37,7 +37,7 @@ const Card = ({
 					) : null}
 				</Styled.CardLabelsWrapper>
 			</Styled.CardImageWrapper>
-			<Styled.CardTitle>{title}</Styled.CardTitle>
+			{isLarge ? null : <Styled.CardTitle>{title}</Styled.CardTitle>}
 			{isFull ? (
 				<Styled.CardDescription>{description}</Styled.CardDescription>
 			) : null}
