@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
 import { getCurrentIconSvgComponent } from './iconSvgComponent'
 import * as Styled from './styledIcon'
 
@@ -11,9 +10,10 @@ const Icon = ({
 	color,
 	backgroundColor,
 	isOnlyIcon,
-	isCircle,
 	isLarge,
-	isStroke,
+	isSmall,
+	isCircle,
+	isFill,
 	onPress
 }) => {
 	const currentIconSvgComponent = getCurrentIconSvgComponent(
@@ -21,15 +21,16 @@ const Icon = ({
 		width,
 		height,
 		color,
-		isStroke
+		isFill
 	)
 
 	return (
 		<Styled.IconWrapper
 			backgroundColor={backgroundColor}
 			isOnlyIcon={isOnlyIcon}
-			isCircle={isCircle}
 			isLarge={isLarge}
+			isSmall={isSmall}
+			isCircle={isCircle}
 			onPress={onPress}
 		>
 			{currentIconSvgComponent}
@@ -41,12 +42,12 @@ Icon.propTypes = {
 	name: PropTypes.string.isRequired,
 	width: PropTypes.number,
 	height: PropTypes.number,
-	color: PropTypes.string.isRequired,
+	color: PropTypes.string,
 	backgroundColor: PropTypes.string,
-	isOnlyIcon: PropTypes.bool,
-	isCircle: PropTypes.bool,
 	isLarge: PropTypes.bool,
-	isStroke: PropTypes.bool,
+	isSmall: PropTypes.bool,
+	isCircle: PropTypes.bool,
+	isFill: PropTypes.bool,
 	onPress: PropTypes.func
 }
 

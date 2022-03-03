@@ -10,7 +10,7 @@ const Card = ({ navigation, route }) => {
 		label,
 		conditionList,
 		linkList,
-		isImportant,
+		icon,
 		isFavorites
 	} = route.params
 
@@ -22,7 +22,7 @@ const Card = ({ navigation, route }) => {
 				label={label}
 				conditionList={conditionList}
 				linkList={linkList}
-				isImportant={isImportant}
+				icon={icon}
 				isFavorites={isFavorites}
 				navigation={navigation}
 			/>

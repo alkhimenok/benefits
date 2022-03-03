@@ -19,8 +19,9 @@
 					{ "instagram": "myata.lounge.center" },
 					{ "phone": "+375 29 123-45-67" }
 				],
-				"isImportant": true,
+				"icon": { "name": "important", "position": "start" },
 				"isFavorites": false,
+				"isLarge": true,
 				"isContainsMore": false
 			},
 			{
@@ -40,8 +41,8 @@
 					{ "instagram": "myata.lounge.center" },
 					{ "phone": "+375 29 123-45-67" }
 				],
-				"isImportant": false,
 				"isFavorites": false,
+				"isLarge": true,
 				"isContainsMore": false
 			},
 			{
@@ -61,8 +62,8 @@
 					{ "instagram": "myata.lounge.center" },
 					{ "phone": "+375 29 123-45-67" }
 				],
-				"isImportant": false,
 				"isFavorites": false,
+				"isLarge": true,
 				"isContainsMore": false
 			},
 			{
@@ -82,8 +83,8 @@
 					{ "instagram": "myata.lounge.center" },
 					{ "phone": "+375 29 123-45-67" }
 				],
-				"isImportant": false,
 				"isFavorites": false,
+				"isLarge": true,
 				"isContainsMore": false
 			}
 		]
@@ -108,7 +109,7 @@
 					{ "instagram": "myata.lounge.center" },
 					{ "phone": "+375 29 123-45-67" }
 				],
-				"isImportant": true,
+				"icon": { "name": "important", "position": "start" },
 				"isFavorites": false,
 				"isContainsMore": false
 			},
@@ -129,7 +130,6 @@
 					{ "instagram": "myata.lounge.center" },
 					{ "phone": "+375 29 123-45-67" }
 				],
-				"isImportant": false,
 				"isFavorites": false,
 				"isContainsMore": false
 			},
@@ -150,7 +150,6 @@
 					{ "instagram": "myata.lounge.center" },
 					{ "phone": "+375 29 123-45-67" }
 				],
-				"isImportant": false,
 				"isFavorites": false,
 				"isContainsMore": false
 			},
@@ -171,7 +170,6 @@
 					{ "instagram": "myata.lounge.center" },
 					{ "phone": "+375 29 123-45-67" }
 				],
-				"isImportant": false,
 				"isFavorites": false,
 				"isContainsMore": false
 			}
@@ -197,7 +195,6 @@
 					{ "instagram": "myata.lounge.center" },
 					{ "phone": "+375 29 123-45-67" }
 				],
-				"isImportant": false,
 				"isFavorites": false,
 				"isContainsMore": false
 			},
@@ -218,7 +215,6 @@
 					{ "instagram": "myata.lounge.center" },
 					{ "phone": "+375 29 123-45-67" }
 				],
-				"isImportant": false,
 				"isFavorites": false,
 				"isContainsMore": false
 			}
@@ -244,7 +240,6 @@
 					{ "instagram": "myata.lounge.center" },
 					{ "phone": "+375 29 123-45-67" }
 				],
-				"isImportant": false,
 				"isFavorites": false,
 				"isContainsMore": false
 			},
@@ -265,7 +260,6 @@
 					{ "instagram": "myata.lounge.center" },
 					{ "phone": "+375 29 123-45-67" }
 				],
-				"isImportant": false,
 				"isFavorites": false,
 				"isContainsMore": false
 			},
@@ -286,7 +280,6 @@
 					{ "instagram": "myata.lounge.center" },
 					{ "phone": "+375 29 123-45-67" }
 				],
-				"isImportant": false,
 				"isFavorites": false,
 				"isContainsMore": false
 			},
@@ -307,7 +300,6 @@
 					{ "instagram": "myata.lounge.center" },
 					{ "phone": "+375 29 123-45-67" }
 				],
-				"isImportant": false,
 				"isFavorites": false,
 				"isContainsMore": false
 			}
@@ -333,7 +325,6 @@
 					{ "instagram": "myata.lounge.center" },
 					{ "phone": "+375 29 123-45-67" }
 				],
-				"isImportant": false,
 				"isFavorites": false,
 				"isContainsMore": false
 			}

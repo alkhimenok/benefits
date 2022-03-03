@@ -20,17 +20,10 @@ const FilterBar = () => {
 							height={15}
 							color={COLORS.dark}
 							backgroundColor={COLORS.neutral}
-							isLarge={true}
 							isStroke={true}
 						/>
 					</Styled.FilterBarIconWrapper>
-					<Styled.FilterBarScroll
-						horizontal={true}
-						showsHorizontalScrollIndicator={false}
-						alwaysBounceHorizontal={true}
-					>
-						<FilterList />
-					</Styled.FilterBarScroll>
+					<FilterList />
 				</Styled.FilterBarBody>
 			</Container>
 		</Styled.FilterBarWrapper>

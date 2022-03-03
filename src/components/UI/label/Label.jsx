@@ -1,19 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
 import Icon from 'components/UI/icon/Icon'
-
 import COLORS from 'globalStyles/colors'
-
 import * as Styled from './styledLabel'
 
-const Label = ({ title, isImportant, isFixed }) => {
+const Label = ({ title, icon, isFixed }) => {
 	return (
-		<Styled.LabelWrapper isImportant={isImportant} isFixed={isFixed}>
-			{isImportant ? (
-				<Styled.LabelIconWrapper>
+		<Styled.LabelWrapper iconPosition={icon?.position} isLarge={icon?.name} isFixed={isFixed}>
+			{icon?.name ? (
+				<Styled.LabelIconWrapper iconPosition={icon?.position}>
 					<Icon
-						name={'important'}
+						name={icon.name}
 						width={16}
 						height={16}
 						color={COLORS.light}

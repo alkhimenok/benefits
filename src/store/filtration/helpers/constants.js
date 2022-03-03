@@ -1,25 +1,22 @@
 export const optionList = [
 	{
 		title: 'Все скидки',
-		isImportant: true,
+		icon: { name: 'important', position: 'start' },
 		isFocused: true,
 		isDisabled: false
 	},
 	{
 		title: 'Еда и напитки',
-		isImportant: false,
 		isFocused: false,
 		isDisabled: false
 	},
 	{
 		title: 'Здоровье',
-		isImportant: false,
 		isFocused: false,
 		isDisabled: false
 	},
 	{
 		title: 'Обучение и хобби',
-		isImportant: false,
 		isFocused: false,
 		isDisabled: false
 	},
@@ -40,7 +37,7 @@ export const optionList = [
 		isImportant: false,
 		isFocused: false,
 		isDisabled: false
-	},
+	}
 	// {
 	// 	title: 'Услуги',
 	// 	isImportant: false,

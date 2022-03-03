@@ -1,55 +1,62 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Icon from 'components/UI/icon/Icon'
-import { getCurrentButtonColors } from './buttonColors'
+import { getCurrentButtonColors, getCurrentIconSize } from './buttonOptions'
 import * as Styled from './styledButton'
 
 const Button = ({
 	title,
-	isImportant,
-	isFocused,
-	isDisabled,
-	isWhite,
+	icon,
 	isLarge,
+	isSmall,
+	isDisable,
+	isPrimary,
+	isSecondary,
+	isContour,
 	onPress
 }) => {
 	const [color, backgroundColor] = getCurrentButtonColors(
-		isFocused,
-		isDisabled,
-		isWhite
+		isPrimary,
+		isSecondary,
+		isContour
 	)
+	const [width, height] = getCurrentIconSize(isLarge, isSmall)
 
 	return (
 		<Styled.ButtonWrapper
-			disabled={isDisabled}
+			iconPosition={icon?.position}
 			backgroundColor={backgroundColor}
-			isWhite={isWhite}
 			isLarge={isLarge}
+			isSmall={isSmall}
+			isDisable={isDisable}
+			isContour={isContour}
 			onPress={onPress}
 		>
-			{isImportant ? (
-				<Styled.ButtonIconWrapper>
+			{icon?.name ? (
+				<Styled.ButtonIconWrapper iconPosition={icon?.position}>
 					<Icon
-						name={'important'}
-						width={14}
-						height={16}
+						name={icon?.name}
+						width={width}
+						height={height}
 						color={color}
 						isOnlyIcon={true}
 					/>
 				</Styled.ButtonIconWrapper>
 			) : null}
-			<Styled.ButtonTitle color={color}>{title}</Styled.ButtonTitle>
+			<Styled.ButtonTitle color={color} isLarge={isLarge}>{title}</Styled.ButtonTitle>
 		</Styled.ButtonWrapper>
 	)
 }
 
 Button.prototype = {
 	title: PropTypes.string.isRequired,
-	isImportant: PropTypes.bool,
-	isFocused: PropTypes.bool,
-	isDisabled: PropTypes.bool,
-	isWhite: PropTypes.bool,
+	icon: PropTypes.object,
+	isPrimary: PropTypes.bool,
+	isSecondary: PropTypes.bool,
+	isContour: PropTypes.bool,
+	isDisable: PropTypes.bool,
 	isLarge: PropTypes.bool,
+	isSmall: PropTypes.bool,
 	onPress: PropTypes.func
 }
 

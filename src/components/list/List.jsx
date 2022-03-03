@@ -1,13 +1,9 @@
 import React from 'react'
 import { observer } from 'mobx-react-lite'
-
 import Container from 'components/common/Container'
 import Card from 'components/card/Card'
-
 import data from 'database'
-
 import { useStore } from 'providers/storeProvider'
-
 import * as Styled from './styledList'
 
 const List = observer(({ navigation }) => {
@@ -19,9 +15,7 @@ const List = observer(({ navigation }) => {
 			<Styled.ListWrapper>
 				<Container>
 					<Styled.ListServiceSections
-						sections={data.filter(
-							(item) => item.title === currentOptionTitle
-						)}
+						sections={data.filter((item) => item.title === currentOptionTitle)}
 						stickySectionHeadersEnabled={false}
 						showsVerticalScrollIndicator={false}
 						keyExtractor={(item, index) => item + index}
@@ -36,7 +30,7 @@ const List = observer(({ navigation }) => {
 								name={item.name}
 								title={item.title}
 								label={item.label}
-								isImportant={item.isImportant}
+								icon={item.icon}
 								isFavorites={item.isFavorites}
 								isContainsMore={item.isContainsMore}
 								isLarge={item.isLarge}
@@ -72,7 +66,7 @@ const List = observer(({ navigation }) => {
 											name={item.name}
 											title={item.title}
 											label={item.label}
-											isImportant={item.isImportant}
+											icon={item.icon}
 											isFavorites={item.isFavorites}
 											isContainsMore={item.isContainsMore}
 											isLarge={item.isLarge}

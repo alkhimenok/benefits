@@ -2,13 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Svg, Path } from 'react-native-svg'
 
-const SearchIcon = ({ width = 20, height = 20, color, isStroke }) => {
+const SearchIcon = ({ width = 20, height = 20, color }) => {
 	return (
-		<Svg width={width} height={height} viewBox='0 0 16 16'>
+		<Svg width={width} height={height} viewBox='0 0 512 512'>
 			<Path
-				d='M9.23836 3.24082C7.62061 1.62307 4.99772 1.62307 3.37998 3.24082C1.76223 4.85856 1.76223 7.48145 3.37998 9.0992C4.96845 10.6877 7.52603 10.7164 9.14958 9.18541C9.1673 9.16404 9.18626 9.14334 9.20645 9.12343C9.22754 9.10263 9.24945 9.08318 9.27208 9.06509C10.856 7.44479 10.8448 4.84724 9.23836 3.24082ZM10.9333 9.68732C12.67 7.41015 12.4978 4.14324 10.4169 2.06231C8.14825 -0.206315 4.47009 -0.206315 2.20147 2.06231C-0.067155 4.33093 -0.067155 8.00909 2.20147 10.2777C4.25758 12.3338 7.47154 12.5264 9.74457 10.8555L14.0735 15.2436C14.3967 15.5712 14.9243 15.5748 15.2519 15.2516C15.5796 14.9284 15.5832 14.4007 15.2599 14.0731L10.9333 9.68732Z'
-				fill={isStroke ? null : color}
-				stroke={isStroke ? color : null}
+				d='M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z'
+				fill={color}
 			/>
 		</Svg>
 	)
@@ -17,8 +16,7 @@ const SearchIcon = ({ width = 20, height = 20, color, isStroke }) => {
 SearchIcon.propTypes = {
 	width: PropTypes.number,
 	height: PropTypes.number,
-	color: PropTypes.string.isRequired,
-	isStroke: PropTypes.bool
+	color: PropTypes.string.isRequired
 }
 
 export default SearchIcon

@@ -3,7 +3,7 @@ import styled from 'styled-components/native'
 import FONTS from 'globalStyles/fonts'
 
 const ListWrapper = styled.SafeAreaView`
-	/* padding: 0 0 88px 0; remove !!!!!!!! */
+	flex: 1;
 `
 const ListServiceSections = styled.SectionList``
 const ListService = styled.View`

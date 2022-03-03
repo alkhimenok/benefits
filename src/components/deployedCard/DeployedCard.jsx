@@ -1,14 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
 import Container from 'components/common/Container'
 import Image from 'components/UI/image/Image'
 import Icon from 'components/UI/icon/Icon'
 import Label from 'components/UI/label/Label'
 import Button from 'components/UI/button/Button'
-
 import COLORS from 'globalStyles/colors'
-
 import * as Styled from './styledDeployedCard'
 
 const DeployedCard = ({
@@ -17,7 +14,7 @@ const DeployedCard = ({
 	label,
 	conditionList,
 	linkList,
-	isImportant,
+	icon,
 	isFavorites,
 	navigation
 }) => {
@@ -33,19 +30,17 @@ const DeployedCard = ({
 						color={COLORS.dark}
 						backgroundColor={COLORS.light}
 						isCircle={true}
-						isLarge={true}
 						onPress={() => navigation.goBack()}
 					/>
 				</Styled.DeployedCardIconBackWrapper>
 				<Styled.DeployedCardIconFavoritesWrapper>
 					<Icon
 						name={'favorites'}
-						width={15}
+						width={17}
 						height={15}
 						color={isFavorites ? COLORS.primary : COLORS.dark}
 						backgroundColor={COLORS.light}
 						isCircle={true}
-						isLarge={true}
 						isStroke={!isFavorites}
 						// onPress={}
 					/>
@@ -56,7 +51,7 @@ const DeployedCard = ({
 					<Styled.DeployedCardTitle>{title}</Styled.DeployedCardTitle>
 					<Styled.DeployedCardLabels>
 						<Styled.DeployedCardLabelWrapper>
-							<Label title={label} isImportant={isImportant} isFixed={true} />
+							<Label title={label} icon={icon} isFixed={true} />
 						</Styled.DeployedCardLabelWrapper>
 						<Styled.DeployedCardIconMoreWrapper>
 							<Icon
@@ -66,7 +61,6 @@ const DeployedCard = ({
 								color={COLORS.dark}
 								backgroundColor={COLORS.neutral}
 								isCircle={true}
-								isLarge={true}
 							/>
 						</Styled.DeployedCardIconMoreWrapper>
 					</Styled.DeployedCardLabels>
@@ -80,7 +74,7 @@ const DeployedCard = ({
 					))}
 					<Styled.DeployedCardLinkList>
 						{linkList.map((link, i) => (
-							<Styled.DeployedCardLink>
+							<Styled.DeployedCardLink key={i}>
 								<Styled.DeployedCardLinkIconWrapper>
 									<Icon
 										name={Object.keys(link)[0]}
@@ -109,7 +103,7 @@ const DeployedCard = ({
 			</Styled.DeployedCardAbout>
 			<Styled.DeployedCardButtonWrapper>
 				<Container>
-					<Button title={'Активировать'} isFocused={true} isLarge={true} />
+					<Button title={'Активировать'} isPrimary={true} isLarge={true} />
 				</Container>
 			</Styled.DeployedCardButtonWrapper>
 		</Styled.DeployedCardWrapper>

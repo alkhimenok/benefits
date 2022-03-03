@@ -14,11 +14,5 @@ const FilterBarBody = styled.View`
 const FilterBarIconWrapper = styled.View`
 	padding: 0 8px 0 0;
 `
-const FilterBarScroll = styled.ScrollView``
 
-export {
-	FilterBarWrapper,
-	FilterBarBody,
-	FilterBarIconWrapper,
-	FilterBarScroll
-}
+export { FilterBarWrapper, FilterBarBody, FilterBarIconWrapper }

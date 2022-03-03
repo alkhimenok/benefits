@@ -1,7 +1,5 @@
 import React from 'react'
-
 import Icon from 'components/UI/icon/Icon'
-
 import COLORS from 'globalStyles/colors'
 
 const getCurrentCardIcon = (name, condition, onPress) => {
@@ -22,12 +20,11 @@ const getCurrentCardIcon = (name, condition, onPress) => {
 			return (
 				<Icon
 					name={'favorites'}
-					width={15}
+					width={17}
 					height={15}
 					color={condition ? COLORS.primary : COLORS.dark}
 					backgroundColor={COLORS.lightTransparent}
 					isCircle={true}
-					isLarge={true}
 					isStroke={!condition}
 					onPress={onPress}
 				/>

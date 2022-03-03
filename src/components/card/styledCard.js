@@ -1,5 +1,4 @@
 import styled from 'styled-components/native'
-
 import UNITS from 'globalStyles/units'
 import FONTS from 'globalStyles/fonts'
 import COLORS from 'globalStyles/colors'
@@ -47,12 +46,12 @@ const CardTitle = styled.Text`
 	color: ${COLORS.dark};
 	${({ isFull }) =>
 		isFull
-			? `margin: 16px 0 0 0; font-family: ${FONTS.primaryBold}; font-size: ${UNITS.md}`
-			: `margin: 8px 0 0 0; font-family: ${FONTS.primarySemiBold}; font-size: ${UNITS.sm}`}
+			? `margin: 16px 0 0 0; font-family: ${FONTS.primaryBold}; font-size: ${UNITS.baseX6}`
+			: `margin: 8px 0 0 0; font-family: ${FONTS.primarySemiBold}; font-size: ${UNITS.baseX4}`}
 `
 const CardDescription = styled.Text`
 	margin: 4px 0 0 0;
-	font-size: ${UNITS.sm};
+	font-size: ${UNITS.baseX4};
 	color: ${COLORS.paragraph};
 `
 

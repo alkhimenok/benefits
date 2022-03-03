@@ -1,9 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
 import Image from 'components/UI/image/Image'
 import Label from 'components/UI/label/Label'
-
 import { getCurrentCardIcon } from './cardIcon'
 import * as Styled from './styledCard'
 
@@ -13,7 +11,7 @@ const Card = ({
 	label,
 	description,
 	isFavorites,
-	isImportant,
+	icon,
 	isContainsMore,
 	isLarge,
 	isFull,
@@ -29,7 +27,7 @@ const Card = ({
 					</Styled.CardFavoritesIconWrapper>
 				) : null}
 				<Styled.CardLabelsWrapper isLarge={isLarge} isFull={isFull}>
-					<Label title={label} isImportant={isImportant} />
+					<Label title={label} icon={{ ...icon }} />
 					{isContainsMore ? (
 						<Styled.CardMoreIconWrapper>
 							{getCurrentCardIcon('more')}

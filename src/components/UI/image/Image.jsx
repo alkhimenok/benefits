@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
 import { geCurrentImageSource } from './imageSource'
 import * as Styled from './styledImage'
 

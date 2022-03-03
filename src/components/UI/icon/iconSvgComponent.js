@@ -15,7 +15,7 @@ import NavigationIcon from './svg/NavigationIcon'
 import PhoneIcon from './svg/PhoneIcon'
 import SearchIcon from './svg/SearchIcon'
 
-const getCurrentIconSvgComponent = (name, width, height, color, isStroke) => {
+const getCurrentIconSvgComponent = (name, width, height, color, isFill) => {
 	switch (name) {
 		case 'account':
 			return (
@@ -23,7 +23,7 @@ const getCurrentIconSvgComponent = (name, width, height, color, isStroke) => {
 					width={width}
 					height={height}
 					color={color}
-					isStroke={isStroke}
+					isFill={isFill}
 				/>
 			)
 		case 'back':
@@ -32,7 +32,7 @@ const getCurrentIconSvgComponent = (name, width, height, color, isStroke) => {
 					width={width}
 					height={height}
 					color={color}
-					isStroke={isStroke}
+					isFill={isFill}
 				/>
 			)
 		case 'connection':
@@ -41,7 +41,7 @@ const getCurrentIconSvgComponent = (name, width, height, color, isStroke) => {
 					width={width}
 					height={height}
 					color={color}
-					isStroke={isStroke}
+					isFill={isFill}
 				/>
 			)
 		case 'danger':
@@ -50,16 +50,16 @@ const getCurrentIconSvgComponent = (name, width, height, color, isStroke) => {
 					width={width}
 					height={height}
 					color={color}
-					isStroke={isStroke}
+					isFill={isFill}
 				/>
 			)
-		case 'Denied':
+		case 'denied':
 			return (
 				<DeniedIcon
 					width={width}
 					height={height}
 					color={color}
-					isStroke={isStroke}
+					isFill={isFill}
 				/>
 			)
 		case 'discount':
@@ -68,7 +68,7 @@ const getCurrentIconSvgComponent = (name, width, height, color, isStroke) => {
 					width={width}
 					height={height}
 					color={color}
-					isStroke={isStroke}
+					isFill={isFill}
 				/>
 			)
 		case 'favorites':
@@ -77,7 +77,7 @@ const getCurrentIconSvgComponent = (name, width, height, color, isStroke) => {
 					width={width}
 					height={height}
 					color={color}
-					isStroke={isStroke}
+					isFill={isFill}
 				/>
 			)
 		case 'fine':
@@ -86,7 +86,7 @@ const getCurrentIconSvgComponent = (name, width, height, color, isStroke) => {
 					width={width}
 					height={height}
 					color={color}
-					isStroke={isStroke}
+					isFill={isFill}
 				/>
 			)
 		case 'further':
@@ -95,7 +95,7 @@ const getCurrentIconSvgComponent = (name, width, height, color, isStroke) => {
 					width={width}
 					height={height}
 					color={color}
-					isStroke={isStroke}
+					isFill={isFill}
 				/>
 			)
 		case 'important':
@@ -104,7 +104,7 @@ const getCurrentIconSvgComponent = (name, width, height, color, isStroke) => {
 					width={width}
 					height={height}
 					color={color}
-					isStroke={isStroke}
+					isFill={isFill}
 				/>
 			)
 		case 'instagram':
@@ -113,7 +113,7 @@ const getCurrentIconSvgComponent = (name, width, height, color, isStroke) => {
 					width={width}
 					height={height}
 					color={color}
-					isStroke={isStroke}
+					isFill={isFill}
 				/>
 			)
 		case 'location':
@@ -122,7 +122,7 @@ const getCurrentIconSvgComponent = (name, width, height, color, isStroke) => {
 					width={width}
 					height={height}
 					color={color}
-					isStroke={isStroke}
+					isFill={isFill}
 				/>
 			)
 		case 'more':
@@ -131,7 +131,7 @@ const getCurrentIconSvgComponent = (name, width, height, color, isStroke) => {
 					width={width}
 					height={height}
 					color={color}
-					isStroke={isStroke}
+					isFill={isFill}
 				/>
 			)
 		case 'navigation':
@@ -140,7 +140,7 @@ const getCurrentIconSvgComponent = (name, width, height, color, isStroke) => {
 					width={width}
 					height={height}
 					color={color}
-					isStroke={isStroke}
+					isFill={isFill}
 				/>
 			)
 		case 'phone':
@@ -149,7 +149,7 @@ const getCurrentIconSvgComponent = (name, width, height, color, isStroke) => {
 					width={width}
 					height={height}
 					color={color}
-					isStroke={isStroke}
+					isFill={isFill}
 				/>
 			)
 		case 'search':
@@ -158,7 +158,7 @@ const getCurrentIconSvgComponent = (name, width, height, color, isStroke) => {
 					width={width}
 					height={height}
 					color={color}
-					isStroke={isStroke}
+					isFill={isFill}
 				/>
 			)
 		default:

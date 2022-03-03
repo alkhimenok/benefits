@@ -9,7 +9,7 @@ const Container = ({ children }) => {
 }
 
 const ContainerWrapper = styled.View`
-	padding: 0 ${UNITS.md};
+	padding: 0 ${UNITS.baseX5};
 `
 
 Container.propTypes = {

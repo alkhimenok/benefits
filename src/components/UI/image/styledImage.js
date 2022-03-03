@@ -1,5 +1,4 @@
 import styled from 'styled-components/native'
-
 import BORDERS from 'globalStyles/borders'
 
 const ImageWrapper = styled.Image`
