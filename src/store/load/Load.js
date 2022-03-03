@@ -1,5 +1,4 @@
 import { makeAutoObservable } from 'mobx'
-
 import { loadFonts } from './helpers/utils'
 
 export default class Filtration {

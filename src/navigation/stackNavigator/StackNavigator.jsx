@@ -1,21 +1,21 @@
 import React from 'react'
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
-
+import { createStackNavigator, TransitionPresets } from '@react-navigation/stack'
 import Discount from 'screens/Discount'
-import DeployedCard from 'screens/stack/DeployedCard'
-
-const Stack = createNativeStackNavigator()
+import Card from 'screens/stack/Card'
 
 const StackNavigator = () => {
-	const { Navigator, Screen } = Stack
+	const { Navigator, Screen } = createStackNavigator()
 
 	return (
 		<Navigator
 			initialRouteName={'discount'}
-			screenOptions={{ headerShown: false }}
+			screenOptions={{
+				headerShown: false,
+				...TransitionPresets.SlideFromRightIOS
+			}}
 		>
 			<Screen name='discount' component={Discount} />
-			<Screen name='deployed' component={DeployedCard} />
+			<Screen name='deployed' component={Card} />
 		</Navigator>
 	)
 }

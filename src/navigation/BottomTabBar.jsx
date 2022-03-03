@@ -1,13 +1,10 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-
-import StackNavigator from './stackNavigator/StackNavigator'
-
 // import Discount from 'screens/Discount'
 import Favorites from 'screens/Favorites'
 import Account from 'screens/Account'
-
+import StackNavigator from './stackNavigator/StackNavigator'
 import CustomTab from './CustomTab'
 import { navigatorOptions } from './options'
 
@@ -27,7 +24,7 @@ const BottomTabBar = () => {
 				})}
 			>
 				<Screen name='Скидки' component={StackNavigator} />
-				<Screen name='Избраное' component={Favorites} />
+				<Screen name='Избранное' component={Favorites} />
 				<Screen name='Аккаунт' component={Account} />
 			</Navigator>
 		</NavigationContainer>

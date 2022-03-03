@@ -1,8 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
 import Icon from 'components/UI/icon/Icon'
-
 import { getCurrentButtonColors } from './buttonColors'
 import * as Styled from './styledButton'
 
@@ -24,10 +22,10 @@ const Button = ({
 	return (
 		<Styled.ButtonWrapper
 			disabled={isDisabled}
-			onPress={onPress}
-			isLarge={isLarge}
-			isWhite={isWhite}
 			backgroundColor={backgroundColor}
+			isWhite={isWhite}
+			isLarge={isLarge}
+			onPress={onPress}
 		>
 			{isImportant ? (
 				<Styled.ButtonIconWrapper>

@@ -47,12 +47,12 @@ const CardTitle = styled.Text`
 	color: ${COLORS.dark};
 	${({ isFull }) =>
 		isFull
-			? `margin: 16px 0 0 0; font-family: ${FONTS.primaryBold}; font-size: ${UNITS.lg}`
-			: `margin: 8px 0 0 0; font-family: ${FONTS.primarySemiBold}; font-size: ${UNITS.md}`}
+			? `margin: 16px 0 0 0; font-family: ${FONTS.primaryBold}; font-size: ${UNITS.md}`
+			: `margin: 8px 0 0 0; font-family: ${FONTS.primarySemiBold}; font-size: ${UNITS.sm}`}
 `
 const CardDescription = styled.Text`
 	margin: 4px 0 0 0;
-	font-size: ${UNITS.md};
+	font-size: ${UNITS.sm};
 	color: ${COLORS.paragraph};
 `
 

@@ -29,7 +29,7 @@ const LabelTitle = styled.Text`
 	color: ${COLORS.light};
 	${({ isImportant, isFixed }) =>
 		isImportant || isFixed
-			? `font-size: ${UNITS.md};`
+			? `font-size: ${UNITS.sm};`
 			: `font-size: ${UNITS.xs};`}
 `
 

@@ -1,5 +1,4 @@
 import Icon from 'components/UI/icon/Icon'
-
 import COLORS from 'globalStyles/colors'
 
 const getTabOptions = (name, isFocused) => {
@@ -21,7 +20,7 @@ const getCurrentIcon = (name, color) => {
 					isStroke={true}
 				/>
 			)
-		case 'Избраное':
+		case 'Избранное':
 			return (
 				<Icon
 					name={'favorites'}
