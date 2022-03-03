@@ -1,4 +1,4 @@
-export const buttonList = [
+export const optionList = [
 	{
 		title: 'Все скидки',
 		isImportant: true,
