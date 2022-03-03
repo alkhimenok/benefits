@@ -1,6 +1,6 @@
 import styled from 'styled-components/native'
 
-import FONTS from 'constants/fonts'
+import FONTS from 'globalStyles/fonts'
 
 const ListWrapper = styled.SafeAreaView`
 	padding: 0 0 88px 0; /* remove !!!!!!!! */

@@ -6,24 +6,28 @@ import Card from 'components/card/Card'
 
 import data from 'database'
 
-import filter from '../../store/filter/filter'
+import filtration from 'store/Filtration'
 
 import * as Styled from './styledList'
 
 const List = observer(({ navigation }) => {
-	console.log(filter.currentTitle)
-	const isFiltered = filter.currentTitle !== 'Все скидки'
+	const isFiltered = filtration.currentTitle !== 'Все скидки'
+
 	if (isFiltered) {
 		return (
 			<Styled.ListWrapper>
 				<Container>
 					<Styled.ListServiceSections
-						sections={data.filter((item) => item.title === filter.currentTitle)}
+						sections={data.filter(
+							(item) => item.title === filtration.currentTitle
+						)}
 						stickySectionHeadersEnabled={false}
 						showsVerticalScrollIndicator={false}
 						keyExtractor={(item, index) => item + index}
 						renderSectionHeader={({ section }) => (
-							<Styled.ListServiceTitle isMain={true}>{section.title}</Styled.ListServiceTitle>
+							<Styled.ListServiceTitle isMain={true}>
+								{section.title}
+							</Styled.ListServiceTitle>
 						)}
 						renderItem={({ item, index }) => (
 							// <Styled.ListCardWrapper index={index}>

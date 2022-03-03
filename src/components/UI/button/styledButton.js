@@ -1,9 +1,9 @@
 import styled from 'styled-components/native'
 
-import UNITS from 'constants/units'
-import FONTS from 'constants/fonts'
-import COLORS from 'constants/colors'
-import BORDERS from 'constants/borders'
+import UNITS from 'globalStyles/units'
+import FONTS from 'globalStyles/fonts'
+import COLORS from 'globalStyles/colors'
+import BORDERS from 'globalStyles/borders'
 
 const ButtonWrapper = styled.TouchableOpacity`
 	align-items: center;

@@ -1,6 +1,6 @@
 import Icon from 'components/UI/icon/Icon'
 
-import COLORS from 'constants/colors'
+import COLORS from 'globalStyles/colors'
 
 const getTabOptions = (name, isFocused) => {
 	const currentColor = isFocused ? COLORS.primary : COLORS.paragraph

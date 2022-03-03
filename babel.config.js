@@ -11,12 +11,13 @@ module.exports = function (api) {
 					alias: {
 						src: './src',
 						assets: './src/assets',
-						constants: './src/constants',
+						globalStyles: './src/globalStyles',
 						utils: './src/utils',
 						components: './src/components',
 						screens: './src/screens',
 						navigation: './src/navigation',
-						database: './src/database.json'
+						database: './src/database.json',
+						store: './src/store'
 					}
 				}
 			]

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import Icon from 'components/UI/icon/Icon'
 
-import COLORS from 'constants/colors'
+import COLORS from 'globalStyles/colors'
 
 import * as Styled from './styledLabel'
 

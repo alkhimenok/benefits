@@ -1,6 +1,6 @@
 import styled from 'styled-components/native'
 
-import BORDERS from 'constants/borders'
+import BORDERS from 'globalStyles/borders'
 
 const ImageWrapper = styled.Image`
 	margin: 0 auto; /* to hide in the center */

@@ -4,7 +4,7 @@ import Container from 'components/common/Container'
 import Icon from 'components/UI/icon/Icon'
 import FilterList from './filterList/FilterList'
 
-import COLORS from 'constants/colors'
+import COLORS from 'globalStyles/colors'
 
 import * as Styled from './styledFilterBar'
 

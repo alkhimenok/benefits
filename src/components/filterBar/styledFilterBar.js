@@ -1,6 +1,6 @@
 import styled from 'styled-components/native'
 
-import COLORS from 'constants/colors'
+import COLORS from 'globalStyles/colors'
 
 const FilterBarWrapper = styled.View`
 	padding: 24px 0;

@@ -1,6 +1,6 @@
 import styled from 'styled-components/native'
 
-import BORDERS from 'constants/borders'
+import BORDERS from 'globalStyles/borders'
 
 const IconWrapper = styled.TouchableOpacity`
 	align-items: center;

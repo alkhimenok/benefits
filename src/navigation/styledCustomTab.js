@@ -1,7 +1,7 @@
 import styled from 'styled-components/native'
 
-import UNITS from 'constants/units'
-import FONTS from 'constants/fonts'
+import UNITS from 'globalStyles/units'
+import FONTS from 'globalStyles/fonts'
 
 const TabWrapper = styled.View`
 	align-items: center;

@@ -2,7 +2,7 @@ import React from 'react'
 
 import Icon from 'components/UI/icon/Icon'
 
-import COLORS from 'constants/colors'
+import COLORS from 'globalStyles/colors'
 
 const getCurrentCardIcon = (name, condition, onPress) => {
 	switch (name) {

@@ -1,8 +1,8 @@
 import styled from 'styled-components/native'
 
-import UNITS from 'constants/units'
-import FONTS from 'constants/fonts'
-import COLORS from 'constants/colors'
+import UNITS from 'globalStyles/units'
+import FONTS from 'globalStyles/fonts'
+import COLORS from 'globalStyles/colors'
 
 const DeployedCardWrapper = styled.View`
 	flex: 1;

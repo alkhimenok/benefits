@@ -1,4 +1,4 @@
-import COLORS from 'constants/colors'
+import COLORS from 'globalStyles/colors'
 
 const getCurrentButtonColors = (isFocused, isDisabled, isWhite) => {
 	if (isFocused && isDisabled) {

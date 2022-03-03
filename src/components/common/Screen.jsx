@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components/native'
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs'
 
-import COLORS from 'constants/colors'
+import COLORS from 'globalStyles/colors'
 
 const Screen = ({ children }) => {
 	const barHeight = useBottomTabBarHeight()

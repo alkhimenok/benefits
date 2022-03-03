@@ -8,7 +8,7 @@ import Icon from 'components/UI/icon/Icon'
 import Label from 'components/UI/label/Label'
 import Button from 'components/UI/button/Button'
 
-import COLORS from 'constants/colors'
+import COLORS from 'globalStyles/colors'
 
 import * as Styled from './styledDeployedCard'
 
