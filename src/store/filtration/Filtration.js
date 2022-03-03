@@ -5,6 +5,8 @@ import { optionList } from './helpers/constants'
 export default class Filtration {
 	constructor() {
 		makeAutoObservable(this)
+
+		this.focused = this.focused.bind(this)
 	}
 
 	optionList = optionList
