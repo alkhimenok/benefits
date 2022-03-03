@@ -6,12 +6,13 @@ import Card from 'components/card/Card'
 
 import data from 'database'
 
-import filtration from 'store/Filtration'
+import { useStore } from 'providers/storeProvider'
 
 import * as Styled from './styledList'
 
 const List = observer(({ navigation }) => {
-	const isFiltered = filtration.currentTitle !== 'Все скидки'
+	const { currentOptionTitle } = useStore().filtration
+	const isFiltered = currentOptionTitle !== 'Все скидки'
 
 	if (isFiltered) {
 		return (
@@ -19,7 +20,7 @@ const List = observer(({ navigation }) => {
 				<Container>
 					<Styled.ListServiceSections
 						sections={data.filter(
-							(item) => item.title === filtration.currentTitle
+							(item) => item.title === currentOptionTitle
 						)}
 						stickySectionHeadersEnabled={false}
 						showsVerticalScrollIndicator={false}

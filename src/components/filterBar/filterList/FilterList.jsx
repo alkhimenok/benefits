@@ -3,29 +3,26 @@ import { observer } from 'mobx-react-lite'
 
 import Button from 'components/UI/button/Button'
 
-import filtration from 'store/Filtration'
+import { useStore } from 'providers/storeProvider'
 
 import * as Styled from './styledFilterList'
 
 const FilterList = observer(() => {
+	const { optionList, focused } = useStore().filtration
+
 	return (
 		<Styled.FilterListWrapper>
-			{filtration.list.map(
-				(
-					{ title, isImportant, isFocused, isDisabled },
-					i
-				) => (
-					<Styled.FilterListButtonWrapper key={i} index={i}>
-						<Button
-							title={title}
-							isImportant={isImportant}
-							isFocused={isFocused}
-							isDisabled={isDisabled}
-							onPress={() => filtration.focused(title)}
-						/>
-					</Styled.FilterListButtonWrapper>
-				)
-			)}
+			{optionList.map(({ title, isImportant, isFocused, isDisabled }, i) => (
+				<Styled.FilterListButtonWrapper key={i} index={i}>
+					<Button
+						title={title}
+						isImportant={isImportant}
+						isFocused={isFocused}
+						isDisabled={isDisabled}
+						onPress={() => focused(title)}
+					/>
+				</Styled.FilterListButtonWrapper>
+			))}
 		</Styled.FilterListWrapper>
 	)
 })

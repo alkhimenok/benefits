@@ -1,27 +1,33 @@
-import React, { useState } from 'react'
-import { SafeAreaView } from 'react-native-safe-area-context'
-import { StatusBar } from 'expo-status-bar'
+import React from 'react'
 import AppLoading from 'expo-app-loading'
+import { StatusBar } from 'expo-status-bar'
+import { SafeAreaView } from 'react-native-safe-area-context'
+import { observer } from 'mobx-react-lite'
 
 import BottomTabBar from 'navigation/BottomTabBar'
 
-import { loadFonts } from 'utils/load/fonts'
+import StoreContext from 'providers/storeProvider'
+import RootStore from 'store/RootStore'
 
-export const App = () => {
-	const [loaded, setLoaded] = useState(false)
+const store = new RootStore()
+
+export const App = observer(() => {
+	const { loaded, waitLoading, completeDownload } = store.load
 
 	return loaded ? (
-		<SafeAreaView style={{ flex: 1 }}>
-			<BottomTabBar />
-			<StatusBar />
-		</SafeAreaView>
+		<StoreContext.Provider value={store}>
+			<SafeAreaView style={{ flex: 1 }}>
+				<BottomTabBar />
+				<StatusBar />
+			</SafeAreaView>
+		</StoreContext.Provider>
 	) : (
 		<AppLoading
-			startAsync={loadFonts}
-			onFinish={() => setLoaded(true)}
+			startAsync={waitLoading}
+			onFinish={completeDownload}
 			onError={console.warn}
 		/>
 	)
-}
+})
 
 export default App

@@ -10,14 +10,15 @@ module.exports = function (api) {
 					root: ['./src/'],
 					alias: {
 						src: './src',
+						providers: './src/providers',
+						store: './src/store',
+						database: './src/database.json',
 						assets: './src/assets',
 						globalStyles: './src/globalStyles',
 						utils: './src/utils',
 						components: './src/components',
 						screens: './src/screens',
 						navigation: './src/navigation',
-						database: './src/database.json',
-						store: './src/store'
 					}
 				}
 			]
