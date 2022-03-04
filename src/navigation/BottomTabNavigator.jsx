@@ -1,14 +1,10 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-// import Discount from 'screens/Discount'
-import Favorites from 'screens/Favorites'
-import Account from 'screens/Account'
-import StackNavigator from './stackNavigator/StackNavigator'
-import CustomTab from './CustomTab'
-import { navigatorOptions } from './options'
+import CustomTab from './customTab/CustomTab'
+import { screenOptions, screenList } from './bottomTabOptions'
 
-const BottomTabBar = () => {
+const BottomTabNavigator = () => {
 	const { Navigator, Screen } = createBottomTabNavigator()
 
 	return (
@@ -17,18 +13,18 @@ const BottomTabBar = () => {
 				initialRouteName={'Скидки'}
 				backBehavior={'history'}
 				screenOptions={({ route: { name } }) => ({
-					...navigatorOptions,
+					...screenOptions,
 					tabBarIcon: ({ focused }) => (
 						<CustomTab name={name} isFocused={focused} />
 					)
 				})}
 			>
-				<Screen name='Скидки' component={StackNavigator} />
-				<Screen name='Избранное' component={Favorites} />
-				<Screen name='Аккаунт' component={Account} />
+				{screenList.map(({ name, component }) => (
+					<Screen name={name} component={component} key={name} />
+				))}
 			</Navigator>
 		</NavigationContainer>
 	)
 }
 
-export default BottomTabBar
+export default BottomTabNavigator

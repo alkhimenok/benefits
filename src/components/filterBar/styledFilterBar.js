@@ -12,7 +12,7 @@ const FilterBarBody = styled.View`
 	flex-direction: row;
 `
 const FilterBarIconWrapper = styled.View`
-	padding: 0 8px 0 0;
+	/* padding: 0 8px 0 0; */
 `
 
 export { FilterBarWrapper, FilterBarBody, FilterBarIconWrapper }

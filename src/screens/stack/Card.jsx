@@ -16,7 +16,7 @@ const Card = ({ navigation, route }) => {
 
 	return (
 		<Screen>
-			<DeployedCard
+			<DeployedCard // TODO: create extends for Card
 				name={name}
 				title={title}
 				label={label}

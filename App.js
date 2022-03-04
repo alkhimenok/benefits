@@ -6,7 +6,7 @@ import { StatusBar } from 'expo-status-bar'
 import { observer } from 'mobx-react-lite'
 import StoreContext from 'providers/storeProvider'
 import RootStore from 'store/RootStore'
-import BottomTabBar from 'navigation/BottomTabBar'
+import BottomTabNavigator from 'navigation/BottomTabNavigator'
 
 const store = new RootStore()
 
@@ -16,7 +16,7 @@ export const App = observer(() => {
 	return loaded ? (
 		<StoreContext.Provider value={store}>
 			<SafeAreaView style={{ flex: 1 }}>
-				<BottomTabBar />
+				<BottomTabNavigator />
 				<StatusBar />
 			</SafeAreaView>
 		</StoreContext.Provider>

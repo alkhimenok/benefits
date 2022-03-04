@@ -37,7 +37,7 @@ const getCurrentIcon = (name, color) => {
 					width={22}
 					height={22}
 					color={color}
-					isStroke={false}
+					isStroke={false} // FIXME: svg problem
 				/>
 			)
 		default:

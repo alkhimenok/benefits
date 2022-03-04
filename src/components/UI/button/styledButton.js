@@ -14,11 +14,11 @@ const ButtonWrapper = styled.TouchableOpacity`
 		let styles = ''
 
 		if (isLarge) {
-			styles += `padding: ${UNITS.baseX5} ${UNITS.baseX7};`
+			styles += `height: ${UNITS.baseX13}; padding: 0 ${UNITS.baseX7};`
 		} else if (isSmall) {
-			styles += `padding: ${UNITS.baseX2} ${UNITS.baseX5};`
+			styles += `height: ${UNITS.baseX9}; padding: 0 ${UNITS.baseX5};`
 		} else {
-			styles += `padding: ${UNITS.baseX3} ${UNITS.baseX5};`
+			styles += `height: ${UNITS.baseX11}; padding: 0 ${UNITS.baseX5};`
 		}
 
 		if (isContour) {
