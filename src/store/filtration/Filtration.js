@@ -9,14 +9,16 @@ export default class Filtration {
 	}
 
 	optionList = optionList
-	currentOptionTitle = this.optionList.find((item) => item.isFocused).title
+	data = null // can be used asyncStorage
+	hash = {}
 
 	focused(optionTitle) {
-		this.currentOptionTitle = optionTitle
+		const focusedData = this.hash.optionTitle ?? this.data.filter((list) => list.title === optionTitle)
+		
+		this.optionList = this.optionList.map((option) => ({ ...option, isFocused: option.title === optionTitle }))
+		this.data = focusedData.length ? focusedData : this.data
+		this.hash.optionTitle = focusedData
 
-		this.optionList = this.optionList.map((option) => ({
-			...option,
-			isFocused: option.title === optionTitle
-		}))
+		return this.data
 	}
 }
