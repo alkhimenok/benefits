@@ -2,47 +2,28 @@ import Icon from 'components/UI/icon/Icon'
 import COLORS from 'globalStyles/colors'
 
 const getTabOptions = (name, isFocused) => {
-	const currentColor = isFocused ? COLORS.primary : COLORS.paragraph
-	const currentIcon = getCurrentIcon(name, currentColor)
+	const color = isFocused ? COLORS.primary : COLORS.paragraph
+	const icon = getCurrentIcon(name, color)
 
-	return { currentIcon, currentColor }
+	return { color, icon }
 }
 
 const getCurrentIcon = (name, color) => {
-	switch (name) {
-		case 'Скидки':
-			return (
-				<Icon
-					name={'discount'}
-					width={22}
-					height={22}
-					color={color}
-					isStroke={true}
-				/>
-			)
-		case 'Избранное':
-			return (
-				<Icon
-					name={'favorites'}
-					width={22}
-					height={22}
-					color={color}
-					isStroke={true}
-				/>
-			)
-		case 'Аккаунт':
-			return (
-				<Icon
-					name={'account'}
-					width={22}
-					height={22}
-					color={color}
-					isStroke={false} // FIXME: svg problem
-				/>
-			)
-		default:
-			return
+	const nameList = {
+		'Скидки': 'discount',
+		'Избранное': 'favorites',
+		'Аккаунт': 'account'
 	}
+
+	return (
+		<Icon // FIXME: svg problem
+			name={nameList[name]}
+			width={22}
+			height={22}
+			color={color}
+			isOnlyIcon={true}
+		/>
+	)
 }
 
 export { getTabOptions }

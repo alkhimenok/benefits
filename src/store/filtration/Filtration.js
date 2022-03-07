@@ -13,12 +13,10 @@ export default class Filtration {
 	hash = {}
 
 	focused(optionTitle) {
-		const focusedData = this.hash.optionTitle ?? this.data.filter((list) => list.title === optionTitle)
+		const focusedData =	this.hash.optionTitle ?? this.data.filter((list) => list.title === optionTitle)
 		
 		this.optionList = this.optionList.map((option) => ({ ...option, isFocused: option.title === optionTitle }))
 		this.data = focusedData.length ? focusedData : this.data
 		this.hash.optionTitle = focusedData
-
-		return this.data
 	}
 }

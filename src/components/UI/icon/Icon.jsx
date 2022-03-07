@@ -1,14 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { getCurrentIconSvgComponent } from './iconSvgComponent'
+import COLORS from 'globalStyles/colors'
 import * as Styled from './styledIcon'
 
 const Icon = ({
 	name,
 	width,
 	height,
-	color,
-	backgroundColor,
+	color = COLORS.dark,
+	backgroundColor = COLORS.neutral,
 	isOnlyIcon,
 	isLarge,
 	isSmall,

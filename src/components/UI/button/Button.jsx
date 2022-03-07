@@ -33,9 +33,9 @@ const Button = ({
 			onPress={onPress}
 		>
 			{icon?.name ? (
-				<Styled.ButtonIconWrapper iconPosition={icon?.position}>
+				<Styled.ButtonIconWrapper iconPosition={icon.position}>
 					<Icon
-						name={icon?.name}
+						name={icon.name}
 						width={width}
 						height={height}
 						color={color}

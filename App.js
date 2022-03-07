@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler'
 import React from 'react'
-import AppLoading from 'expo-app-loading'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import AppLoading from 'expo-app-loading'
 import { StatusBar } from 'expo-status-bar'
 import { observer } from 'mobx-react-lite'
 import StoreContext from 'providers/storeProvider'
@@ -10,7 +10,7 @@ import BottomTabNavigator from 'navigation/BottomTabNavigator'
 
 const store = new RootStore()
 
-export const App = observer(() => {
+const App = observer(() => {
 	const { loaded, waitLoading, completeDownload } = store.load
 
 	return loaded ? (

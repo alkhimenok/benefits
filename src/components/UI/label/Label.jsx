@@ -6,9 +6,13 @@ import * as Styled from './styledLabel'
 
 const Label = ({ title, icon, isFixed }) => {
 	return (
-		<Styled.LabelWrapper iconPosition={icon?.position} isLarge={icon?.name} isFixed={isFixed}>
+		<Styled.LabelWrapper
+			iconPosition={icon?.position}
+			isLarge={icon?.name}
+			isFixed={isFixed}
+		>
 			{icon?.name ? (
-				<Styled.LabelIconWrapper iconPosition={icon?.position}>
+				<Styled.LabelIconWrapper iconPosition={icon.position}>
 					<Icon
 						name={icon.name}
 						width={16}
@@ -18,7 +22,9 @@ const Label = ({ title, icon, isFixed }) => {
 					/>
 				</Styled.LabelIconWrapper>
 			) : null}
-			<Styled.LabelTitle>{title}</Styled.LabelTitle>
+			<Styled.LabelTitle isLarge={icon?.name} isFixed={isFixed}>
+				{title}
+			</Styled.LabelTitle>
 		</Styled.LabelWrapper>
 	)
 }

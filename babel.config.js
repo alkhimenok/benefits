@@ -17,7 +17,7 @@ module.exports = function (api) {
 						store: './src/store',
 						navigation: './src/navigation',
 						screens: './src/screens',
-						components: './src/components',
+						components: './src/components'
 					}
 				}
 			]

@@ -4,14 +4,14 @@ import { getTabOptions } from './tabOptions'
 import * as Styled from './styledCustomTab'
 
 const CustomTab = ({ name, isFocused }) => {
-	const { currentIcon, currentColor } = getTabOptions(name, isFocused)
+	const { color, icon } = getTabOptions(name, isFocused)
 
 	return (
 		<Styled.TabWrapper>
-			<Styled.TabIconWrapper pointerEvents='none'>
-				{currentIcon}
+			<Styled.TabIconWrapper pointerEvents={'none'}>
+				{icon}
 			</Styled.TabIconWrapper>
-			<Styled.TabName color={currentColor}>{name}</Styled.TabName>
+			<Styled.TabName color={color}>{name}</Styled.TabName>
 		</Styled.TabWrapper>
 	)
 }

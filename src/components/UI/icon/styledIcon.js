@@ -6,18 +6,18 @@ const IconWrapper = styled.TouchableOpacity`
 	align-items: center;
 	justify-content: center;
 	border-radius: ${({ isCircle }) => isCircle ? BORDERS.radiusCircle : BORDERS.radiusSuperellipse};
-	${({ backgroundColor }) => `background-color: ${backgroundColor};`};
+	${({ backgroundColor, isOnlyIcon }) => `background-color: ${isOnlyIcon ? 'transparent' : backgroundColor};`};
 	${({ isOnlyIcon, isLarge, isSmall }) => {
 		let styles = ''
 
 		if (isOnlyIcon) {
 			styles += ``
 		} else if (isLarge) {
-			styles = `width: ${UNITS.baseX13}; height: ${UNITS.baseX13};`
+			styles = `width: ${UNITS.baseX12}; height: ${UNITS.baseX12};`
 		} else if (isSmall) {
-			styles = `width: ${UNITS.baseX9}; height: ${UNITS.baseX9};`
+			styles = `width: ${UNITS.baseX8}; height: ${UNITS.baseX8};`
 		} else {
-			styles = `width: ${UNITS.baseX11} height: ${UNITS.baseX11}`
+			styles = `width: ${UNITS.baseX10} height: ${UNITS.baseX10}`
 		}
 
 		return styles
