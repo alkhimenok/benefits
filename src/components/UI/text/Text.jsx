@@ -4,15 +4,18 @@ import * as Styled from './styledText'
 
 const Text = ({
 	type = 'text1',
-	isTextSemiBold = false,
-	isDanger = false,
-	isParagraph = false,
-	children = null
+	numberOfLines,
+	isTextSemiBold,
+	isDanger,
+	isParagraph,
+	children
 }) => {
 	return (
 		<Styled.TextWrapper
 			type={type}
+			numberOfLines={numberOfLines}
 			isTextSemiBold={isTextSemiBold}
+			ellipsizeMode={"tail"}
 			isDanger={isDanger}
 			isParagraph={isParagraph}
 		>
@@ -23,7 +26,10 @@ const Text = ({
 
 Text.propTypes = {
 	type: PropTypes.string,
+	numberOfLines: PropTypes.number,
 	isTextSemiBold: PropTypes.bool,
+	isDanger: PropTypes.bool,
+	isParagraph: PropTypes.bool,
 	children: PropTypes.node.isRequired
 }
 

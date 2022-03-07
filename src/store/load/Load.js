@@ -9,7 +9,7 @@ export default class Load {
 		this.filtration = filtration
 
 		this.waitLoading = this.waitLoading.bind(this)
-		this.completeDownload = this.completeDownload.bind(this)
+		this.finishLoading = this.finishLoading.bind(this)
 	}
 
 	loaded = false
@@ -18,8 +18,8 @@ export default class Load {
 		return await Promise.all([this.data.request(), loadFonts()]) // for asynchronous data loading
 	}
 
-	completeDownload() {
-		this.filtration.data = this.data.data
+	finishLoading() {
+		this.filtration.initData = this.data.data
 		this.loaded = true
 	}
 }
