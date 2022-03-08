@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { observer } from 'mobx-react-lite'
 import { useStore } from 'providers/storeProvider'
 import Button from 'components/UI/button/Button'
@@ -9,8 +9,20 @@ const OptionsList = observer(() => {
 	const { optionList, focused } = useStore().filtration
 	const { length } = optionList
 
-	const handleOptionPress = (title, index) => {
+	useEffect(() => {
+		scrollToOption(
+			optionList.reduce(
+				(acc, { isFocused }, i) => (acc = isFocused ? i : acc),
+				0
+			)
+		)
+	}, [optionList])
+
+	const scrollToOption = (index) => {
 		scroll.current.scrollToIndex({ animated: true, index })
+	}
+
+	const handleOptionPress = (title) => {
 		focused(title)
 	}
 
@@ -29,7 +41,7 @@ const OptionsList = observer(() => {
 							title={item.title}
 							icon={item.icon}
 							isPrimary={item.isFocused}
-							onPress={() => handleOptionPress(item.title, index)}
+							onPress={() => handleOptionPress(item.title)}
 						/>
 					</Styled.OptionListButtonWrapper>
 				)

@@ -13,12 +13,14 @@ const Button = ({
 	isPrimary,
 	isSecondary,
 	isContour,
+	isEmpty,
 	onPress
 }) => {
 	const [color, backgroundColor] = getCurrentButtonColors(
 		isPrimary,
 		isSecondary,
-		isContour
+		isContour,
+		isEmpty
 	)
 	const [width, height] = getCurrentIconSize(isLarge, isSmall)
 
@@ -30,6 +32,7 @@ const Button = ({
 			isSmall={isSmall}
 			isDisable={isDisable}
 			isContour={isContour}
+			isEmpty={isEmpty}
 			onPress={onPress}
 		>
 			{icon?.name ? (
@@ -43,7 +46,9 @@ const Button = ({
 					/>
 				</Styled.ButtonIconWrapper>
 			) : null}
-			<Styled.ButtonTitle color={color} isLarge={isLarge}>{title}</Styled.ButtonTitle>
+			<Styled.ButtonTitle color={color} isLarge={isLarge}>
+				{title}
+			</Styled.ButtonTitle>
 		</Styled.ButtonWrapper>
 	)
 }
@@ -51,12 +56,13 @@ const Button = ({
 Button.prototype = {
 	title: PropTypes.string.isRequired,
 	icon: PropTypes.object,
+	isLarge: PropTypes.bool,
+	isSmall: PropTypes.bool,
+	isDisable: PropTypes.bool,
 	isPrimary: PropTypes.bool,
 	isSecondary: PropTypes.bool,
 	isContour: PropTypes.bool,
-	isDisable: PropTypes.bool,
-	isLarge: PropTypes.bool,
-	isSmall: PropTypes.bool,
+	isEmpty: PropTypes.bool,
 	onPress: PropTypes.func
 }
 

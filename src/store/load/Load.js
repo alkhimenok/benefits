@@ -20,6 +20,7 @@ export default class Load {
 
 	finishLoading() {
 		this.filtration.initData = this.data.data
+		this.filtration.data = this.data.data
 		this.loaded = true
 	}
 }

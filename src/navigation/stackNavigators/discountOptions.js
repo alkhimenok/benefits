@@ -1,6 +1,6 @@
 import { TransitionPresets } from '@react-navigation/stack'
 import Discount from 'screens/Discount'
-import Card from 'screens/stack/Card'
+import DeployedCard from 'screens/stack/DeployedCard'
 
 const screenOptions = {
 	headerShown: false,
@@ -9,7 +9,7 @@ const screenOptions = {
 
 const screenList = [
 	{ name: 'discount', component: Discount },
-	{ name: 'deployed', component: Card }
+	{ name: 'deployed', component: DeployedCard }
 ]
 
 export { screenOptions, screenList }

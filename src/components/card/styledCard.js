@@ -5,7 +5,7 @@ import COLORS from 'globalStyles/colors'
 import BORDERS from 'globalStyles/borders'
 
 const CardWrapper = styled.View`
-	flex: 1;
+	${({ isDeployed }) => isDeployed && `flex: 1;`}
 	width: ${({ isLarge, isFull, isDeployed }) => {
 		if (isLarge) {
 			return '304px;'
@@ -16,7 +16,8 @@ const CardWrapper = styled.View`
 		}
 	}};
 	${({ isEmpty }) =>
-		isEmpty && `max-height: 127px; border: ${BORDERS.thin} ${COLORS.paragraph}; border-radius: ${BORDERS.radiusSuperellipse}`}
+		isEmpty &&
+		`max-height: 127px; border: ${BORDERS.thin} ${COLORS.paragraph}; border-radius: ${BORDERS.radiusSuperellipse}`}
 `
 const CardImageWrapper = styled.TouchableOpacity`
 	width: 100%;

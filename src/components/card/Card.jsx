@@ -25,7 +25,11 @@ const Card = ({
 	isFull,
 	isEmpty,
 	isDeployed,
-	onPress
+	onImagePress,
+	onToggleToFavorites,
+	onShowMore,
+	onBack,
+	onActiveBenefit
 }) => {
 	return (
 		<Styled.CardWrapper
@@ -35,12 +39,9 @@ const Card = ({
 			isDeployed={isDeployed}
 		>
 			{isEmpty ? (
-				<Styled.CardImageWrapper
-					isEmpty={isEmpty}
-					onPress={() => console.log('navigate to filtred')} // TODO: added navigate to filtred handler
-				>
+				<Styled.CardImageWrapper isEmpty={isEmpty} onPress={onImagePress}>
 					<Text type={'text2'} isTextSemiBold={true} isParagraph={true}>
-						Показать еще 2
+						{title}
 					</Text>
 				</Styled.CardImageWrapper>
 			) : (
@@ -51,7 +52,7 @@ const Card = ({
 						isFull={isFull}
 						isEmpty={isEmpty}
 						isDeployed={isDeployed}
-						onPress={onPress} // default press
+						onPress={onImagePress}
 					>
 						<Image
 							name={name}
@@ -79,7 +80,7 @@ const Card = ({
 											backgroundColor={COLORS.dark}
 											isSmall={true}
 											isCircle={true}
-											onPress={() => console.log('show more')} // TODO: add handler show more
+											onPress={onShowMore}
 										/>
 									</Styled.CardMoreIconWrapper>
 								)}
@@ -94,7 +95,7 @@ const Card = ({
 									color={COLORS.dark}
 									backgroundColor={COLORS.light}
 									isCircle={true}
-									onPress={() => console.log('back')} // TODO: add handler back to menu
+									onPress={onBack}
 								/>
 							</Styled.CardBackIconWrapper>
 						)}
@@ -115,7 +116,7 @@ const Card = ({
 									isCircle={true}
 									isFill={isFavorites}
 									isSmall={!isLarge && !isFull && !isDeployed}
-									onPress={() => console.log('toggle added to favorites')} // TODO: add handler toggle added to favorites
+									onPress={onToggleToFavorites}
 								/>
 							</Styled.CardFavoritesIconWrapper>
 						)}
@@ -164,7 +165,7 @@ const Card = ({
 											backgroundColor={COLORS.neutral}
 											color={COLORS.dark}
 											isCircle={true}
-											onPress={() => console.log('show more')} // TODO: add handler show more
+											onPress={onShowMore}
 										/>
 									</Styled.CardMoreIconWrapper>
 								)}
@@ -218,7 +219,7 @@ const Card = ({
 									title={'Активировать'}
 									isLarge={true}
 									isPrimary={true}
-									onPress={() => console.log('active benefit')} // TODO: added active handler
+									onPress={onActiveBenefit}
 								/>
 							</Styled.CardButtonWrapper>
 						</Container>
@@ -243,8 +244,13 @@ Card.prototype = {
 	isContainsMore: PropTypes.bool,
 	isLarge: PropTypes.bool,
 	isFull: PropTypes.bool,
+	isEmpty: PropTypes.bool,
 	isDeployed: PropTypes.bool,
-	onPress: PropTypes.func
+	onImagePress: PropTypes.func,
+	onToggleToFavorites: PropTypes.func,
+	onShowMore: PropTypes.func,
+	onBack: PropTypes.func,
+	onActiveBenefit: PropTypes.func
 }
 
 export default Card
