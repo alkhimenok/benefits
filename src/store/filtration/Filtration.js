@@ -1,5 +1,5 @@
 import { makeAutoObservable } from 'mobx'
-import { optionList } from './helpers/constants'
+import { optionList } from 'helpers/constants'
 
 export default class Filtration {
 	constructor() {
