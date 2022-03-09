@@ -6,7 +6,9 @@ import * as Styled from './styledFilterBar'
 
 const FilterBar = () => {
 	return (
-		<Styled.FilterBarWrapper style={{ paddingStart: 16 } /* intend for start */}>
+		<Styled.FilterBarWrapper
+			style={{ paddingStart: 16 } /* intend for start */}
+		>
 			<Styled.FilterBarBody>
 				<Styled.FilterBarIconWrapper>
 					<Icon
