@@ -10,7 +10,7 @@ const ListServiceSections = styled.SectionList`
 const ListService = styled.View`
 	margin: ${({ isVertical }) => (isVertical ? 0 : UNITS.baseX4)} 0; /* FIXME: last margin */
 `
-const ListTitleWrapper = styled.View`
+const ListTitleWrapper = styled.TouchableOpacity`
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;

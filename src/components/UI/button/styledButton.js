@@ -19,7 +19,7 @@ const ButtonWrapper = styled.TouchableOpacity`
 		} else if (isSmall) {
 			styles += `height: ${UNITS.baseX8}; padding: 0 ${UNITS.baseX3};`
 		} else if (isEmpty) {
-			styles += ``
+			styles += `padding: ${UNITS.baseX3} 0;`
 		} else {
 			styles += `height: ${UNITS.baseX10}; padding: 0 ${UNITS.baseX3};`
 		}

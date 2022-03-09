@@ -59,12 +59,18 @@ const List = observer(({ navigation }) => {
 				isVertical={isVertical}
 				sections={isVertical ? renderData : correctData}
 				showsVerticalScrollIndicator={false}
-				contentContainerStyle={isVertical ? { paddingVertical: 24 } : { paddingVertical: 8 }}
+				contentContainerStyle={
+					isVertical ? { paddingVertical: 24 } : { paddingVertical: 8 }
+				}
 				keyExtractor={(item, index) => item + index}
 				renderSectionHeader={({ section }) => (
 					<Styled.ListService isVertical={isVertical}>
 						<Container>
-							<Styled.ListTitleWrapper isVertical={isVertical}>
+							<Styled.ListTitleWrapper
+								isVertical={isVertical}
+								onPress={() => section.title === 'Новинки' || focused(section.title)}
+								activeOpacity={1}
+							>
 								<Text type={isVertical ? 'h1' : 'h2'}>{section.title}</Text>
 								{isVertical || section.title === 'Новинки' || (
 									<Button

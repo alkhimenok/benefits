@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { geCurrentImageSource } from './imageSource'
+import { imageSources } from './imageSource'
 import * as Styled from './styledImage'
 
 const Image = ({ name, width, height, isContain, isRounded }) => {
-	const currentImageSource = geCurrentImageSource(name)
+	const currentImageSource = imageSources[name] || imageSources.default
 	const resizeMode = isContain ? 'contain' : 'cover'
 
 	return (
