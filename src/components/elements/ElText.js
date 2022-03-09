@@ -10,11 +10,12 @@ const ElText = ({ variation, weight, color, numberOfLines, children }) => {
 
 	return (
 		<Text
+			numberOfLines={numberOfLines}
+			//
 			fontFamily={fontFamily}
 			fontSize={fontSize}
 			lineHeight={lineHeight}
 			color={color}
-			numberOfLines={numberOfLines}
 		>
 			{children}
 		</Text>
