@@ -4,11 +4,13 @@ import styled from 'styled-components/native'
 import ElIcon from './ElIcon'
 import ElText from './ElText'
 import UNITS from 'styles/units'
+import WEIGHT from 'styles/weight'
 import COLORS from 'styles/colors'
 
 const ElLabel = ({ title, icon, isLarge }) => {
 	const isContainsIcon = !!icon.name
 	const iconBeginning = icon.position !== 'end'
+	const textVariation = isLarge ? 'text2' : 'text3'
 	const { height, paddingHorizontal } = getLabelOptions(isLarge, isContainsIcon)
 
 	return (
@@ -18,19 +20,23 @@ const ElLabel = ({ title, icon, isLarge }) => {
 			paddingHorizontalSize={paddingHorizontal}
 		>
 			{isContainsIcon && (
-				<IconWrapper iconBeginning={iconBeginning}>
+				<IconWrapper
+					pointerEvents={'none'}
+					//
+					iconBeginning={iconBeginning}
+				>
 					<ElIcon
 						variation={'empty'}
 						name={icon.name}
-						width={'16px'}
+						width={'13px'}
 						height={'16px'}
 						color={COLORS.light}
 					/>
 				</IconWrapper>
 			)}
 			<ElText
-				variation={isLarge ? 'text2' : 'text3'}
-				weight={600}
+				variation={textVariation}
+				fontWeight={WEIGHT.semiBold}
 				color={COLORS.light}
 			>
 				{title}
@@ -48,7 +54,7 @@ const Label = styled.View`
 	padding: 0 ${({ paddingHorizontalSize }) => paddingHorizontalSize};
 	background-color: ${COLORS.secondary};
 `
-const IconWrapper = styled.Text`
+const IconWrapper = styled.View`
 	${({ iconBeginning }) =>
 		`margin-${iconBeginning ? 'right' : 'left'}: ${UNITS.baseX2}`}
 `

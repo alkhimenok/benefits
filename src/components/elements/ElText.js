@@ -3,10 +3,14 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components/native'
 import UNITS from 'styles/units'
 import FONTS from 'styles/fonts'
+import WEIGHT from 'styles/weight'
 import COLORS from 'styles/colors'
 
-const ElText = ({ variation, weight, color, numberOfLines, children }) => {
-	const { fontFamily, fontSize, lineHeight } = getTextOptions(variation, weight)
+const ElText = ({ variation, fontWeight, color, numberOfLines, children }) => {
+	const { fontFamily, fontSize, lineHeight } = getTextOptions(
+		variation,
+		fontWeight
+	)
 
 	return (
 		<Text
@@ -29,14 +33,14 @@ const Text = styled.Text`
 	color: ${({ color }) => color};
 `
 
-const getTextOptions = (variation, weight) => {
+const getTextOptions = (variation, fontWeight) => {
 	const fontFamily = {
-		400: FONTS.primaryRegular,
-		500: FONTS.primaryMedium,
-		600: FONTS.primarySemiBold,
-		700: FONTS.primaryBold,
-		900: FONTS.primaryBlack
-	}[weight]
+		[WEIGHT.regular]: FONTS.primaryRegular,
+		[WEIGHT.medium]: FONTS.primaryMedium,
+		[WEIGHT.semiBold]: FONTS.primarySemiBold,
+		[WEIGHT.bold]: FONTS.primaryBold,
+		[WEIGHT.black]: FONTS.primaryBlack
+	}[fontWeight]
 
 	const { fontSize, lineHeight } = {
 		h1: { fontSize: UNITS.baseX7, lineHeight: UNITS.baseX7 },
@@ -52,14 +56,14 @@ const getTextOptions = (variation, weight) => {
 
 ElText.defaultProps = {
 	variation: 'text1',
-	weight: 400,
+	fontWeight: WEIGHT.regular,
 	color: COLORS.dark,
 	numberOfLines: 0,
 	children: ''
 }
 ElText.prototype = {
 	variation: PropTypes.string,
-	weight: PropTypes.number,
+	fontWeight: PropTypes.number,
 	color: PropTypes.string,
 	numberOfLines: PropTypes.number,
 	children: PropTypes.node

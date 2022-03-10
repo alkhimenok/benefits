@@ -5,6 +5,7 @@ import { iconsSourceList, underlayColorList } from 'helpers/constants'
 import UNITS from 'styles/units'
 import COLORS from 'styles/colors'
 import BORDERS from 'styles/borders'
+import TRANSPARENCY from 'styles/transparency'
 
 const ElIcon = ({
 	variation,
@@ -26,7 +27,7 @@ const ElIcon = ({
 
 	return (
 		<Touch
-			activeOpacity={0.5}
+			activeOpacity={TRANSPARENCY.half}
 			underlayColor={underlayColor}
 			onPress={onPress}
 			//

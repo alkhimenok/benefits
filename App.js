@@ -7,6 +7,7 @@ import StoreContext from 'providers/storeProvider'
 import RootStore from 'store/RootStore'
 
 import { SafeAreaView } from 'react-native-safe-area-context'
+import ElButton from './src/components/elements/ElButton'
 
 const store = new RootStore()
 
@@ -15,7 +16,13 @@ const App = observer(() => {
 
 	return loaded ? (
 		<StoreContext.Provider value={store}>
-			<SafeAreaView>
+			<SafeAreaView style={{ alignItems: 'center' }}>
+				<ElButton
+					variation={'large'}
+					type={'primary'}
+					title={'Отправить'}
+					isDisable={true}
+				/>
 			</SafeAreaView>
 			<StatusBar />
 		</StoreContext.Provider>
