@@ -1,7 +1,6 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { SafeAreaView } from 'react-native'
 import styled from 'styled-components/native'
 import DiscountNavigator from './stackNavigators/DiscountNavigator'
 import Favorites from 'screens/Favorites'

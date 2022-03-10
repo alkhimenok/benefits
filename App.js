@@ -14,7 +14,7 @@ const App = observer(() => {
 
 	return loaded ? (
 		<StoreContext.Provider value={store}>
-				<BottomTabNavigator />
+			<BottomTabNavigator />
 			<StatusBar />
 		</StoreContext.Provider>
 	) : (

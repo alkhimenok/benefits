@@ -3,8 +3,8 @@ import {
 	createStackNavigator,
 	TransitionPresets
 } from '@react-navigation/stack'
-import Discount from 'screens/Discount'
-import DeployedCard from 'screens/stack/DeployedCard'
+import Discount from 'screens/discount/Discount'
+import DeployedCard from 'screens/discount/DeployedCard'
 
 const DiscountNavigator = () => {
 	const { Navigator, Screen } = createStackNavigator()
