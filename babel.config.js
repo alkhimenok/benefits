@@ -18,7 +18,10 @@ module.exports = function (api) {
 						store: './src/store',
 						navigation: './src/navigation',
 						screens: './src/screens',
-						components: './src/components'
+						components: './src/components',
+						elements: './src/components/elements',
+						patterns: './src/components/patterns',
+						templates: './src/components/templates'
 					}
 				}
 			]
