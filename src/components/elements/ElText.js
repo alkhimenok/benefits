@@ -6,7 +6,7 @@ import FONTS from 'styles/fonts'
 import COLORS from 'styles/colors'
 
 const ElText = ({ variation, weight, color, numberOfLines, children }) => {
-	const { fontFamily, fontSize, lineHeight } = getTextOption(variation, weight)
+	const { fontFamily, fontSize, lineHeight } = getTextOptions(variation, weight)
 
 	return (
 		<Text
@@ -29,7 +29,7 @@ const Text = styled.Text`
 	color: ${({ color }) => color};
 `
 
-const getTextOption = (variation, weight) => {
+const getTextOptions = (variation, weight) => {
 	const fontFamily = {
 		400: FONTS.primaryRegular,
 		500: FONTS.primaryMedium,
