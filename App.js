@@ -6,7 +6,6 @@ import { observer } from 'mobx-react-lite'
 import StoreContext from 'providers/storeProvider'
 import RootStore from 'store/RootStore'
 
-import ElLabel from 'elements/ElLabel'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 const store = new RootStore()

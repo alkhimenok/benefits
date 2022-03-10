@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components/native'
-import { iconsSourceList } from 'helpers/constants'
+import { iconsSourceList, underlayColorList } from 'helpers/constants'
 import UNITS from 'styles/units'
 import COLORS from 'styles/colors'
 import BORDERS from 'styles/borders'
@@ -17,9 +17,12 @@ const ElIcon = ({
 	onPress
 }) => {
 	const source = iconsSourceList[name]
+	const underlayColor = underlayColorList[backgroundColor]
 	const resizeMode = 'contain'
-	const { touchWidth, touchHeight, underlayColor, borderRadius } =
-		getIconOptions(variation, backgroundColor, isCircle)
+	const { touchWidth, touchHeight, borderRadius } = getIconOptions(
+		variation,
+		isCircle
+	)
 
 	return (
 		<Touch
@@ -58,7 +61,7 @@ const Icon = styled.Image`
 	height: ${({ height }) => height};
 `
 
-const getIconOptions = (variation, backgroundColor, isCircle) => {
+const getIconOptions = (variation, isCircle) => {
 	const { touchWidth, touchHeight } = {
 		large: { touchWidth: UNITS.baseX12, touchHeight: UNITS.baseX12 },
 		middle: { touchWidth: UNITS.baseX10, touchHeight: UNITS.baseX10 },
@@ -67,31 +70,11 @@ const getIconOptions = (variation, backgroundColor, isCircle) => {
 		// empty: { touchWidth: UNITS.baseX6, touchHeight: UNITS.baseX6 }
 	}[variation]
 
-	const underlayColor = {
-		[COLORS.transparent]: COLORS.transparent,
-		[COLORS.light]: COLORS.paragraph,
-		[COLORS.lightTransparent]: COLORS.paragraph,
-		[COLORS.dark]: COLORS.paragraph,
-		[COLORS.darkTransparent]: COLORS.paragraph,
-		[COLORS.primary]: COLORS.primaryDark,
-		[COLORS.primaryTransparent]: COLORS.primaryDark,
-		[COLORS.secondary]: COLORS.secondaryDark,
-		[COLORS.secondaryTransparent]: COLORS.secondaryDark,
-		[COLORS.success]: COLORS.successDark,
-		[COLORS.successTransparent]: COLORS.successDark,
-		[COLORS.danger]: COLORS.dangerDark,
-		[COLORS.dangerTransparent]: COLORS.dangerDark,
-		[COLORS.warning]: COLORS.warningDark,
-		[COLORS.warningTransparent]: COLORS.warningDark,
-		[COLORS.neutral]: COLORS.neutralDark,
-		[COLORS.neutralTransparent]: COLORS.neutralDark
-	}[backgroundColor]
-
 	const borderRadius = isCircle
 		? BORDERS.radiusCircle
 		: BORDERS.radiusSuperellipse
 
-	return { touchWidth, touchHeight, underlayColor, borderRadius }
+	return { touchWidth, touchHeight, borderRadius }
 }
 
 ElIcon.defaultProps = {

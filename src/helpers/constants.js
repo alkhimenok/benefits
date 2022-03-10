@@ -1,3 +1,5 @@
+import COLORS from 'styles/colors'
+
 const optionList = [
 	{
 		title: 'Все скидки',
@@ -93,4 +95,24 @@ const iconsSourceList = {
 	close: require('assets/icons/close.png')
 }
 
-export { optionList, imageSourceList, iconsSourceList }
+const underlayColorList = {
+	[COLORS.transparent]: COLORS.transparent,
+	[COLORS.light]: COLORS.paragraph,
+	[COLORS.lightTransparent]: COLORS.paragraph,
+	[COLORS.dark]: COLORS.paragraph,
+	[COLORS.darkTransparent]: COLORS.paragraph,
+	[COLORS.primary]: COLORS.primaryDark,
+	[COLORS.primaryTransparent]: COLORS.primaryDark,
+	[COLORS.secondary]: COLORS.secondaryDark,
+	[COLORS.secondaryTransparent]: COLORS.secondaryDark,
+	[COLORS.success]: COLORS.successDark,
+	[COLORS.successTransparent]: COLORS.successDark,
+	[COLORS.danger]: COLORS.dangerDark,
+	[COLORS.dangerTransparent]: COLORS.dangerDark,
+	[COLORS.warning]: COLORS.warningDark,
+	[COLORS.warningTransparent]: COLORS.warningDark,
+	[COLORS.neutral]: COLORS.neutralDark,
+	[COLORS.neutralTransparent]: COLORS.neutralDark
+}
+
+export { optionList, imageSourceList, iconsSourceList, underlayColorList }
