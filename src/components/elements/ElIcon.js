@@ -71,9 +71,9 @@ const getIconOptions = (variation, isCircle) => {
 		// empty: { touchWidth: UNITS.baseX6, touchHeight: UNITS.baseX6 }
 	}[variation]
 
-	const borderRadius = isCircle
-		? BORDERS.radiusCircle
-		: BORDERS.radiusSuperellipse
+	const borderRadius =
+		(variation === 'empty' && '0') ||
+		(isCircle ? BORDERS.radiusCircle : BORDERS.radiusSuperellipse)
 
 	return { touchWidth, touchHeight, borderRadius }
 }

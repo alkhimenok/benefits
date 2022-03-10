@@ -5,9 +5,7 @@ import { StatusBar } from 'expo-status-bar'
 import { observer } from 'mobx-react-lite'
 import StoreContext from 'providers/storeProvider'
 import RootStore from 'store/RootStore'
-
-import { SafeAreaView } from 'react-native-safe-area-context'
-import ElButton from './src/components/elements/ElButton'
+import BottomTabNavigator from 'navigation/BottomTabNavigator'
 
 const store = new RootStore()
 
@@ -16,14 +14,7 @@ const App = observer(() => {
 
 	return loaded ? (
 		<StoreContext.Provider value={store}>
-			<SafeAreaView style={{ alignItems: 'center' }}>
-				<ElButton
-					variation={'large'}
-					type={'primary'}
-					title={'Отправить'}
-					isDisable={true}
-				/>
-			</SafeAreaView>
+				<BottomTabNavigator />
 			<StatusBar />
 		</StoreContext.Provider>
 	) : (
