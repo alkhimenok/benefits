@@ -17,12 +17,12 @@ const PtService = ({
 	name,
 	title,
 	label,
-	description,
 	more,
 	conditionList,
 	linkList,
 	isImportant,
-	isFavorites
+	isFavorites,
+	onGoBack
 }) => {
 	const { top } = useSafeAreaInsets()
 	const favoritesIconName = isFavorites ? 'favoritesFill' : 'favorites'
@@ -53,7 +53,7 @@ const PtService = ({
 						color={COLORS.dark}
 						backgroundColor={COLORS.light}
 						isCircle={true}
-						// onPress={handleBack}
+						onPress={onGoBack}
 					/>
 				</IconFavoritesWrapper>
 			</ImageWrapper>
@@ -209,7 +209,8 @@ PtService.defaultProps = {
 	conditionList: [],
 	linkList: [],
 	isImportant: false,
-	isFavorites: false
+	isFavorites: false,
+	onGoBack: () => console.log('go back')
 }
 PtService.prototype = {
 	name: PropTypes.string,
@@ -220,7 +221,8 @@ PtService.prototype = {
 	conditionList: PropTypes.array,
 	linkList: PropTypes.array,
 	isImportant: PropTypes.bool,
-	isFavorites: PropTypes.bool
+	isFavorites: PropTypes.bool,
+	onGoBack: PropTypes.func
 }
 
 export default PtService

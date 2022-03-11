@@ -21,7 +21,8 @@ const PtCard = ({
 	isEmpty,
 	isImportant,
 	isFavorites,
-	isContainsMore
+	isContainsMore,
+	onImagePres
 }) => {
 	const isFull = variation === 'full'
 	const isLarge = variation === 'large'
@@ -36,9 +37,11 @@ const PtCard = ({
 	return (
 		<Card cardWidth={width}>
 			<ImageWrapper
+				activeOpacity={1}
+				//
 				imageHeight={height}
 				isContour={isEmpty}
-				// onPress={handleShowService}
+				onPress={onImagePres}
 			>
 				{isEmpty ? (
 					<ElText
@@ -116,7 +119,7 @@ const PtCard = ({
 const Card = styled.View`
 	width: ${({ cardWidth }) => cardWidth};
 `
-const ImageWrapper = styled.View`
+const ImageWrapper = styled.TouchableOpacity`
 	align-items: center;
 	justify-content: center;
 	width: 100%;
@@ -124,7 +127,7 @@ const ImageWrapper = styled.View`
 	border: ${({ isContour }) =>
 		isContour ? `${BORDERS.thin} ${COLORS.neutralDark}` : 'none'};
 	border-radius: ${({ isContour }) =>
-		isContour ? BORDERS.radiusSuperellipse : 'none'};
+		isContour ? BORDERS.radiusSuperellipse : 0};
 `
 const TitleWrapper = styled.View`
 	margin: ${({ titleMarginTop }) => titleMarginTop} 0 0 0;
@@ -198,7 +201,8 @@ PtCard.defaultProps = {
 	isEmpty: false,
 	isImportant: false,
 	isFavorites: false,
-	isContainsMore: false
+	isContainsMore: false,
+	onImagePres: () => console.log('card press')
 }
 PtCard.prototype = {
 	variation: PropTypes.string,
@@ -210,7 +214,8 @@ PtCard.prototype = {
 	isEmpty: PropTypes.bool,
 	isImportant: PropTypes.bool,
 	isFavorites: PropTypes.bool,
-	isContainsMore: PropTypes.bool
+	isContainsMore: PropTypes.bool,
+	onImagePres: PropTypes.func
 }
 
 export default PtCard

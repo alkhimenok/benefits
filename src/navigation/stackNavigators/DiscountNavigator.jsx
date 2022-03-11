@@ -7,7 +7,7 @@ import {
 import { observer } from 'mobx-react-lite'
 import { useStore } from 'providers/storeProvider'
 import Discount from 'screens/discount/Discount'
-import DeployedCard from 'screens/discount/DeployedCard'
+import ServiceInfo from 'screens/discount/ServiceInfo'
 
 const DiscountNavigator = observer(({ navigation }) => {
 	const { Navigator, Screen } = createStackNavigator()
@@ -45,7 +45,7 @@ const DiscountNavigator = observer(({ navigation }) => {
 
 	const screenList = [
 		{ name: 'discount', component: Discount },
-		{ name: 'deployed', component: DeployedCard }
+		{ name: 'serviceInfo', component: ServiceInfo }
 	]
 
 	return (
