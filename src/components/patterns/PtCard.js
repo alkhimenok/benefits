@@ -9,6 +9,7 @@ import ElText from 'elements/ElText'
 import UNITS from 'styles/units'
 import WEIGHT from 'styles/weight'
 import COLORS from 'styles/colors'
+import BORDERS from 'styles/borders'
 
 const PtCard = ({
 	variation,
@@ -17,9 +18,10 @@ const PtCard = ({
 	description,
 	label,
 	more,
+	isEmpty,
 	isImportant,
-	isContainsMore,
-	isFavorites
+	isFavorites,
+	isContainsMore
 }) => {
 	const isFull = variation === 'full'
 	const isLarge = variation === 'large'
@@ -33,44 +35,62 @@ const PtCard = ({
 
 	return (
 		<Card cardWidth={width}>
-			<ImageWrapper imageHeight={height}>
-				<ElImage name={name} resizeMode={'contain'} isRounded={true} />
-				{(isFavorites || isFull) && (
-					<IconFavoritesWrapper top={top} right={right}>
-						<ElIcon
-							variation={'middle'}
-							name={favoritesIconName}
-							width={'16px'}
-							height={'15px'}
-							color={color}
-							backgroundColor={COLORS.lightTransparent}
-							isCircle={true}
-							// onPress={handleSwitchFavorites}
-						/>
-					</IconFavoritesWrapper>
-				)}
-				<LabelsWrapper bottom={bottom} left={left}>
-					<ElLabel
-						title={label}
-						icon={isImportant && { name: 'importantFill', position: 'start' }}
-					/>
-					{isContainsMore && (
-						<IconMoreWrapper>
-							<ElIcon
-								variation={'small'}
-								name={'more'}
-								width={'6px'}
-								height={'13px'}
-								color={COLORS.light}
-								backgroundColor={COLORS.dark}
-								isCircle={true}
-								// onPress={handleShowMore}
+			<ImageWrapper
+				imageHeight={height}
+				isContour={isEmpty}
+				// onPress={handleShowService}
+			>
+				{isEmpty ? (
+					<ElText
+						variation={titleVariation}
+						fontWeight={titleWeight}
+						color={COLORS.paragraph}
+					>
+						{title}
+					</ElText>
+				) : (
+					<>
+						<ElImage name={name} resizeMode={'contain'} isRounded={true} />
+						{(isFavorites || isFull) && (
+							<IconFavoritesWrapper top={top} right={right}>
+								<ElIcon
+									variation={'middle'}
+									name={favoritesIconName}
+									width={'16px'}
+									height={'15px'}
+									color={color}
+									backgroundColor={COLORS.lightTransparent}
+									isCircle={true}
+									// onPress={handleSwitchFavorites}
+								/>
+							</IconFavoritesWrapper>
+						)}
+						<LabelsWrapper bottom={bottom} left={left}>
+							<ElLabel
+								title={label}
+								icon={
+									isImportant && { name: 'importantFill', position: 'start' }
+								}
 							/>
-						</IconMoreWrapper>
-					)}
-				</LabelsWrapper>
+							{isContainsMore && (
+								<IconMoreWrapper>
+									<ElIcon
+										variation={'small'}
+										name={'more'}
+										width={'6px'}
+										height={'13px'}
+										color={COLORS.light}
+										backgroundColor={COLORS.dark}
+										isCircle={true}
+										// onPress={handleShowMore}
+									/>
+								</IconMoreWrapper>
+							)}
+						</LabelsWrapper>
+					</>
+				)}
 			</ImageWrapper>
-			{!isLarge && (
+			{!isLarge && !isEmpty && (
 				<TitleWrapper titleMarginTop={marginTop}>
 					<ElText variation={titleVariation} fontWeight={titleWeight}>
 						{title}
@@ -101,12 +121,21 @@ const ImageWrapper = styled.View`
 	justify-content: center;
 	width: 100%;
 	height: ${({ imageHeight }) => imageHeight};
+	border: ${({ isContour }) =>
+		isContour ? `${BORDERS.thin} ${COLORS.neutralDark}` : 'none'};
+	border-radius: ${({ isContour }) =>
+		isContour ? BORDERS.radiusSuperellipse : 'none'};
 `
 const TitleWrapper = styled.View`
 	margin: ${({ titleMarginTop }) => titleMarginTop} 0 0 0;
 `
 const DescriptionWrapper = styled.View`
 	margin: ${UNITS.baseX1} ${UNITS.baseX10} 0 0;
+`
+const IconFavoritesWrapper = styled.View`
+	position: absolute;
+	top: ${({ top }) => top};
+	right: ${({ right }) => right};
 `
 const LabelsWrapper = styled.View`
 	position: absolute;
@@ -117,11 +146,6 @@ const LabelsWrapper = styled.View`
 `
 const IconMoreWrapper = styled.View`
 	margin: 0 0 0 ${UNITS.baseX2};
-`
-const IconFavoritesWrapper = styled.View`
-	position: absolute;
-	top: ${({ top }) => top};
-	right: ${({ right }) => right};
 `
 
 const getCardOptions = (variation, clientWidth, isFavorites) => {
@@ -171,8 +195,8 @@ PtCard.defaultProps = {
 	descriptions: '',
 	label: '',
 	more: '',
-	isContainsMore: false,
-	isFavorites: false
+	isFavorites: false,
+	isContainsMore: false
 }
 PtCard.prototype = {
 	variation: PropTypes.string,
@@ -181,8 +205,8 @@ PtCard.prototype = {
 	descriptions: PropTypes.string,
 	label: PropTypes.string,
 	more: PropTypes.string,
-	isContainsMore: PropTypes.bool,
-	isFavorites: PropTypes.bool
+	isFavorites: PropTypes.bool,
+	isContainsMore: PropTypes.bool
 }
 
 export default PtCard

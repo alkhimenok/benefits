@@ -17,6 +17,7 @@ const Discount = () => {
 				more={
 					'hello hello hello hello hello hello hello hello hello hello hello hello hello hello'
 				}
+				isEmpty={true}
 				isImportant={true}
 				isContainsMore={false}
 				isFavorites={true}
