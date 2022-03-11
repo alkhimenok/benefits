@@ -19,31 +19,23 @@ const TmList = observer(({ navigation }) => {
 
 	return (
 		<ListWrapper>
-			<Services
+			<List
+				isVertical={isVertical}
 				sections={renderData}
 				showsVerticalScrollIndicator={false}
-				contentContainerStyle={{ paddingVertical: isVertical ? 24 : 8 }}
-				keyExtractor={(item, index) => item + index}
-				renderItem={({ item, index }) =>
-					isVertical && (
-						<ElContainer>
-							<CardWrapper isVertical={isVertical} index={index}>
-								{getCardComponent('full', item)}
-							</CardWrapper>
-						</ElContainer>
-					)
+				contentContainerStyle={
+					isVertical ? { paddingVertical: 24 } : { paddingVertical: 8 }
 				}
+				keyExtractor={(item, index) => item + index}
 				renderSectionHeader={({ section }) => (
 					<SubListWrapper isVertical={isVertical}>
 						<ElContainer>
 							<Header
-								onPress={() =>
-									section.title === 'Новинки' || focused(section.title)
-								}
+								isVertical={isVertical}
+								onPress={() => section.title === 'Новинки' || focused(section.title)}
+								activeOpacity={1}
 							>
-								<ElText variation={titleVariation} fontWeight={WEIGHT.bold}>
-									{section.title}
-								</ElText>
+								<ElText type={titleVariation} fontWeight={WEIGHT.bold}>{section.title}</ElText>
 								{isVertical || section.title === 'Новинки' || (
 									<ElButton
 										variation={'small'}
@@ -62,7 +54,18 @@ const TmList = observer(({ navigation }) => {
 								contentContainerStyle={{ paddingHorizontal: 16 }}
 								keyExtractor={(item, index) => item + index}
 								renderItem={({ item, index }) => (
-									<CardWrapper isVertical={isVertical} index={index}>
+									<CardWrapper index={index} isVertical={isVertical}>
+										{/* <Card
+											name={item.name}
+											title={item.title}
+											label={item.label}
+											isImportant={item.isImportant}
+											isFavorites={item.isFavorites}
+											isContainsMore={item.isContainsMore}
+											isLarge={item.isLarge}
+											isEmpty={item.isEmpty}
+											onImagePress={item.onImagePres}
+										/> */}
 										{getCardComponent(item.variation, item)}
 									</CardWrapper>
 								)}
@@ -70,15 +73,91 @@ const TmList = observer(({ navigation }) => {
 						)}
 					</SubListWrapper>
 				)}
+				renderItem={({ item, index }) =>
+					isVertical && (
+						<ElContainer>
+							<CardWrapper index={index} isVertical={isVertical}>
+								{/* <Card
+									name={item.name}
+									title={item.title}
+									label={item.label}
+									description={item.description}
+									isImportant={item.isImportant}
+									isFavorites={item.isFavorites}
+									isContainsMore={item.isContainsMore}
+									isFull={true}
+									onImagePress={item.onImagePres}
+								/> */}
+								{getCardComponent('full', item)}
+							</CardWrapper>
+						</ElContainer>
+					)
+				}
 			/>
 		</ListWrapper>
+		// <ListWrapper>
+		// 	<Services
+		// 		sections={renderData}
+		// 		showsVerticalScrollIndicator={false}
+		// 		contentContainerStyle={{ paddingVertical: isVertical ? 24 : 8 }}
+		// 		keyExtractor={(item, index) => item + index}
+		// 		renderSectionHeader={({ section }) => (
+		// 			<SubListWrapper isVertical={isVertical}>
+		// 				<ElContainer>
+		// 					<Header
+		// 						onPress={() =>
+		// 							section.title === 'Новинки' || focused(section.title)
+		// 						}
+		// 					>
+		// 						<ElText variation={titleVariation} fontWeight={WEIGHT.bold}>
+		// 							{section.title}
+		// 						</ElText>
+		// 						{isVertical || section.title === 'Новинки' || (
+		// 							<ElButton
+		// 								variation={'small'}
+		// 								type={'empty'}
+		// 								title={'Все'}
+		// 								onPress={() => focused(section.title)}
+		// 							/>
+		// 						)}
+		// 					</Header>
+		// 				</ElContainer>
+		// 				{isVertical || (
+		// 					<SubList
+		// 						data={section.data}
+		// 						horizontal={true}
+		// 						showsHorizontalScrollIndicator={false}
+		// 						contentContainerStyle={{ paddingHorizontal: 16 }}
+		// 						keyExtractor={(item, index) => item + index}
+		// 						renderItem={({ item, index }) => (
+		// 							<CardWrapper isVertical={isVertical} index={index}>
+		// 								{getCardComponent(item.variation, item)}
+		// 							</CardWrapper>
+		// 						)}
+		// 					/>
+		// 				)}
+		// 			</SubListWrapper>
+		// 		)}
+		// 		renderItem={({ item, index }) =>
+		// 		isVertical && (
+		// 			<ElContainer>
+		// 				<CardWrapper isVertical={isVertical} index={index}>
+		// 					{getCardComponent('full', item)}
+		// 				</CardWrapper>
+		// 			</ElContainer>
+		// 		)
+		// 	}
+		// 	/>
+		// </ListWrapper>
 	)
 })
 
 const ListWrapper = styled.View`
 	flex: 1;
 `
-const Services = styled.SectionList``
+const List = styled.SectionList`
+	/* padding: ${({isVertical}) => isVertical ? 0 : UNITS.baseX2} 0; FIXME: last margin */
+`
 const SubListWrapper = styled.View`
 	margin: ${({ isVertical }) => (isVertical ? 0 : UNITS.baseX4)} 0; /* FIXME: last margin */
 `
@@ -95,6 +174,28 @@ const CardWrapper = styled.View`
 		(!isVertical && `margin: 0 0 0 ${index === 0 ? 0 : UNITS.baseX2};`) ||
 		`margin: ${index === 0 ? 0 : UNITS.baseX8} 0 0 0;`}
 `
+
+
+// const ListWrapper = styled.View`
+// 	flex: 1;
+// `
+// const Services = styled.SectionList``
+// const SubListWrapper = styled.View`
+// 	margin: ${({ isVertical }) => (isVertical ? 0 : UNITS.baseX4)} 0; /* FIXME: last margin */
+// `
+// const SubList = styled.FlatList``
+// const Header = styled.TouchableOpacity`
+// 	flex-direction: row;
+// 	align-items: center;
+// 	justify-content: space-between;
+// 	margin: 0 0 ${({ isVertical }) => (isVertical ? UNITS.baseX6 : UNITS.baseX4)}
+// 		0;
+// `
+// const CardWrapper = styled.View`
+// 	${({ index, isVertical }) =>
+// 		(!isVertical && `margin: 0 0 0 ${index === 0 ? 0 : UNITS.baseX2};`) ||
+// 		`margin: ${index === 0 ? 0 : UNITS.baseX8} 0 0 0;`}
+// `
 
 const getCardComponent = (
 	variation,

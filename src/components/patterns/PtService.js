@@ -112,7 +112,7 @@ const PtService = ({
 									color={COLORS.primary}
 								/>
 								<LinkTextWrapper>
-									<ElText type={'text1'} isTextSemiBold={true}>
+									<ElText type={'text1'} fontWeight={WEIGHT.semiBold}>
 										{Object.values(link)[0]}
 									</ElText>
 								</LinkTextWrapper>
