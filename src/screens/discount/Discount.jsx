@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import ElScreen from 'elements/ElScreen'
 import PtFilterBar from 'patterns/PtFilterBar'
 
-const Discount = ({ navigation }) => {
+const Discount = () => {
 	return (
 		<ElScreen>
 			<PtFilterBar />

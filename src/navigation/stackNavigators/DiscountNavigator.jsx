@@ -1,13 +1,47 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { BackHandler } from 'react-native'
 import {
 	createStackNavigator,
 	TransitionPresets
 } from '@react-navigation/stack'
+import { observer } from 'mobx-react-lite'
+import { useStore } from 'providers/storeProvider'
 import Discount from 'screens/discount/Discount'
 import DeployedCard from 'screens/discount/DeployedCard'
 
-const DiscountNavigator = () => {
+const DiscountNavigator = observer(({ navigation }) => {
 	const { Navigator, Screen } = createStackNavigator()
+	const { filterReset, focusedPrev } = useStore().filtration
+
+	useEffect(() => {
+		const backAction = () => {
+			navigation.navigate('discount')
+
+			focusedPrev() && BackHandler.exitApp()
+
+			return true
+		}
+
+		const backHandler = BackHandler.addEventListener(
+			'hardwareBackPress',
+			backAction
+		)
+
+		return () => backHandler.remove()
+	}, [])
+
+	useEffect(() => {
+		const handleDiscountTabPres = () => {
+			const { history } = navigation.getState()
+			const { length } = history
+			const { key } = history[length - 1]
+			const isDiscountLastTab = key.startsWith('Скидки')
+
+			isDiscountLastTab && filterReset()
+		}
+
+		return navigation.addListener('tabPress', handleDiscountTabPres)
+	}, [navigation])
 
 	const screenList = [
 		{ name: 'discount', component: Discount },
@@ -27,6 +61,6 @@ const DiscountNavigator = () => {
 			))}
 		</Navigator>
 	)
-}
+})
 
 export default DiscountNavigator

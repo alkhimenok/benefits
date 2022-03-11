@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components/native'
+import { underlayColorList } from 'helpers/constants'
 import ElIcon from './ElIcon'
 import ElText from './ElText'
 import UNITS from 'styles/units'
@@ -24,9 +25,12 @@ const ElButton = ({ variation, type, title, icon, isDisable, onPress }) => {
 		border,
 		opacity
 	} = getButtonOptions(variation, type, isDisable)
+	const underlayColor = underlayColorList[backgroundColor]
 
 	return (
 		<Touch
+			activeOpacity={TRANSPARENCY.half}
+			underlayColor={underlayColor}
 			disabled={isDisable}
 			onPress={onPress}
 			//

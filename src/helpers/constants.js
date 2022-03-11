@@ -3,7 +3,7 @@ import COLORS from 'styles/colors'
 const optionList = [
 	{
 		title: 'Все скидки',
-		icon: { name: 'important', position: 'start' },
+		icon: { name: 'importantFill', position: 'start' },
 		isFocused: true
 	},
 	{
