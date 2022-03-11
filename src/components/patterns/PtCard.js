@@ -1,6 +1,6 @@
 import React from 'react'
-import { Dimensions } from 'react-native'
 import PropTypes from 'prop-types'
+import { Dimensions } from 'react-native'
 import styled from 'styled-components/native'
 import ElIcon from 'elements/ElIcon'
 import ElImage from 'elements/ElImage'
@@ -15,8 +15,8 @@ const PtCard = ({
 	variation,
 	name,
 	title,
-	description,
 	label,
+	description,
 	more,
 	isEmpty,
 	isImportant,
@@ -192,9 +192,11 @@ PtCard.defaultProps = {
 	variation: 'middle',
 	name: 'undefinedCard',
 	title: '',
-	descriptions: '',
 	label: '',
+	descriptions: '',
 	more: '',
+	isEmpty: false,
+	isImportant: false,
 	isFavorites: false,
 	isContainsMore: false
 }
@@ -202,9 +204,11 @@ PtCard.prototype = {
 	variation: PropTypes.string,
 	name: PropTypes.string,
 	title: PropTypes.string,
-	descriptions: PropTypes.string,
 	label: PropTypes.string,
+	descriptions: PropTypes.string,
 	more: PropTypes.string,
+	isEmpty: PropTypes.bool,
+	isImportant: PropTypes.bool,
 	isFavorites: PropTypes.bool,
 	isContainsMore: PropTypes.bool
 }
