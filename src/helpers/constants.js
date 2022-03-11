@@ -60,7 +60,7 @@ const imageSourceList = {
 	emptyAvatar: require('assets/images/profile/emptyAvatar.png')
 }
 
-const iconsSourceList = {
+const iconSourceList = {
 	account: require('assets/icons/account.png'),
 	alert: require('assets/icons/alert.png'),
 	back: require('assets/icons/back.png'),
@@ -115,4 +115,4 @@ const underlayColorList = {
 	[COLORS.neutralTransparent]: COLORS.neutralDark
 }
 
-export { optionList, imageSourceList, iconsSourceList, underlayColorList }
+export { optionList, imageSourceList, iconSourceList, underlayColorList }

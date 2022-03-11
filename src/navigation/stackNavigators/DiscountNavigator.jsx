@@ -8,7 +8,7 @@ import DeployedCard from 'screens/discount/DeployedCard'
 
 const DiscountNavigator = () => {
 	const { Navigator, Screen } = createStackNavigator()
-	
+
 	const screenList = [
 		{ name: 'discount', component: Discount },
 		{ name: 'deployed', component: DeployedCard }

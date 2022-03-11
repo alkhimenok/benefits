@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import PtScreen from 'patterns/PtScreen'
+import ElScreen from 'elements/ElScreen'
 
 const DeployedCard = ({ navigation, route }) => {
 	// const {
@@ -20,7 +20,7 @@ const DeployedCard = ({ navigation, route }) => {
 	// } = route.params
 
 	return (
-		<PtScreen>
+		<ElScreen>
 			{/* <Card
 				name={name}
 				title={title}
@@ -37,7 +37,7 @@ const DeployedCard = ({ navigation, route }) => {
 				onBack={onBack}
 				onActiveBenefit={onActiveBenefit}
 			/> */}
-		</PtScreen>
+		</ElScreen>
 	)
 }
 

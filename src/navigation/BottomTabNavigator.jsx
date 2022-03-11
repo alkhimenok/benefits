@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import styled from 'styled-components/native'
 import DiscountNavigator from './stackNavigators/DiscountNavigator'
 import Favorites from 'screens/Favorites'
@@ -12,6 +13,7 @@ import COLORS from 'styles/colors'
 
 const BottomTabNavigator = () => {
 	const { Navigator, Screen } = createBottomTabNavigator()
+	const { bottom } = useSafeAreaInsets()
 
 	const screenList = [
 		{ name: 'Скидки', component: DiscountNavigator },
@@ -20,36 +22,30 @@ const BottomTabNavigator = () => {
 	]
 
 	return (
-		<NavigationWrapper>
-			<NavigationContainer>
-				<Navigator
-					initialRouteName={'Скидки'}
-					backBehavior={'history'}
-					screenOptions={({ route: { name } }) => ({
-						headerShown: false,
-						tabBarShowLabel: false,
-						tabBarStyle: {
-							height: 55,
-							paddingTop: 7.5,
-							paddingBottom: 6.5
-						},
-						tabBarIcon: ({ focused }) => (
-							<CustomTab name={name} isFocused={focused} />
-						)
-					})}
-				>
-					{screenList.map(({ name, component }) => (
-						<Screen name={name} component={component} key={name} />
-					))}
-				</Navigator>
-			</NavigationContainer>
-		</NavigationWrapper>
+		<NavigationContainer>
+			<Navigator
+				initialRouteName={'Скидки'}
+				backBehavior={'history'}
+				screenOptions={({ route: { name } }) => ({
+					headerShown: false,
+					tabBarShowLabel: false,
+					tabBarStyle: {
+						height: 55 + bottom,
+						paddingTop: 7.5,
+						paddingBottom: 6.5 + bottom
+					},
+					tabBarIcon: ({ focused }) => (
+						<CustomTab name={name} isFocused={focused} />
+					)
+				})}
+			>
+				{screenList.map(({ name, component }) => (
+					<Screen name={name} component={component} key={name} />
+				))}
+			</Navigator>
+		</NavigationContainer>
 	)
 }
-
-const NavigationWrapper = styled.SafeAreaView`
-	flex: 1;
-`
 
 const CustomTab = ({ name, isFocused }) => {
 	const color = isFocused ? COLORS.primary : COLORS.paragraph

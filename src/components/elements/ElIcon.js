@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components/native'
-import { iconsSourceList, underlayColorList } from 'helpers/constants'
+import { iconSourceList, underlayColorList } from 'helpers/constants'
 import UNITS from 'styles/units'
 import COLORS from 'styles/colors'
 import BORDERS from 'styles/borders'
@@ -17,7 +17,7 @@ const ElIcon = ({
 	isCircle,
 	onPress
 }) => {
-	const source = iconsSourceList[name]
+	const source = iconSourceList[name]
 	const underlayColor = underlayColorList[backgroundColor]
 	const resizeMode = 'contain'
 	const { touchWidth, touchHeight, borderRadius } = getIconOptions(
@@ -40,6 +40,7 @@ const ElIcon = ({
 				source={source}
 				resizeMode={resizeMode}
 				tintColor={color}
+				style={{ tintColor: color }}
 				//
 				width={width}
 				height={height}

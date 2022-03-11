@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components/native'
 import UNITS from 'styles/units'
 
-const PtContainer = ({ children }) => {
+const ElContainer = ({ children }) => {
 	return <Container>{children}</Container>
 }
 
@@ -11,8 +11,8 @@ const Container = styled.View`
 	padding: 0 ${UNITS.baseX4};
 `
 
-PtContainer.propTypes = {
+ElContainer.propTypes = {
 	children: PropTypes.node.isRequired
 }
 
-export default PtContainer
+export default ElContainer

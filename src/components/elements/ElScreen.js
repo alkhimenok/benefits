@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components/native'
 import COLORS from 'styles/colors'
 
-const PtScreen = ({ children }) => {
+const ElScreen = ({ children }) => {
 	return <Screen>{children}</Screen>
 }
 
@@ -12,8 +12,8 @@ const Screen = styled.View`
 	background-color: ${COLORS.light};
 `
 
-PtScreen.propTypes = {
+ElScreen.propTypes = {
 	children: PropTypes.node.isRequired
 }
 
-export default PtScreen
+export default ElScreen

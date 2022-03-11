@@ -1,11 +1,11 @@
 import React from 'react'
-import PtScreen from 'patterns/PtScreen'
+import ElScreen from 'elements/ElScreen'
 
 const Favorites = () => {
 	return (
-		<PtScreen>
+		<ElScreen>
 			<></>
-		</PtScreen>
+		</ElScreen>
 	)
 }
 
