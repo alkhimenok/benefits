@@ -6,6 +6,7 @@ import ElText from './ElText'
 import UNITS from 'styles/units'
 import WEIGHT from 'styles/weight'
 import COLORS from 'styles/colors'
+import BORDERS from 'styles/borders'
 
 const ElLabel = ({ title, icon, isLarge }) => {
 	const isContainsIcon = !!icon.name
@@ -53,6 +54,7 @@ const Label = styled.View`
 	height: ${({ heightSize }) => heightSize};
 	padding: 0 ${({ paddingHorizontalSize }) => paddingHorizontalSize};
 	background-color: ${COLORS.secondary};
+	border-radius: ${BORDERS.radiusOval};
 `
 const IconWrapper = styled.View`
 	${({ iconBeginning }) =>
