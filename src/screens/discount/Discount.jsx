@@ -13,6 +13,9 @@ const Discount = ({ navigation }) => {
 	)
 }
 
+Discount.defaultProps = {
+	navigation: {}
+}
 Discount.propTypes = {
 	navigation: PropTypes.object
 }

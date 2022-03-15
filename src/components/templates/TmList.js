@@ -179,4 +179,12 @@ const getRenderData = (data, isVertical, navigation, focused) => {
 	return fullData
 }
 
+TmList.defaultProps = {
+	navigation: {}
+}
+TmList.propTypes = {
+	navigation: PropTypes.object
+}
+
+
 export default TmList
