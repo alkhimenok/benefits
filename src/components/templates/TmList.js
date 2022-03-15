@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import { toJS } from 'mobx'
 import { observer } from 'mobx-react-lite'
@@ -14,19 +14,27 @@ import WEIGHT from 'styles/weight'
 const TmList = observer(({ navigation }) => {
 	const { data, focused } = useStore().filtration
 	const isVertical = data.length === 1
+	const verticalPadding = isVertical ? 24 : 8
 	const renderData = getRenderData(data, isVertical, navigation, focused)
 	const titleVariation = isVertical ? 'h1' : 'h2'
+	const scroll = useRef(null)
+
+	useEffect(() => {
+		scroll.current.scrollToLocation({
+			itemIndex: 0,
+			viewOffset: 24
+		})
+	}, [verticalPadding, renderData])
 
 	return (
 		<ListWrapper>
 			<List
+				ref={scroll}
 				isVertical={isVertical}
 				sections={renderData}
 				stickySectionHeadersEnabled={false}
 				showsVerticalScrollIndicator={false}
-				contentContainerStyle={
-					isVertical ? { paddingVertical: 24 } : { paddingVertical: 8 }
-				}
+				contentContainerStyle={{ paddingVertical: verticalPadding }}
 				keyExtractor={(item, index) => item + index}
 				renderSectionHeader={({ section }) => (
 					<SubListWrapper isVertical={isVertical}>
@@ -185,6 +193,5 @@ TmList.defaultProps = {
 TmList.propTypes = {
 	navigation: PropTypes.object
 }
-
 
 export default TmList
