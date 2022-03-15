@@ -49,18 +49,18 @@ const BottomTabNavigator = () => {
 
 const CustomTab = ({ name, isFocused }) => {
 	const color = isFocused ? COLORS.primary : COLORS.paragraph
-	const nameList = {
+	const iconName = {
 		'Скидки': 'discount',
 		'Избранное': 'favorites',
 		'Аккаунт': 'account'
-	}
+	}[name]
 
 	return (
 		<TabWrapper>
 			<TabIconWrapper pointerEvents={'none'}>
 				<ElIcon
 					variation={'empty'}
-					name={nameList[name]}
+					name={iconName}
 					width={'22px'}
 					height={'22px'}
 					color={color}

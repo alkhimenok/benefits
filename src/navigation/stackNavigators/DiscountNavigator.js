@@ -1,9 +1,6 @@
 import React, { useEffect } from 'react'
 import { BackHandler } from 'react-native'
-import {
-	createStackNavigator,
-	TransitionPresets
-} from '@react-navigation/stack'
+import { createStackNavigator, TransitionPresets } from '@react-navigation/stack'
 import { observer } from 'mobx-react-lite'
 import { useStore } from 'providers/storeProvider'
 import Discount from 'screens/discount/Discount'
