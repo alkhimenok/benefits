@@ -1,5 +1,5 @@
 export default {
-	transparent: 'transparent',
+	transparent: 'transparent', // transparent
 	white: '#ffffff', // white
 	whiteTransparent: 'rgba(255, 255, 255, 0.5)', // white-50
 	black: '#000000', // black

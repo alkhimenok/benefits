@@ -12,12 +12,16 @@ module.exports = function (api) {
 						database: './database.json',
 						src: './src',
 						assets: './src/assets',
-						globalStyles: './src/globalStyles',
+						styles: './src/styles',
+						helpers: './src/helpers',
 						providers: './src/providers',
 						store: './src/store',
 						navigation: './src/navigation',
 						screens: './src/screens',
-						components: './src/components'
+						components: './src/components',
+						elements: './src/components/elements',
+						patterns: './src/components/patterns',
+						templates: './src/components/templates'
 					}
 				}
 			]

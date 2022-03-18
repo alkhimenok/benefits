@@ -11,5 +11,6 @@ export default {
 	baseX9: '36px',
 	baseX10: '40px',
 	baseX11: '44px',
-	baseX12: '48px'
+	baseX12: '48px',
+	baseX40: '160px'
 }

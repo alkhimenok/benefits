@@ -18,29 +18,11 @@ const optionList = [
 		title: 'Обучение и хобби',
 		isFocused: false
 	},
-	// {
-	// 	title: 'Красота',
-	// 	isImportant: false,
-	// 	isFocused: false,
-	// 	isDisabled: true
-	// },
-	// {
-	// 	title: 'Спорт',
-	// 	isImportant: false,
-	// 	isFocused: false,
-	// 	isDisabled: true
-	// },
 	{
 		title: 'Одежда',
 		isImportant: false,
 		isFocused: false
 	}
-	// {
-	// 	title: 'Услуги',
-	// 	isImportant: false,
-	// 	isFocused: false,
-	// 	isDisabled: true
-	// }
 ]
 
 const imageSourceList = {
@@ -57,7 +39,12 @@ const imageSourceList = {
 	voka: require('assets/images/services/health/voka.png'),
 	undefinedCard: require('assets/images/services/undefinedCard.png'),
 	emptyFavorites: require('assets/images/services/emptyFavorites.png'),
-	emptyAvatar: require('assets/images/profile/emptyAvatar.png')
+	emptyAvatar: require('assets/images/profile/emptyAvatar.png'),
+	about: require('assets/images/illustrations/about.png'),
+	howItWork: require('assets/images/illustrations/howItWork.png'),
+	ready: require('assets/images/illustrations/ready.png'),
+	signIn: require('assets/images/illustrations/signIn.png'),
+	signUp: require('assets/images/illustrations/signUp.png')
 }
 
 const iconSourceList = {

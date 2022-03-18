@@ -1,21 +1,16 @@
 import React from 'react'
-import {
-	createStackNavigator,
-	TransitionPresets
-} from '@react-navigation/stack'
-import BottomTabNavigation from 'navigation/bottomTabNavigation/BottomTabNavigation'
+import { createStackNavigator } from '@react-navigation/stack'
+import { getSignInOptions } from './signInOptions'
 
 const SignInNavigation = () => {
 	const { Navigator, Screen } = createStackNavigator()
+	const { screenOptions, screenList } = getSignInOptions()
 
 	return (
-		<Navigator
-			screenOptions={{
-				headerShown: false,
-				...TransitionPresets.SlideFromRightIOS
-			}}
-		>
-			<Screen name={'home'} component={BottomTabNavigation} />
+		<Navigator screenOptions={{ ...screenOptions }}>
+			{screenList.map(({ name, component }) => (
+				<Screen name={name} component={component} key={name} />
+			))}
 		</Navigator>
 	)
 }

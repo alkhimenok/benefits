@@ -10,7 +10,6 @@ import * as S from './styledButton'
 const ElButton = ({ variation, type, title, icon, isDisable, onPress }) => {
 	const isContainsIcon = !!icon.name
 	const iconBeginning = icon.position !== 'end'
-	const underlayColor = underlayColorList[backgroundColor]
 	const {
 		height,
 		paddingHorizontal,
@@ -23,6 +22,7 @@ const ElButton = ({ variation, type, title, icon, isDisable, onPress }) => {
 		border,
 		opacity
 	} = getButtonOptions(variation, type, isDisable)
+	const underlayColor = underlayColorList[backgroundColor]
 
 	return (
 		<S.Touch
@@ -37,7 +37,7 @@ const ElButton = ({ variation, type, title, icon, isDisable, onPress }) => {
 			border={border}
 			opacity={opacity}
 		>
-			<S.Button iconBeginning={iconBeginning}>
+			<S.ButtonWrapper iconBeginning={iconBeginning}>
 				{isContainsIcon && (
 					<S.IconWrapper
 						pointerEvents={'none'}
@@ -56,7 +56,7 @@ const ElButton = ({ variation, type, title, icon, isDisable, onPress }) => {
 				<Text variation={textVariation} fontWeight={fontWeight} color={color}>
 					{title}
 				</Text>
-			</S.Button>
+			</S.ButtonWrapper>
 		</S.Touch>
 	)
 }
