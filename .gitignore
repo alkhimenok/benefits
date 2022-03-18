@@ -16,3 +16,4 @@ web-build/
 # other
 yarn.lock
 package-lock.json
+.idea/

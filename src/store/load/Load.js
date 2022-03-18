@@ -1,5 +1,5 @@
 import { makeAutoObservable } from 'mobx'
-import { loadFonts } from './helpers/utils'
+import { loadFonts } from 'helpers/utils'
 
 export default class Load {
 	constructor({ data, filtration }) {

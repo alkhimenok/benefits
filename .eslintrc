@@ -1,6 +1,6 @@
 {
 	"root": true,
-	"extends": ["eslint:recommended", "plugin:prettier/recommended"],
+	"extends": ["eslint:recommended", "plugin:prettier/recommended", "plugin:react/recommended"],
 	"parserOptions": {
 		"ecmaVersion": 13,
 		"sourceType": "module"
@@ -101,7 +101,7 @@
 		"no-useless-concat": "error",
 		"no-useless-escape": "error",
 		"no-void": "error",
-		"no-warning-comments": "error",
+		"no-warning-comments": "off",
 		"no-with": "error",
 		"radix": ["error", "as-needed"],
 		"vars-on-top": "error",
@@ -138,7 +138,7 @@
 		"consistent-this": "error",
 		"eol-last": "error",
 		"func-call-spacing": "error",
-		"func-names": "error",
+		"func-names": "warn",
 		"func-style": "error",
 		"id-blacklist": "error",
 		"id-length": "off",

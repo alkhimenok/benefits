@@ -1,5 +1,4 @@
 import { makeAutoObservable } from 'mobx'
-import { requestData } from './helpers/utils'
 
 export default class Data {
 	constructor() {
@@ -11,6 +10,10 @@ export default class Data {
 	data = null
 
 	async request() {
-		this.data = await requestData()
+		// const response = await fetch('database') // for async request from database
+
+		// this.data = await response.json()
+
+		this.data = require('database')
 	}
 }
