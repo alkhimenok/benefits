@@ -1,4 +1,5 @@
 import styled from 'styled-components/native'
+import { sizeInProportion } from 'helpers/utils'
 import { UNITS_PX } from 'styles/units'
 import COLORS from 'styles/colors'
 import BORDERS from 'styles/borders'
@@ -13,9 +14,12 @@ const OnboardingBody = styled.View`
 	flex: 1;
 `
 const OnboardingImageWrapper = styled.View`
-	width: 100%;
-	height: 60%;
-	margin: 0 0 ${UNITS_PX.baseX6} 0;
+	margin: 0 auto ${UNITS_PX.baseX6} auto;
+	${() => {
+		const { width, height } = sizeInProportion(220, 220, true)
+
+		return `width: ${width}; height: ${height}`
+	}}
 `
 const OnboardingTitleWrapper = styled.View`
 	width: 80%;

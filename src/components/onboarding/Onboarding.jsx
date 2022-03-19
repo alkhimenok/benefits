@@ -12,8 +12,8 @@ import * as S from './styledOnboarding'
 
 const Onboarding = observer(
 	({ title, description, buttonTitle, route, navigation }) => {
-		const { bottom } = useSafeAreaInsets()
 		const { signIn } = useStore().auth
+		const { bottom } = useSafeAreaInsets()
 		const { name } = route
 		const { routeNames } = navigation.getState()
 		const { length } = routeNames

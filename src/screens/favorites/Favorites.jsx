@@ -16,7 +16,6 @@ const Favorites = observer(() => {
 					data={favoritesList}
 					renderItem={(item) => <></>}
 					listEmptyComponent={<EmptyFavorites />}
-					isScrollToSelected={true}
 					isHorizontal={true}
 				/>
 			</Screen>
