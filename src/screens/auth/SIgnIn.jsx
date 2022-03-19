@@ -9,7 +9,7 @@ const SignIn = ({ navigation, route }) => {
 			<Onboarding
 				title={'Готово, за скидками!'}
 				description={
-					'Используй все возможные скидки, сохраняйте лучшие и предлагай новые.'
+					'Используй все возможные скидки, сохраняйте\nлучшие и предлагай новые.'
 				}
 				buttonTitle={'К скидкам'}
 				navigation={navigation}

@@ -9,7 +9,7 @@ const About = ({ navigation, route }) => {
 			<Onboarding
 				title={'Скидки от mediacube для блогеров'}
 				description={
-					'Приложение предоставляет уникальные скидки и промокоды на товары и услуги.'
+					'Приложение предоставляет уникальные скидки\nи промокоды на товары и услуги.'
 				}
 				buttonTitle={'Хорошо'}
 				navigation={navigation}
