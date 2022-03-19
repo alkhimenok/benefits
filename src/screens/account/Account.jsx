@@ -8,7 +8,7 @@ const Account = () => {
 			<View
 				style={{
 					flex: 1,
-					backgroundColor: 'yellow'
+					backgroundColor: 'red'
 					// transform: [{ translateY: -100 }]
 				}}
 			></View>

@@ -1,19 +1,27 @@
 import React from 'react'
-import { View } from 'react-native'
+import { observer } from 'mobx-react-lite'
+import { useStore } from 'providers/storeProvider'
+import List from 'components/common/List'
+import Screen from 'components/common/Screen'
 import Fade from 'components/animations/Fade'
+import EmptyFavorites from './emptyFavorites/EmptyFavorites'
 
-const Favorites = () => {
+const Favorites = observer(() => {
+	const { favoritesList } = useStore().filtration
+
 	return (
 		<Fade>
-			<View
-				style={{
-					flex: 1,
-					backgroundColor: 'green'
-					// transform: [{ translateY: -100 }]
-				}}
-			></View>
+			<Screen>
+				<List
+					data={favoritesList}
+					renderItem={(item) => <></>}
+					listEmptyComponent={<EmptyFavorites />}
+					isScrollToSelected={true}
+					isHorizontal={true}
+				/>
+			</Screen>
 		</Fade>
 	)
-}
+})
 
 export default Favorites
