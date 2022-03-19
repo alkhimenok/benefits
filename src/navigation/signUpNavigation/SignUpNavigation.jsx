@@ -1,6 +1,6 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
-import Fade from 'components/animations/Fade'
+import Descent from 'components/animations/Descent'
 import { getSignUpOptions } from './signUpOptions'
 
 const SignUpNavigation = () => {
@@ -8,13 +8,13 @@ const SignUpNavigation = () => {
 	const { screenOptions, screenList } = getSignUpOptions()
 
 	return (
-		<Fade>
+		<Descent>
 			<Navigator screenOptions={{ ...screenOptions }}>
 				{screenList.map(({ name, component }) => (
 					<Screen name={name} component={component} key={name} />
 				))}
 			</Navigator>
-		</Fade>
+		</Descent>
 	)
 }
 

@@ -1,6 +1,7 @@
 import Discount from 'screens/discount/Discount'
 import Favorites from 'screens/favorites/Favorites'
 import Account from 'screens/account/Account'
+import COLORS from 'styles/colors'
 
 const getBottomTabOptions = (bottom) => {
 	const screenOptions = {
@@ -9,7 +10,8 @@ const getBottomTabOptions = (bottom) => {
 		tabBarStyle: {
 			height: 55 + bottom,
 			paddingTop: 7.5,
-			paddingBottom: 6.5 + bottom
+			paddingBottom: 6.5 + bottom,
+			backgroundColor: COLORS.light
 		}
 	}
 

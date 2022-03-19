@@ -1,7 +1,19 @@
 import React from 'react'
+import { View } from 'react-native'
+import Fade from 'components/animations/Fade'
 
 const Account = () => {
-	return <></>
+	return (
+		<Fade>
+			<View
+				style={{
+					flex: 1,
+					backgroundColor: 'yellow'
+					// transform: [{ translateY: -100 }]
+				}}
+			></View>
+		</Fade>
+	)
 }
 
 export default Account
