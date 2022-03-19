@@ -1,7 +1,7 @@
 import { TransitionPresets } from '@react-navigation/stack'
 import About from 'screens/auth/About'
 import HowItWork from 'screens/auth/HowItWork'
-import SelectCity from 'screens/auth/SelectCity'
+// import SelectCity from 'screens/auth/SelectCity'
 import SignUp from 'screens/auth/SignUp'
 import Ready from 'screens/auth/Ready'
 import SignIn from 'screens/auth/SIgnIn'

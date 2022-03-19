@@ -1,5 +1,6 @@
 import React from 'react'
 import Icon from 'components/UI/icon/Icon'
+import { calculateBase } from 'styles/units'
 import COLORS from 'styles/colors'
 
 const getTabOptions = (name, isFocused) => {
@@ -15,8 +16,8 @@ const getTabOptions = (name, isFocused) => {
 		<Icon
 			variation={'empty'}
 			name={name}
-			width={'22px'}
-			height={'22px'}
+			width={calculateBase(22, true)}
+			height={calculateBase(22, true)}
 			color={color}
 		/>
 	)
