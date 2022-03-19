@@ -1,4 +1,12 @@
 import COLORS from 'styles/colors'
+import { Dimensions } from 'react-native'
+
+const { width: CLIENT_WIDTH, height: CLIENT_HEIGHT } = Dimensions.get('window')
+const DESIGN_CLIENT_WIDTH = 375
+const DESIGN_CLIENT_HEIGHT = 812
+const WIDTH_RATIO = CLIENT_WIDTH / DESIGN_CLIENT_WIDTH
+const HEIGHT_RATIO = CLIENT_HEIGHT / DESIGN_CLIENT_HEIGHT
+const BASE = 4
 
 const optionList = [
 	{
@@ -102,4 +110,16 @@ const underlayColorList = {
 	[COLORS.neutralTransparent]: COLORS.neutralDark
 }
 
-export { optionList, imageSourceList, iconSourceList, underlayColorList }
+export {
+	CLIENT_WIDTH,
+	CLIENT_HEIGHT,
+	DESIGN_CLIENT_WIDTH,
+	DESIGN_CLIENT_HEIGHT,
+	WIDTH_RATIO,
+	HEIGHT_RATIO,
+	BASE,
+	optionList,
+	imageSourceList,
+	iconSourceList,
+	underlayColorList
+}
