@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Icon from 'components/UI/icon/Icon'
 import Text from 'components/UI/text/Text'
+import { calculateBase } from 'styles/units'
 import WEIGHT from 'styles/weight'
 import COLORS from 'styles/colors'
 import { getLabelOptions } from './labelOptions'
@@ -28,8 +29,8 @@ const ElLabel = ({ title, icon, isLarge }) => {
 					<Icon
 						variation={'empty'}
 						name={icon.name}
-						width={'13px'}
-						height={'16px'}
+						width={calculateBase(13, true)}
+						height={calculateBase(16, true)}
 						color={COLORS.light}
 					/>
 				</S.IconWrapper>

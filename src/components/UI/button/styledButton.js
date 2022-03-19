@@ -1,5 +1,5 @@
 import styled from 'styled-components/native'
-import UNITS from 'styles/units'
+import { UNITS_PX } from 'styles/units'
 import BORDERS from 'styles/borders'
 
 const Touch = styled.TouchableHighlight`
@@ -20,7 +20,7 @@ const ButtonWrapper = styled.View`
 `
 const IconWrapper = styled.View`
 	${({ iconBeginning }) =>
-		`margin-${iconBeginning ? 'right' : 'left'}: ${UNITS.baseX2}`}
+		`margin-${iconBeginning ? 'right' : 'left'}: ${UNITS_PX.baseX2}`}
 `
 
 export { Touch, ButtonWrapper, IconWrapper }

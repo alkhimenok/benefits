@@ -9,6 +9,7 @@ export default class Filtration {
 		this.addToHistory = this.addToHistory.bind(this)
 		this.focusedPrev = this.focusedPrev.bind(this)
 		this.filterReset = this.filterReset.bind(this)
+		this.toggleFavorites = this.toggleFavorites.bind(this)
 	}
 
 	optionList = optionList
@@ -17,6 +18,13 @@ export default class Filtration {
 	data = null
 	hash = {}
 	history = [this.initTitle]
+
+	get favoritesList() {
+		return this.data
+			.map(({ data }) => data)
+			.flat()
+			.filter((item) => item.isFavorites)
+	}
 
 	focused(optionTitle) {
 		const focusedData =
@@ -55,5 +63,15 @@ export default class Filtration {
 		this.focused(this.initTitle)
 
 		this.history.length = 1
+	}
+
+	toggleFavorites(name) {
+		return (this.data = this.data.map(({ title, data }) => ({
+			title,
+			data: data.map((item) => ({
+				...item,
+				isFavorites: name === item.name ? !item.isFavorites : item.isFavorites
+			}))
+		})))
 	}
 }

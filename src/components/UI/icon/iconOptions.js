@@ -1,11 +1,11 @@
-import UNITS from 'styles/units'
+import { UNITS_PX } from 'styles/units'
 import BORDERS from 'styles/borders'
 
 const getIconOptions = (variation, isCircle) => {
 	const { touchWidth, touchHeight } = {
-		large: { touchWidth: UNITS.baseX12, touchHeight: UNITS.baseX12 },
-		middle: { touchWidth: UNITS.baseX10, touchHeight: UNITS.baseX10 },
-		small: { touchWidth: UNITS.baseX8, touchHeight: UNITS.baseX8 },
+		large: { touchWidth: UNITS_PX.baseX12, touchHeight: UNITS_PX.baseX12 },
+		middle: { touchWidth: UNITS_PX.baseX10, touchHeight: UNITS_PX.baseX10 },
+		small: { touchWidth: UNITS_PX.baseX8, touchHeight: UNITS_PX.baseX8 },
 		empty: { touchWidth: 'auto', touchHeight: 'auto' }
 	}[variation]
 
