@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Screen from 'components/common/Screen'
-import Onboarding from 'components/onboarding/Onboarding'
+import Onboarding from './onboarding/Onboarding'
 
 const SignIn = ({ navigation, route }) => {
 	return (
