@@ -20,7 +20,7 @@ const Onboarding = observer(
 		const tabIndex = routeNames.findIndex((tabName) => tabName === name)
 		const nextScreenName = routeNames[tabIndex + 1]
 		const tabList = new Array(length)
-			.fill({})
+			.fill()
 			.map((tab, i) => ({ isCurrent: i === tabIndex }))
 
 		const handlePress = () => {
