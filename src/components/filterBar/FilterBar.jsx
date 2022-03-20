@@ -13,7 +13,6 @@ const FilterBar = observer(() => {
 	const { optionList, focused } = useStore().filtration
 	const { top } = useSafeAreaInsets()
 	const { length } = optionList
-	const viewOffset = UNITS.baseX2 // padding-right
 
 	return (
 		<S.FilterBarWrapper insetsTop={top} insetsLeft={UNITS.baseX4}>
@@ -38,7 +37,7 @@ const FilterBar = observer(() => {
 							icon={icon}
 							onPress={() => {
 								focused(title)
-								scrollToItem(index, viewOffset)
+								scrollToItem(index)
 							}}
 						/>
 					</S.FilterBarOptionWrapper>
