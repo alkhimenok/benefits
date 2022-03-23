@@ -45,6 +45,7 @@ class Units {
 	getBase(level, isPX = false) {
 		return this.#base * level + (isPX && 'px')
 	}
+
 	calculateBase(size, isPX = false) {
 		return this.#base * (size / BASE) + (isPX && 'px')
 	}
