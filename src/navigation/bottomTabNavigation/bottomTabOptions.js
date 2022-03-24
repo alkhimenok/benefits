@@ -8,6 +8,7 @@ const getBottomTabOptions = (bottom) => {
 	const screenOptions = {
 		headerShown: false,
 		tabBarShowLabel: false,
+		unmountOnBlur: true,
 		tabBarStyle: {
 			height: calculateBase(55) + bottom,
 			paddingTop: calculateBase(7.5),
