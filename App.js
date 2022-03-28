@@ -27,7 +27,7 @@ const App = observer(() => {
 		<AppLoading
 			startAsync={waitLoading}
 			onFinish={finishLoading}
-			onError={console.warn} // TODO: error handler
+			onError={console.warn}
 		/>
 	)
 })
