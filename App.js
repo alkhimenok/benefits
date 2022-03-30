@@ -15,14 +15,14 @@ const App = observer(() => {
 	const { loaded, waitLoading, finishLoading } = store.load
 
 	return loaded ? (
-		<NavigationContainer>
-			<StoreContext.Provider value={store}>
+		<StoreContext.Provider value={store}>
+			<NavigationContainer>
 				<SafeAreaProvider>
 					<AppNavigation />
 					<StatusBar />
 				</SafeAreaProvider>
-			</StoreContext.Provider>
-		</NavigationContainer>
+			</NavigationContainer>
+		</StoreContext.Provider>
 	) : (
 		<AppLoading
 			startAsync={waitLoading}
