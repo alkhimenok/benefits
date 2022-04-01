@@ -1,16 +1,29 @@
 {
 	"root": true,
-	"extends": ["eslint:recommended", "plugin:prettier/recommended", "plugin:react/recommended"],
+	"parser": "@babel/eslint-parser",
+	"plugins": ["react", "react-native", "prettier"],
+	"extends": [
+		"eslint:recommended",
+		"plugin:react/recommended",
+		"plugin:react/jsx-runtime",
+		"plugin:react-native/all",
+		"plugin:import/recommended",
+		"plugin:prettier/recommended"
+	],
 	"parserOptions": {
 		"ecmaVersion": 13,
-		"sourceType": "module"
+		"sourceType": "module",
+		"ecmaFeatures": {
+			"jsx": true
+		}
 	},
 	"env": {
 		"browser": true,
 		"node": true,
 		"amd": true,
 		"commonjs": true,
-		"worker": true
+		"worker": true,
+		"react-native/react-native": true
 	},
 	"rules": {
 		"indent": "off",
