@@ -1,5 +1,4 @@
 import 'react-native-gesture-handler'
-import React from 'react'
 import { observer } from 'mobx-react-lite'
 import AppLoading from 'expo-app-loading'
 import { NavigationContainer } from '@react-navigation/native'
@@ -16,12 +15,12 @@ const App = observer(() => {
 
 	return loaded ? (
 		<StoreContext.Provider value={store}>
-			<NavigationContainer>
-				<SafeAreaProvider>
+			<SafeAreaProvider>
+				<NavigationContainer>
 					<AppNavigation />
 					<StatusBar />
-				</SafeAreaProvider>
-			</NavigationContainer>
+				</NavigationContainer>
+			</SafeAreaProvider>
 		</StoreContext.Provider>
 	) : (
 		<AppLoading
