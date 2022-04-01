@@ -94,8 +94,10 @@
 		// react
 		"react/prop-types": "warn",
 		// react-native
+		"react-native/no-inline-styles": "warn",
 		// import
 		"import/no-unresolved": "warn",
+		"import/named": "off",
 		// prettier
 		"prettier/prettier": "warn"
 	}

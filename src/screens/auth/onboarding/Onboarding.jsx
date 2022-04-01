@@ -1,4 +1,3 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 import { observer } from 'mobx-react-lite'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'

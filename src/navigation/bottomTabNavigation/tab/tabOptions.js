@@ -1,4 +1,3 @@
-import React from 'react'
 import Icon from 'components/UI/icon/Icon'
 import { calculateBase } from 'styles/units'
 import COLORS from 'styles/colors'

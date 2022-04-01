@@ -1,14 +1,8 @@
 import * as Font from 'expo-font'
-import { WIDTH_RATIO } from './constants'
+import { WIDTH_RATIO, fontSourceList } from './constants'
 
 const loadFonts = () => {
-	return Font.loadAsync({
-		primaryRegular: require('assets/fonts/SFUIDisplay-Regular.ttf'),
-		primaryMedium: require('assets/fonts/SFUIDisplay-Medium.ttf'),
-		primarySemiBold: require('assets/fonts/SFUIDisplay-Semibold.ttf'),
-		primaryBold: require('assets/fonts/SFUIDisplay-Bold.ttf'),
-		primaryBlack: require('assets/fonts/SFUIDisplay-Black.ttf')
-	})
+	return Font.loadAsync(fontSourceList)
 }
 
 const sizeInProportion = (width, height, isPX = false) => {

@@ -1,4 +1,3 @@
-import React from 'react'
 import Image from 'components/UI/image/Image'
 import Text from 'components/UI/text/Text'
 import WEIGHT from 'styles/weight'

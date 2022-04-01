@@ -1,4 +1,3 @@
-import React from 'react'
 import Fade from 'components/animations/Fade'
 import Screen from 'components/common/Screen'
 

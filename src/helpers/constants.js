@@ -33,6 +33,14 @@ const optionList = [
 	}
 ]
 
+const fontSourceList = {
+	primaryRegular: require('assets/fonts/SFUIDisplay-Regular.ttf'),
+	primaryMedium: require('assets/fonts/SFUIDisplay-Medium.ttf'),
+	primarySemiBold: require('assets/fonts/SFUIDisplay-Semibold.ttf'),
+	primaryBold: require('assets/fonts/SFUIDisplay-Bold.ttf'),
+	primaryBlack: require('assets/fonts/SFUIDisplay-Black.ttf')
+}
+
 const imageSourceList = {
 	odin: require('assets/images/services/clothes/odin.png'),
 	fasol: require('assets/images/services/educationAndHobbies/fasol.png'),
@@ -119,6 +127,7 @@ export {
 	HEIGHT_RATIO,
 	BASE,
 	optionList,
+	fontSourceList,
 	imageSourceList,
 	iconSourceList,
 	underlayColorList

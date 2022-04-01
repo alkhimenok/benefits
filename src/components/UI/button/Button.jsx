@@ -1,4 +1,3 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 import { underlayColorList } from 'helpers/constants'
 import Icon from 'components/UI/icon/Icon'

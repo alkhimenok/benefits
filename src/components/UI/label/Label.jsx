@@ -1,4 +1,3 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 import Icon from 'components/UI/icon/Icon'
 import Text from 'components/UI/text/Text'
@@ -8,7 +7,7 @@ import COLORS from 'styles/colors'
 import { getLabelOptions } from './labelOptions'
 import * as S from './styledLabel'
 
-const ElLabel = ({ title, icon, isLarge }) => {
+const Label = ({ title, icon, isLarge }) => {
 	const isContainsIcon = !!icon.name
 	const iconBeginning = icon.position !== 'end'
 	const textVariation = isLarge ? 'text2' : 'text3'
@@ -46,15 +45,15 @@ const ElLabel = ({ title, icon, isLarge }) => {
 	)
 }
 
-ElLabel.defaultProps = {
+Label.defaultProps = {
 	title: '',
 	icon: { name: '', position: 'start' },
 	isLarge: false
 }
-ElLabel.propTypes = {
+Label.propTypes = {
 	title: PropTypes.string,
 	icon: PropTypes.object,
 	isLarge: PropTypes.bool
 }
 
-export default ElLabel
+export default Label

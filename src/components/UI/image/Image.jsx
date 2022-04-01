@@ -1,4 +1,3 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 import { imageSourceList } from 'helpers/constants'
 import BORDERS from 'styles/borders'
