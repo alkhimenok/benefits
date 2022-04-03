@@ -6,7 +6,7 @@ class Units {
 		this.calculateBase = this.calculateBase.bind(this)
 	}
 
-	#base = BASE * WIDTH_RATIO
+	#base = 4 // BASE * WIDTH_RATIO
 
 	UNITS = {
 		baseX1: this.getBase(1),
@@ -49,10 +49,18 @@ class Units {
 	calculateBase(size, isPX = false) {
 		return this.#base * (size / BASE) + (isPX && 'px')
 	}
+
+	withPX(size) {
+		return `${size}px`
+	}
+
+	withoutPX(size) {
+		return parseFloat(size)
+	}
 }
 
 const units = new Units()
-const { UNITS, UNITS_PX, getBase, calculateBase } = units
+const { UNITS, UNITS_PX, getBase, calculateBase, withPX, withoutPX } = units
 
-export { UNITS, UNITS_PX, getBase, calculateBase }
+export { UNITS, UNITS_PX, getBase, calculateBase, withPX, withoutPX }
 export default units
