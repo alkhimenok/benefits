@@ -8,7 +8,18 @@ const Discount = () => {
 		<Fade>
 			<Screen>
 				<FilterBar />
-				<Card />
+				<Card
+					variation={'full'}
+					name={'odin'}
+					title={'odin'}
+					label={'clothe odin'}
+					description={'lot of clothe odin'}
+					// more
+					isEmpty={false}
+					isImportant={true}
+					isFavorites={true}
+					isContainsMore={true}
+				/>
 			</Screen>
 		</Fade>
 	)

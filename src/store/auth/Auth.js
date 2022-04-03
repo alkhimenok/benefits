@@ -8,8 +8,8 @@ export default class Auth {
 		this.logOut = this.logOut.bind(this)
 	}
 
-	isSignIn = false
-	isSignUp = true
+	isSignIn = true
+	isSignUp = false
 
 	signIn() {
 		this.isSignIn = true

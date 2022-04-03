@@ -25,8 +25,7 @@ const getCardOptions = (variation, isFavorites) => {
 			right: UNITS_PX.baseX3,
 			bottom: UNITS_PX.baseX3,
 			left: UNITS_PX.baseX3,
-			width: '100%',
-			height: '100%',
+			...sizeInProportion(225, 127, true, true),
 			marginTop: UNITS_PX.baseX4
 		}
 	}[variation]

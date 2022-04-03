@@ -5,6 +5,7 @@ import Image from 'components/UI/image/Image'
 import Label from 'components/UI/label/Label'
 import Text from 'components/UI/text/Text'
 import COLORS from 'styles/colors'
+import WEIGHT from 'styles/weight'
 import { getCardOptions } from './cardOptions'
 
 const Card = ({
@@ -12,7 +13,7 @@ const Card = ({
 	name,
 	title,
 	label,
-	descriptions,
+	description,
 	more,
 	isEmpty,
 	isImportant,
@@ -20,6 +21,10 @@ const Card = ({
 	isContainsMore,
 	onImagePres
 }) => {
+	const isFull = variation === 'full'
+	const isLarge = variation === 'large'
+	const titleVariation = isFull ? 'h3' : 'text2'
+	const titleWeight = isFull ? WEIGHT.bold : WEIGHT.semiBold
 	const favoritesIconName = isFavorites ? 'favoritesFill' : 'favorites'
 	const labelIcon = isImportant
 		? { name: 'importantFill', position: 'start' }
@@ -28,7 +33,7 @@ const Card = ({
 		getCardOptions(variation, isFavorites)
 
 	return (
-		<S.CardWrapper>
+		<S.CardWrapper cardWidth={width}>
 			<S.CardImageWrapper
 				activeOpacity={1}
 				//
@@ -36,35 +41,68 @@ const Card = ({
 				isContour={isEmpty}
 				onPress={onImagePres}
 			>
-				<Image name={name} resizeMode={'contain'} isRounded={true} />
-				<S.CardFavoritesIconWrapper>
-					<Icon
-						variation={'middle'}
-						name={favoritesIconName}
-						width={'16px'}
-						height={'15px'}
-						// color={color}
-						backgroundColor={COLORS.lightTransparent}
-						isCircle={true}
-					/>
-				</S.CardFavoritesIconWrapper>
-				<S.CardLabels>
-					<Label title={label} icon={labelIcon} />
-					<S.CardMoreIconWrapper>
-						<Icon
-							variation={'small'}
-							name={'more'}
-							width={'6px'}
-							height={'13px'}
-							color={COLORS.light}
-							backgroundColor={COLORS.dark}
-							isCircle={true}
-						/>
-					</S.CardMoreIconWrapper>
-				</S.CardLabels>
+				{isEmpty ? (
+					<Text
+						variation={titleVariation}
+						fontWeight={titleWeight}
+						color={COLORS.paragraph}
+					>
+						{title}
+					</Text>
+				) : (
+					<>
+						<Image name={name} resizeMode={'contain'} isRounded={true} />
+						{(isFavorites || isFull) && (
+							<S.CardFavoritesIconWrapper top={top} right={right}>
+								<Icon
+									variation={'middle'}
+									name={favoritesIconName}
+									width={'16px'}
+									height={'15px'}
+									color={color}
+									backgroundColor={COLORS.lightTransparent}
+									isCircle={true}
+								/>
+							</S.CardFavoritesIconWrapper>
+						)}
+						<S.CardLabels bottom={bottom} left={left}>
+							<Label title={label} icon={labelIcon} />
+							{isContainsMore && (
+								<S.CardMoreIconWrapper>
+									<Icon
+										variation={'small'}
+										name={'more'}
+										width={'6px'}
+										height={'13px'}
+										color={COLORS.light}
+										backgroundColor={COLORS.dark}
+										isCircle={true}
+									/>
+								</S.CardMoreIconWrapper>
+							)}
+						</S.CardLabels>
+					</>
+				)}
 			</S.CardImageWrapper>
-			<S.CardTitleWrapper></S.CardTitleWrapper>
-			<S.CardDescriptionWrapper></S.CardDescriptionWrapper>
+			{!isLarge && !isEmpty && (
+				<S.CardTitleWrapper titleMarginTop={marginTop}>
+					<Text variation={titleVariation} fontWeight={titleWeight}>
+						{title}
+					</Text>
+				</S.CardTitleWrapper>
+			)}
+			{isFull && (
+				<S.CardDescriptionWrapper>
+					<Text
+						variation={'text2'}
+						fontWeight={WEIGHT.regular}
+						color={COLORS.paragraph}
+						numberOfLines={2}
+					>
+						{description}
+					</Text>
+				</S.CardDescriptionWrapper>
+			)}
 		</S.CardWrapper>
 	)
 }
@@ -74,7 +112,7 @@ Card.defaultProps = {
 	name: 'undefinedCard',
 	title: '',
 	label: '',
-	descriptions: '',
+	description: '',
 	more: '',
 	isEmpty: false,
 	isImportant: false,
@@ -87,7 +125,7 @@ Card.propTypes = {
 	name: PropTypes.string,
 	title: PropTypes.string,
 	label: PropTypes.string,
-	descriptions: PropTypes.string,
+	description: PropTypes.string,
 	more: PropTypes.string,
 	isEmpty: PropTypes.bool,
 	isImportant: PropTypes.bool,
