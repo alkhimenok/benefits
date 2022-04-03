@@ -1,13 +1,15 @@
 import * as Font from 'expo-font'
-import { WIDTH_RATIO, fontSourceList } from './constants'
+import { CLIENT_WIDTH, WIDTH_RATIO, fontSourceList } from './constants'
+import { UNITS } from 'styles/units'
 
 const loadFonts = () => {
 	return Font.loadAsync(fontSourceList)
 }
 
-const sizeInProportion = (width, height, isPX = false) => {
+const sizeInProportion = (width, height, isPX = false, makeFull = false) => {
+	const SAFE_AREA = CLIENT_WIDTH - UNITS.baseX4 * 2
 	const aspectRatio = width / height
-	const currentWidth = width * WIDTH_RATIO
+	const currentWidth = makeFull ? SAFE_AREA : width * WIDTH_RATIO
 	const currentHeight = currentWidth / aspectRatio
 
 	return {

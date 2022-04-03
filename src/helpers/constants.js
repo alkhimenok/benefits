@@ -1,5 +1,5 @@
-import COLORS from 'styles/colors'
 import { Dimensions } from 'react-native'
+import COLORS from 'styles/colors'
 
 const { width: CLIENT_WIDTH, height: CLIENT_HEIGHT } = Dimensions.get('window')
 const DESIGN_CLIENT_WIDTH = 375
