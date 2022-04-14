@@ -4,20 +4,23 @@ export default class Auth {
 	constructor() {
 		makeAutoObservable(this)
 
+		this.signUp = this.signUp.bind(this)
 		this.signIn = this.signIn.bind(this)
-		this.logOut = this.logOut.bind(this)
+		this.signOut = this.signOut.bind(this)
 	}
 
-	isSignIn = true
+	isSignIn = false
 	isSignUp = false
+
+	signUp() {
+		this.isSignUp = true
+	}
 
 	signIn() {
 		this.isSignIn = true
-		this.isSignUp = false
 	}
 
-	logOut() {
+	signOut() {
 		this.isSignIn = false
-		this.isSignUp = true
 	}
 }

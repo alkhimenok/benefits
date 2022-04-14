@@ -7,13 +7,13 @@ export default class Data {
 		this.request = this.request.bind(this)
 	}
 
-	data = null
+	response = null
 
 	async request() {
 		// const response = await fetch('database') // for async request from database
 
 		// this.data = await response.json()
 
-		this.data = require('database')
+		this.response = require('database')
 	}
 }

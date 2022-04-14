@@ -6,25 +6,25 @@ export default class Filtration {
 		makeAutoObservable(this)
 
 		this.focused = this.focused.bind(this)
-		this.addToHistory = this.addToHistory.bind(this)
 		this.focusedPrev = this.focusedPrev.bind(this)
-		this.filterReset = this.filterReset.bind(this)
 		this.toggleFavorites = this.toggleFavorites.bind(this)
+		this.filterReset = this.filterReset.bind(this)
+		this.addToHistory = this.addToHistory.bind(this)
 	}
 
 	optionList = optionList
-	initTitle = optionList.find((option) => option.isFocused).title
+	initTitle = optionList.find(({ isFocused }) => isFocused).title
+	history = [this.initTitle]
 	initData = null // can be used asyncStorage
 	data = null
 	hash = {}
-	history = [this.initTitle]
 
-	get favoritesList() {
-		return this.data
-			.map(({ data }) => data)
-			.flat()
-			.filter((item) => item.isFavorites)
-	}
+	// get favoritesList() { // перенести в экран избранное
+	// 	return this.data
+	// 		.map(({ data }) => data)
+	// 		.flat()
+	// 		.filter((item) => item.isFavorites)
+	// }
 
 	focused(optionTitle) {
 		const focusedData =
@@ -41,12 +41,6 @@ export default class Filtration {
 		this.addToHistory(optionTitle)
 	}
 
-	addToHistory(optionTitle) {
-		const { length } = this.history
-
-		this.history[length - 1] !== optionTitle && this.history.push(optionTitle)
-	}
-
 	focusedPrev() {
 		this.history.pop()
 
@@ -59,19 +53,27 @@ export default class Filtration {
 		return length === 0
 	}
 
-	filterReset() {
-		this.focused(this.initTitle)
+	addToHistory(optionTitle) {
+		const { length } = this.history
 
-		this.history.length = 1
+		this.history[length - 1] !== optionTitle && this.history.push(optionTitle)
+
+		length >= 5 && this.history.shift()
 	}
 
 	toggleFavorites(name) {
-		return (this.data = this.data.map(({ title, data }) => ({
+		this.data = this.data.map(({ title, data }) => ({
 			title,
 			data: data.map((item) => ({
 				...item,
 				isFavorites: name === item.name ? !item.isFavorites : item.isFavorites
 			}))
-		})))
+		}))
+	}
+
+	filterReset() {
+		this.focused(this.initTitle)
+
+		this.history.length = 1
 	}
 }
