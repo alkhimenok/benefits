@@ -19,9 +19,9 @@ module.exports = function (api) {
 						navigation: './src/navigation',
 						screens: './src/screens',
 						components: './src/components',
-						elements: './src/components/elements',
-						patterns: './src/components/patterns',
-						templates: './src/components/templates'
+						common: './src/components/common',
+						UI: './src/components/UI',
+						animation: './src/components/animations'
 					}
 				}
 			]
