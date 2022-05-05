@@ -6,7 +6,7 @@ class Units {
 		this.calculateBase = this.calculateBase.bind(this)
 	}
 
-	#base = 4 // BASE * WIDTH_RATIO
+	#base = BASE * WIDTH_RATIO
 
 	UNITS = {
 		baseX1: this.getBase(1),
@@ -51,7 +51,7 @@ class Units {
 	}
 
 	withPX(size) {
-		return `${size}px`
+		return `${withoutPX(size)}px`
 	}
 
 	withoutPX(size) {
