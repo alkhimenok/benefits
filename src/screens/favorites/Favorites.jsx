@@ -4,7 +4,9 @@ import Fade from 'components/animations/Fade'
 import Screen from 'components/common/Screen'
 import Container from 'components/common/Container'
 import List from 'components/common/List'
-import Card from 'components/card/Card'
+import RenderItem from './renderItem/RenderItem'
+import HeaderFavorites from './headerFavorites/HeaderFavorites'
+import FooterFavorites from './footerFavorites/FooterFavorites'
 import EmptyFavorites from './emptyFavorites/EmptyFavorites'
 
 const Favorites = observer(() => {
@@ -15,27 +17,21 @@ const Favorites = observer(() => {
 		.flat()
 		.filter((item) => item.isFavorites)
 
+	const handleRefresh = () => {
+		console.log('refresh')
+	}
+
 	return (
 		<Fade>
 			<Screen>
 				<Container>
 					<List
 						data={favoritesList}
-						renderItem={(item) => (
-							<Card
-								variation={'full'}
-								name={item.name}
-								title={item.title}
-								label={item.label}
-								description={item.description}
-								more={item.more}
-								isImportant={item.isImportant}
-								isFavorites={item.isFavorites}
-								isContainsMore={item.isContainsMore}
-							/>
-						)}
-						listEmptyComponent={<EmptyFavorites />}
-						isHorizontal={true}
+						renderItem={(item) => <RenderItem item={item} />}
+						listHeader={<HeaderFavorites />}
+						listFooter={<FooterFavorites />}
+						listEmpty={<EmptyFavorites />}
+						onRefresh={handleRefresh}
 					/>
 				</Container>
 			</Screen>
