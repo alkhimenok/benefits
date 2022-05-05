@@ -8,7 +8,12 @@ const EmptyFavorites = () => {
 	return (
 		<S.EmptyFavoritesWrapper>
 			<S.EmptyFavoritesImageWrapper>
-				<Image name={'emptyFavorites'} resizeMode={'contain'} />
+				<Image
+					name={'emptyFavorites'}
+					designWidth={210}
+					designHeight={160}
+					resizeMode={'contain'}
+				/>
 			</S.EmptyFavoritesImageWrapper>
 			<S.EmptyFavoritesTitleWrapper>
 				<Text variation={'h2'} fontWeight={WEIGHT.bold}>
@@ -17,8 +22,7 @@ const EmptyFavorites = () => {
 			</S.EmptyFavoritesTitleWrapper>
 			<S.EmptyFavoritesSubtitleWrapper>
 				<Text variation={'text2'} textAlign={'center'} color={COLORS.paragraph}>
-					Чтобы добавить любимые скидки, просто{'\n'}нажими на иконку 💙️ в
-					карточке
+					Чтобы добавить любимые скидки, просто{'\n'}нажими на иконку 💙️ в карточке
 				</Text>
 			</S.EmptyFavoritesSubtitleWrapper>
 		</S.EmptyFavoritesWrapper>

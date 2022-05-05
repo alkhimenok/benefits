@@ -1,14 +1,19 @@
 import { observer } from 'mobx-react-lite'
 import { useStore } from 'providers/storeProvider'
-import List from 'components/common/List'
+import Fade from 'components/animations/Fade'
 import Screen from 'components/common/Screen'
 import Container from 'components/common/Container'
-import Fade from 'components/animations/Fade'
+import List from 'components/common/List'
 import Card from 'components/card/Card'
 import EmptyFavorites from './emptyFavorites/EmptyFavorites'
 
 const Favorites = observer(() => {
-	const { favoritesList } = useStore().filtration
+	const { data } = useStore().filtration
+
+	const favoritesList = data
+		.map(({ data }) => data)
+		.flat()
+		.filter((item) => item.isFavorites)
 
 	return (
 		<Fade>
@@ -24,7 +29,6 @@ const Favorites = observer(() => {
 								label={item.label}
 								description={item.description}
 								more={item.more}
-								isEmpty={item.isEmpty}
 								isImportant={item.isImportant}
 								isFavorites={item.isFavorites}
 								isContainsMore={item.isContainsMore}

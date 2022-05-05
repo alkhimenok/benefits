@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import Screen from 'components/common/Screen'
 import Onboarding from './onboarding/Onboarding'
 
-const HowItWork = ({ navigation, route }) => {
+const HowItWork = ({ route }) => {
 	return (
 		<Screen>
 			<Onboarding
@@ -11,19 +11,16 @@ const HowItWork = ({ navigation, route }) => {
 					'Все просто. Выбираете нужную скидку,\nнажимаете кнопку «Активировать»\nпоказываете приложение перед оплатой счета.\nИли используете промокод.'
 				}
 				buttonTitle={'Мне нравится'}
-				navigation={navigation}
-				route={route}
+				screenName={route.name}
 			/>
 		</Screen>
 	)
 }
 
 HowItWork.defaultProps = {
-	navigation: {},
 	route: {}
 }
 HowItWork.propTypes = {
-	navigation: PropTypes.object,
 	route: PropTypes.object
 }
 

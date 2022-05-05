@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import Screen from 'components/common/Screen'
 import Onboarding from './onboarding/Onboarding'
 
-const Ready = ({ navigation, route }) => {
+const Ready = ({ route }) => {
 	return (
 		<Screen>
 			<Onboarding
@@ -11,19 +11,16 @@ const Ready = ({ navigation, route }) => {
 					'Сейчас вы можете просматривайть все\nвозможные скидки и сохранять лучшие.\n\nЧтобы активировать скидки и использовать\nпромокоды, нужно привязать Youtobe-канал с\nболее 10К подписчиками.'
 				}
 				buttonTitle={'Смотреть предложения'}
-				navigation={navigation}
-				route={route}
+				screenName={route.name}
 			/>
 		</Screen>
 	)
 }
 
 Ready.defaultProps = {
-	navigation: {},
 	route: {}
 }
 Ready.propTypes = {
-	navigation: PropTypes.object,
 	route: PropTypes.object
 }
 
