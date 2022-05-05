@@ -6,7 +6,7 @@ import SignUpNavigation from './signUpNavigation/SignUpNavigation'
 const AppNavigation = observer(() => {
 	const { isSignIn, isSignUp } = useStore().auth
 
-	return isSignIn && !isSignUp ? <SignInNavigation /> : <SignUpNavigation />
+	return isSignIn && isSignUp ? <SignInNavigation /> : <SignUpNavigation />
 })
 
 export default AppNavigation

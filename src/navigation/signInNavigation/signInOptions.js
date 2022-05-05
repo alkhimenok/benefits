@@ -7,7 +7,7 @@ const getSignInOptions = () => {
 		...TransitionPresets.SlideFromRightIOS
 	}
 
-	const screenList = [{ name: 'home', component: BottomTabNavigation }]
+	const screenList = [{ name: 'main', component: BottomTabNavigation }]
 
 	return { screenOptions, screenList }
 }

@@ -6,9 +6,9 @@ import COLORS from 'styles/colors'
 
 const getBottomTabOptions = (bottom) => {
 	const screenOptions = {
+		unmountOnBlur: true,
 		headerShown: false,
 		tabBarShowLabel: false,
-		unmountOnBlur: true,
 		tabBarStyle: {
 			height: calculateBase(55) + bottom,
 			paddingTop: calculateBase(7.5),
