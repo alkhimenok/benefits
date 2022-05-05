@@ -1,4 +1,4 @@
-import { WIDTH_RATIO, BASE } from 'helpers/constants'
+import { RATIO, BASE } from 'helpers/constants'
 
 class Units {
 	constructor() {
@@ -6,13 +6,13 @@ class Units {
 		this.calculateBase = this.calculateBase.bind(this)
 	}
 
-	#base = BASE * WIDTH_RATIO
+	#base = BASE * RATIO
 
 	UNITS = {
 		baseX1: this.getBase(1),
 		baseX2: this.getBase(2),
 		baseX3: this.getBase(3),
-		baseX3_5: this.getBase(3.5), // FIXME: not a valid value
+		baseX3_5: this.getBase(3.5),
 		baseX4: this.getBase(4),
 		baseX5: this.getBase(5),
 		baseX6: this.getBase(6),
@@ -29,7 +29,7 @@ class Units {
 		baseX1: this.getBase(1, true),
 		baseX2: this.getBase(2, true),
 		baseX3: this.getBase(3, true),
-		baseX3_5: this.getBase(3.5, true), // FIXME: not a valid value
+		baseX3_5: this.getBase(3.5, true),
 		baseX4: this.getBase(4, true),
 		baseX5: this.getBase(5, true),
 		baseX6: this.getBase(6, true),

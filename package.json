@@ -1,4 +1,5 @@
 {
+	"private": true,
 	"name": "benefits",
 	"version": "1.0.0",
 	"main": "node_modules/expo/AppEntry.js",
@@ -43,6 +44,5 @@
 		"eslint-plugin-react": "^7.29.4",
 		"eslint-plugin-react-native": "^4.0.0",
 		"prettier": "2.5.1"
-	},
-	"private": true
+	}
 }
