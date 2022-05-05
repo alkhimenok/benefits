@@ -12,13 +12,11 @@ const List = ({
 }) => {
 	const scroll = useRef()
 
-	useEffect(() => {
-		isReturnScrollToStart && scrollToItem(0)
-	}, [])
-
 	const scrollToItem = (index, viewOffset) => {
 		scroll.current.scrollToIndex({ animated: true, index, viewOffset })
 	}
+
+	useEffect(() => isReturnScrollToStart && scrollToItem(0), [])
 
 	return (
 		<ListWrapper
@@ -27,10 +25,10 @@ const List = ({
 			renderItem={({ item, index }) => renderItem(item, index, scrollToItem)}
 			ListEmptyComponent={listEmptyComponent}
 			keyExtractor={(item, index) => item + index}
+			contentContainerStyle={[{ flexGrow: 1 }, contentContainerStyle]}
 			horizontal={isHorizontal}
 			showsHorizontalScrollIndicator={false}
 			showsVerticalScrollIndicator={false}
-			contentContainerStyle={[{ flexGrow: 1 }, contentContainerStyle]}
 		/>
 	)
 }

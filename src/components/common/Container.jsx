@@ -1,13 +1,15 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components/native'
-import { UNITS_PX } from 'styles/units'
+import { CONTAINER_INDENT } from 'helpers/constants'
+import { withPX } from 'styles/units'
 
 const Container = ({ children }) => {
 	return <ContainerWrapper>{children}</ContainerWrapper>
 }
 
 const ContainerWrapper = styled.View`
-	padding: 0 ${UNITS_PX.baseX4};
+	flex: 1;
+	padding: 0 ${withPX(CONTAINER_INDENT)};
 `
 
 Container.defaultProps = {
