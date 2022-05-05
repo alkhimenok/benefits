@@ -13,11 +13,7 @@ const Fade = ({ duration, children }) => {
 		}).start()
 	}, [fadeAnim])
 
-	return (
-		<Animated.View style={{ flex: 1, opacity: fadeAnim }}>
-			{children}
-		</Animated.View>
-	)
+	return <Animated.View style={{ flex: 1, opacity: fadeAnim }}>{children}</Animated.View>
 }
 
 Fade.defaultProps = {

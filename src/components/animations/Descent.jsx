@@ -14,9 +14,7 @@ const Descent = ({ duration, children }) => {
 	}, [descentAnim])
 
 	return (
-		<Animated.View
-			style={{ flex: 1, transform: [{ translateY: descentAnim }] }}
-		>
+		<Animated.View style={{ flex: 1, transform: [{ translateY: descentAnim }] }}>
 			{children}
 		</Animated.View>
 	)
