@@ -7,26 +7,26 @@ import TRANSPARENCY from 'styles/transparency'
 const getButtonOptions = (variation, type, isDisable) => {
 	const variationOptions = {
 		large: {
-			height: UNITS_PX.baseX12,
-			paddingHorizontal: UNITS_PX.baseX4,
-			iconWidth: '19px',
-			iconHeight: '19px',
+			wrapperHeight: UNITS_PX.baseX12,
+			wrapperPaddingHorizontal: UNITS_PX.baseX4,
+			iconWidth: 19,
+			iconHeight: 19,
 			textVariation: 'text1',
 			fontWeight: WEIGHT.medium
 		},
 		middle: {
-			height: UNITS_PX.baseX10,
-			paddingHorizontal: UNITS_PX.baseX3,
-			iconWidth: '16px',
-			iconHeight: '16px',
+			wrapperHeight: UNITS_PX.baseX10,
+			wrapperPaddingHorizontal: UNITS_PX.baseX3,
+			iconWidth: 16,
+			iconHeight: 16,
 			textVariation: 'text2',
 			fontWeight: WEIGHT.semiBold
 		},
 		small: {
-			height: UNITS_PX.baseX8,
-			paddingHorizontal: UNITS_PX.baseX3,
-			iconWidth: '15px',
-			iconHeight: '15px',
+			wrapperHeight: UNITS_PX.baseX8,
+			wrapperPaddingHorizontal: UNITS_PX.baseX3,
+			iconWidth: 15,
+			iconHeight: 15,
 			textVariation: 'text2',
 			fontWeight: WEIGHT.semiBold
 		}
@@ -35,28 +35,28 @@ const getButtonOptions = (variation, type, isDisable) => {
 	const typeOptions = {
 		primary: {
 			color: COLORS.light,
-			backgroundColor: COLORS.primary,
-			border: 'none'
+			wrapperBackgroundColor: COLORS.primary,
+			wrapperBorder: 'none'
 		},
 		secondary: {
 			color: COLORS.light,
-			backgroundColor: COLORS.secondary,
-			border: 'none'
+			wrapperBackgroundColor: COLORS.secondary,
+			wrapperBorder: 'none'
 		},
 		contour: {
 			color: COLORS.dark,
-			backgroundColor: COLORS.light,
-			border: `${BORDERS.thin} ${COLORS.neutralDark}`
+			wrapperBackgroundColor: COLORS.light,
+			wrapperBorder: `${BORDERS.thin} ${COLORS.neutralDark}`
 		},
 		default: {
 			color: COLORS.dark,
-			backgroundColor: COLORS.neutral,
-			border: 'none'
+			wrapperBackgroundColor: COLORS.neutral,
+			wrapperBorder: 'none'
 		},
 		empty: {
 			color: COLORS.primary,
-			backgroundColor: COLORS.transparent,
-			border: 'none'
+			wrapperBackgroundColor: COLORS.transparent,
+			wrapperBorder: 'none'
 		}
 	}[type]
 

@@ -1,6 +1,6 @@
 import styled from 'styled-components/native'
 
-const Touch = styled.TouchableHighlight`
+const IconWrapper = styled.TouchableHighlight`
 	align-items: center;
 	justify-content: center;
 	width: ${({ width }) => width};
@@ -9,9 +9,9 @@ const Touch = styled.TouchableHighlight`
 	border-radius: ${({ borderRadius }) => borderRadius};
 	overflow: hidden;
 `
-const IconWrapper = styled.Image`
+const IconBody = styled.Image`
 	width: ${({ width }) => width};
 	height: ${({ height }) => height};
 `
 
-export { Touch, IconWrapper }
+export { IconWrapper, IconBody }

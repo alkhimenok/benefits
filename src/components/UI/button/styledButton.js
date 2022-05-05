@@ -2,25 +2,23 @@ import styled from 'styled-components/native'
 import { UNITS_PX } from 'styles/units'
 import BORDERS from 'styles/borders'
 
-const Touch = styled.TouchableHighlight`
+const ButtonWrapper = styled.TouchableHighlight`
 	align-items: center;
 	justify-content: center;
-	height: ${({ height }) => height};
-	padding: 0 ${({ paddingHorizontal }) => paddingHorizontal};
-	background-color: ${({ backgroundColor }) => backgroundColor};
-	border: ${({ border }) => border};
+	height: ${({ wrapperHeight }) => wrapperHeight};
+	padding: 0 ${({ wrapperPaddingHorizontal }) => wrapperPaddingHorizontal};
+	background-color: ${({ wrapperBackgroundColor }) => wrapperBackgroundColor};
+	border: ${({ wrapperBorder }) => wrapperBorder};
 	border-radius: ${BORDERS.radiusSuperellipse};
 	opacity: ${({ opacity }) => opacity};
 `
-const ButtonWrapper = styled.View`
+const ButtonBody = styled.View`
 	align-items: center;
 	justify-content: center;
-	flex-direction: ${({ iconBeginning }) =>
-		iconBeginning ? 'row' : 'row-reverse'};
+	flex-direction: ${({ iconBeginning }) => (iconBeginning ? 'row' : 'row-reverse')};
 `
-const IconWrapper = styled.View`
-	${({ iconBeginning }) =>
-		`margin-${iconBeginning ? 'right' : 'left'}: ${UNITS_PX.baseX2}`}
+const ButtonIconWrapper = styled.View`
+	${({ iconBeginning }) => `margin-${iconBeginning ? 'right' : 'left'}: ${UNITS_PX.baseX2}`}
 `
 
-export { Touch, ButtonWrapper, IconWrapper }
+export { ButtonWrapper, ButtonBody, ButtonIconWrapper }

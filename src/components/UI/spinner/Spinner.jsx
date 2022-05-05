@@ -3,11 +3,11 @@ import { getSpinnerOptions } from './spinnerOptions'
 import * as S from './styledSpinner'
 
 const Spinner = ({ variation, type }) => {
-	const color = getSpinnerOptions(type)
+	const iconColor = getSpinnerOptions(type)
 
 	return (
 		<S.SpinnerWrapper>
-			<S.SpinnerIcon size={variation} color={color} />
+			<S.SpinnerIcon size={variation} color={iconColor} />
 		</S.SpinnerWrapper>
 	)
 }

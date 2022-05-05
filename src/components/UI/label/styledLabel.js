@@ -6,16 +6,14 @@ import BORDERS from 'styles/borders'
 const LabelWrapper = styled.View`
 	align-items: center;
 	justify-content: center;
-	flex-direction: ${({ iconBeginning }) =>
-		iconBeginning ? 'row' : 'row-reverse'};
-	height: ${({ heightSize }) => heightSize};
-	padding: 0 ${({ paddingHorizontalSize }) => paddingHorizontalSize};
+	flex-direction: ${({ iconBeginning }) => (iconBeginning ? 'row' : 'row-reverse')};
+	height: ${({ wrapperHeight }) => wrapperHeight};
+	padding: 0 ${({ wrapperPaddingHorizontal }) => wrapperPaddingHorizontal};
 	background-color: ${COLORS.secondary};
 	border-radius: ${BORDERS.radiusOval};
 `
 const IconWrapper = styled.View`
-	${({ iconBeginning }) =>
-		`margin-${iconBeginning ? 'right' : 'left'}: ${UNITS_PX.baseX2}`}
+	${({ iconBeginning }) => `margin-${iconBeginning ? 'right' : 'left'}: ${UNITS_PX.baseX2}`}
 `
 
 export { LabelWrapper, IconWrapper }

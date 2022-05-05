@@ -4,18 +4,8 @@ import COLORS from 'styles/colors'
 import { getTextOptions } from './textOptions'
 import * as S from './styledText'
 
-const Text = ({
-	variation,
-	textAlign,
-	fontWeight,
-	color,
-	numberOfLines,
-	children
-}) => {
-	const { fontFamily, fontSize, lineHeight } = getTextOptions(
-		variation,
-		fontWeight
-	)
+const Text = ({ variation, textAlign, fontWeight, color, numberOfLines, children }) => {
+	const { fontFamily, fontSize, lineHeight } = getTextOptions(variation, fontWeight)
 
 	return (
 		<S.TextWrapper

@@ -6,39 +6,39 @@ import TRANSPARENCY from 'styles/transparency'
 import { getButtonOptions } from './buttonOptions'
 import * as S from './styledButton'
 
-const ElButton = ({ variation, type, title, icon, isDisable, onPress }) => {
+const Button = ({ variation, type, title, icon, isDisable, onPress }) => {
 	const isContainsIcon = !!icon.name
 	const iconBeginning = icon.position !== 'end'
 	const {
-		height,
-		paddingHorizontal,
+		wrapperHeight,
+		wrapperPaddingHorizontal,
 		iconWidth,
 		iconHeight,
 		textVariation,
 		fontWeight,
 		color,
-		backgroundColor,
-		border,
+		wrapperBackgroundColor,
+		wrapperBorder,
 		opacity
 	} = getButtonOptions(variation, type, isDisable)
-	const underlayColor = underlayColorList[backgroundColor]
+	const underlayColor = underlayColorList[wrapperBackgroundColor]
 
 	return (
-		<S.Touch
+		<S.ButtonWrapper
 			activeOpacity={TRANSPARENCY.half}
 			underlayColor={underlayColor}
 			disabled={isDisable}
 			onPress={onPress}
 			//
-			height={height}
-			paddingHorizontal={paddingHorizontal}
-			backgroundColor={backgroundColor}
-			border={border}
+			wrapperHeight={wrapperHeight}
+			wrapperPaddingHorizontal={wrapperPaddingHorizontal}
+			wrapperBackgroundColor={wrapperBackgroundColor}
+			wrapperBorder={wrapperBorder}
 			opacity={opacity}
 		>
-			<S.ButtonWrapper iconBeginning={iconBeginning}>
+			<S.ButtonBody iconBeginning={iconBeginning}>
 				{isContainsIcon && (
-					<S.IconWrapper
+					<S.ButtonIconWrapper
 						pointerEvents={'none'}
 						//
 						iconBeginning={iconBeginning}
@@ -46,21 +46,21 @@ const ElButton = ({ variation, type, title, icon, isDisable, onPress }) => {
 						<Icon
 							variation={'empty'}
 							name={icon.name}
-							width={iconWidth}
-							height={iconHeight}
+							designWidth={iconWidth}
+							designHeight={iconHeight}
 							color={color}
 						/>
-					</S.IconWrapper>
+					</S.ButtonIconWrapper>
 				)}
 				<Text variation={textVariation} fontWeight={fontWeight} color={color}>
 					{title}
 				</Text>
-			</S.ButtonWrapper>
-		</S.Touch>
+			</S.ButtonBody>
+		</S.ButtonWrapper>
 	)
 }
 
-ElButton.defaultProps = {
+Button.defaultProps = {
 	variation: 'middle',
 	type: 'default',
 	title: '',
@@ -68,7 +68,7 @@ ElButton.defaultProps = {
 	isDisable: false,
 	onPress: () => console.log('button press')
 }
-ElButton.propTypes = {
+Button.propTypes = {
 	variation: PropTypes.string,
 	type: PropTypes.string,
 	title: PropTypes.string,
@@ -77,4 +77,4 @@ ElButton.propTypes = {
 	onPress: PropTypes.func
 }
 
-export default ElButton
+export default Button

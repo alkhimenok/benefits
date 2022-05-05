@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import { sizeInProportion } from 'helpers/utils'
 import { iconSourceList, underlayColorList } from 'helpers/constants'
 import COLORS from 'styles/colors'
 import TRANSPARENCY from 'styles/transparency'
@@ -8,8 +9,8 @@ import * as S from './styledIcon'
 const Icon = ({
 	variation,
 	name,
-	width,
-	height,
+	designWidth,
+	designHeight,
 	color,
 	backgroundColor,
 	isCircle,
@@ -18,13 +19,11 @@ const Icon = ({
 	const source = iconSourceList[name]
 	const underlayColor = underlayColorList[backgroundColor]
 	const resizeMode = 'contain'
-	const { touchWidth, touchHeight, borderRadius } = getIconOptions(
-		variation,
-		isCircle
-	)
+	const { touchWidth, touchHeight, borderRadius } = getIconOptions(variation, isCircle)
+	const { width, height } = sizeInProportion(designWidth, designHeight, false, true)
 
 	return (
-		<S.Touch
+		<S.IconWrapper
 			activeOpacity={TRANSPARENCY.half}
 			underlayColor={underlayColor}
 			onPress={onPress}
@@ -34,7 +33,7 @@ const Icon = ({
 			borderRadius={borderRadius}
 			backgroundColor={backgroundColor}
 		>
-			<S.IconWrapper
+			<S.IconBody
 				source={source}
 				resizeMode={resizeMode}
 				tintColor={color}
@@ -43,15 +42,15 @@ const Icon = ({
 				width={width}
 				height={height}
 			/>
-		</S.Touch>
+		</S.IconWrapper>
 	)
 }
 
 Icon.defaultProps = {
 	variation: 'middle',
 	name: 'default',
-	width: '80%',
-	height: '80%',
+	designWidth: 20,
+	designHeight: 20,
 	color: COLORS.dark,
 	backgroundColor: COLORS.transparent,
 	isCircle: false,
@@ -60,8 +59,8 @@ Icon.defaultProps = {
 Icon.propTypes = {
 	variation: PropTypes.string,
 	name: PropTypes.string,
-	width: PropTypes.string,
-	height: PropTypes.string,
+	designWidth: PropTypes.number,
+	designHeight: PropTypes.number,
 	color: PropTypes.string,
 	backgroundColor: PropTypes.string,
 	isCircle: PropTypes.bool,
