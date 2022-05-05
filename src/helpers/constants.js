@@ -4,9 +4,12 @@ import COLORS from 'styles/colors'
 const { width: CLIENT_WIDTH, height: CLIENT_HEIGHT } = Dimensions.get('window')
 const DESIGN_CLIENT_WIDTH = 375
 const DESIGN_CLIENT_HEIGHT = 812
+const BASE = 4
 const WIDTH_RATIO = CLIENT_WIDTH / DESIGN_CLIENT_WIDTH
 const HEIGHT_RATIO = CLIENT_HEIGHT / DESIGN_CLIENT_HEIGHT
-const BASE = 4
+const RATIO = Math.min(WIDTH_RATIO, HEIGHT_RATIO)
+const CONTAINER_INDENT = (BASE * 4) / RATIO
+const SAFE_AREA = CLIENT_WIDTH - CONTAINER_INDENT * 2
 
 const optionList = [
 	{
@@ -15,21 +18,16 @@ const optionList = [
 		isFocused: true
 	},
 	{
-		title: 'Еда и напитки',
-		isFocused: false
+		title: 'Еда и напитки'
 	},
 	{
-		title: 'Здоровье',
-		isFocused: false
+		title: 'Здоровье'
 	},
 	{
-		title: 'Обучение и хобби',
-		isFocused: false
+		title: 'Обучение и хобби'
 	},
 	{
-		title: 'Одежда',
-		isImportant: false,
-		isFocused: false
+		title: 'Одежда'
 	}
 ]
 
@@ -42,6 +40,12 @@ const fontSourceList = {
 }
 
 const imageSourceList = {
+	logo: require('assets/images/logo/logo.png'),
+	about: require('assets/images/illustrations/about.png'),
+	howItWork: require('assets/images/illustrations/howItWork.png'),
+	ready: require('assets/images/illustrations/ready.png'),
+	signIn: require('assets/images/illustrations/signIn.png'),
+	signUp: require('assets/images/illustrations/signUp.png'),
 	odin: require('assets/images/services/clothes/odin.png'),
 	fasol: require('assets/images/services/educationAndHobbies/fasol.png'),
 	onlineClass: require('assets/images/services/educationAndHobbies/onlineClass.png'),
@@ -55,12 +59,7 @@ const imageSourceList = {
 	voka: require('assets/images/services/health/voka.png'),
 	undefinedCard: require('assets/images/services/undefinedCard.png'),
 	emptyFavorites: require('assets/images/services/emptyFavorites.png'),
-	emptyAvatar: require('assets/images/profile/emptyAvatar.png'),
-	about: require('assets/images/illustrations/about.png'),
-	howItWork: require('assets/images/illustrations/howItWork.png'),
-	ready: require('assets/images/illustrations/ready.png'),
-	signIn: require('assets/images/illustrations/signIn.png'),
-	signUp: require('assets/images/illustrations/signUp.png')
+	emptyAvatar: require('assets/images/profile/emptyAvatar.png')
 }
 
 const iconSourceList = {
@@ -123,9 +122,12 @@ export {
 	CLIENT_HEIGHT,
 	DESIGN_CLIENT_WIDTH,
 	DESIGN_CLIENT_HEIGHT,
+	BASE,
 	WIDTH_RATIO,
 	HEIGHT_RATIO,
-	BASE,
+	RATIO,
+	CONTAINER_INDENT,
+	SAFE_AREA,
 	optionList,
 	fontSourceList,
 	imageSourceList,
