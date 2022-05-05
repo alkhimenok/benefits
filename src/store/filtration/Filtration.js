@@ -15,21 +15,13 @@ export default class Filtration {
 	optionList = optionList
 	initTitle = optionList.find(({ isFocused }) => isFocused).title
 	history = [this.initTitle]
-	initData = null // can be used asyncStorage
+	initData = null
 	data = null
 	hash = {}
 
-	// get favoritesList() { // перенести в экран избранное
-	// 	return this.data
-	// 		.map(({ data }) => data)
-	// 		.flat()
-	// 		.filter((item) => item.isFavorites)
-	// }
-
 	focused(optionTitle) {
 		const focusedData =
-			this.hash[optionTitle] ??
-			this.initData.filter((list) => list.title === optionTitle)
+			this.hash[optionTitle] ?? this.initData.filter((list) => list.title === optionTitle)
 
 		this.optionList = this.optionList.map((option) => ({
 			...option,
@@ -46,9 +38,7 @@ export default class Filtration {
 
 		const { length } = this.history
 
-		if (length !== 0) {
-			this.focused(this.history[length - 1])
-		}
+		length !== 0 && this.focused(this.history[length - 1])
 
 		return length === 0
 	}

@@ -12,7 +12,7 @@ export default class Data {
 	async request() {
 		// const response = await fetch('database') // for async request from database
 
-		// this.data = await response.json()
+		// this.response = await response.json()
 
 		this.response = require('database')
 	}

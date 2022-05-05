@@ -9,8 +9,8 @@ export default class Auth {
 		this.signOut = this.signOut.bind(this)
 	}
 
-	isSignIn = false
-	isSignUp = false
+	isSignIn = true
+	isSignUp = true
 
 	signUp() {
 		this.isSignUp = true
