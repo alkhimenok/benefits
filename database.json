@@ -114,7 +114,7 @@
 				],
 				"dateAdded": 1646487951327,
 				"isImportant": false,
-				"isFavorites": false,
+				"isFavorites": true,
 				"isContainsMore": false
 			},
 			{
@@ -136,7 +136,7 @@
 					{ "phone": "+375 29 123-45-67" }
 				],
 				"isImportant": false,
-				"isFavorites": false,
+				"isFavorites": true,
 				"isContainsMore": false
 			}
 		]
@@ -163,7 +163,7 @@
 					{ "phone": "+375 29 123-45-67" }
 				],
 				"isImportant": false,
-				"isFavorites": false,
+				"isFavorites": true,
 				"isContainsMore": false
 			},
 			{
@@ -185,7 +185,7 @@
 					{ "phone": "+375 29 123-45-67" }
 				],
 				"isImportant": false,
-				"isFavorites": false,
+				"isFavorites": true,
 				"isContainsMore": false
 			},
 			{
