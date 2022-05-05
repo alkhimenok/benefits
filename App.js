@@ -4,8 +4,8 @@ import AppLoading from 'expo-app-loading'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 import { NavigationContainer } from '@react-navigation/native'
 import { StatusBar } from 'expo-status-bar'
-import StoreContext from 'providers/storeProvider'
 import RootStore from 'store/RootStore'
+import StoreContext from 'providers/storeProvider'
 import AppNavigation from './src/navigation/AppNavigation'
 
 const store = new RootStore()
@@ -23,11 +23,7 @@ const App = observer(() => {
 			</SafeAreaProvider>
 		</StoreContext.Provider>
 	) : (
-		<AppLoading
-			startAsync={waitLoading}
-			onFinish={finishLoading}
-			onError={console.warn}
-		/>
+		<AppLoading startAsync={waitLoading} onFinish={finishLoading} onError={console.warn} />
 	)
 })
 

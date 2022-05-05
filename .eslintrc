@@ -48,7 +48,7 @@
 		"max-len": [
 			"error",
 			{
-				"code": 80,
+				"code": 100,
 				"tabWidth": 2,
 				"comments": 65,
 				"ignoreComments": true,
@@ -68,10 +68,7 @@
 		"no-ternary": "off",
 		"object-curly-spacing": "off",
 		"one-var": ["error", "never"],
-		"padded-blocks": [
-			"error",
-			{ "blocks": "never", "classes": "never", "switches": "never" }
-		],
+		"padded-blocks": ["error", { "blocks": "never", "classes": "never", "switches": "never" }],
 		"quote-props": ["error", "as-needed"],
 		"quotes": ["error", "single"],
 		"require-jsdoc": "error",

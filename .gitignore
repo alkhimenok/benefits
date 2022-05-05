@@ -16,5 +16,3 @@ web-build/
 # other
 .idea/
 .vsconfig/
-yarn.lock
-package-lock.json

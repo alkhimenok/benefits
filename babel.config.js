@@ -1,4 +1,4 @@
-module.exports = function (api) {
+module.exports = (api) => {
 	api.cache(true)
 
 	return {
@@ -18,10 +18,7 @@ module.exports = function (api) {
 						store: './src/store',
 						navigation: './src/navigation',
 						screens: './src/screens',
-						components: './src/components',
-						common: './src/components/common',
-						UI: './src/components/UI',
-						animation: './src/components/animations'
+						components: './src/components'
 					}
 				}
 			]
