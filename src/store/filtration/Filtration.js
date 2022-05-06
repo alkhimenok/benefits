@@ -15,8 +15,8 @@ export default class Filtration {
 	optionList = optionList
 	initTitle = optionList.find(({ isFocused }) => isFocused).title
 	history = [this.initTitle]
-	initData = null
-	data = null
+	initData = []
+	data = []
 	hash = {}
 
 	focused(optionTitle) {
@@ -43,6 +43,12 @@ export default class Filtration {
 		return length === 0
 	}
 
+	filterReset() {
+		this.focused(this.initTitle)
+
+		this.history.length = 1
+	}
+
 	toggleFavorites(name) {
 		this.data = this.data.map(({ title, data }) => ({
 			title,
@@ -51,12 +57,6 @@ export default class Filtration {
 				isFavorites: name === item.name ? !item.isFavorites : item.isFavorites
 			}))
 		}))
-	}
-
-	filterReset() {
-		this.focused(this.initTitle)
-
-		this.history.length = 1
 	}
 
 	_addToHistory(optionTitle) {
