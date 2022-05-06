@@ -7,9 +7,9 @@ export default class Filtration {
 
 		this.focused = this.focused.bind(this)
 		this.focusedPrev = this.focusedPrev.bind(this)
-		this.toggleFavorites = this.toggleFavorites.bind(this)
 		this.filterReset = this.filterReset.bind(this)
-		this.addToHistory = this.addToHistory.bind(this)
+		this.toggleFavorites = this.toggleFavorites.bind(this)
+		this._addToHistory = this._addToHistory.bind(this)
 	}
 
 	optionList = optionList
@@ -30,7 +30,7 @@ export default class Filtration {
 		this.data = focusedData.length ? focusedData : this.initData
 		this.hash.optionTitle = focusedData
 
-		this.addToHistory(optionTitle)
+		this._addToHistory(optionTitle)
 	}
 
 	focusedPrev() {
@@ -41,14 +41,6 @@ export default class Filtration {
 		length !== 0 && this.focused(this.history[length - 1])
 
 		return length === 0
-	}
-
-	addToHistory(optionTitle) {
-		const { length } = this.history
-
-		this.history[length - 1] !== optionTitle && this.history.push(optionTitle)
-
-		length >= 5 && this.history.shift()
 	}
 
 	toggleFavorites(name) {
@@ -65,5 +57,13 @@ export default class Filtration {
 		this.focused(this.initTitle)
 
 		this.history.length = 1
+	}
+
+	_addToHistory(optionTitle) {
+		const { length } = this.history
+
+		this.history[length - 1] !== optionTitle && this.history.push(optionTitle)
+
+		length >= 5 && this.history.shift()
 	}
 }
