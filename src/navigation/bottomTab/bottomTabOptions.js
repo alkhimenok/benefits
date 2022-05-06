@@ -1,6 +1,6 @@
-import Discount from 'screens/discount/Discount'
-import Favorites from 'screens/favorites/Favorites'
-import Account from 'screens/account/Account'
+import Discount from 'navigation/stacks/discount/Discount'
+import Favorites from 'navigation/stacks/favorites/Favorites'
+import Account from 'navigation/stacks/account/Account'
 import { calculateBase } from 'styles/units'
 import COLORS from 'styles/colors'
 
@@ -18,9 +18,9 @@ const getBottomTabOptions = (bottom) => {
 	}
 
 	const screenList = [
-		{ name: 'discount', component: Discount },
-		{ name: 'favorites', component: Favorites },
-		{ name: 'account', component: Account }
+		{ name: 'discountStack', component: Discount },
+		{ name: 'favoritesStack', component: Favorites },
+		{ name: 'accountStack', component: Account }
 	]
 
 	return { screenOptions, screenList }

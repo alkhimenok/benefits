@@ -2,7 +2,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 import Descent from 'components/animations/Descent'
 import { getSignUpOptions } from './signUpOptions'
 
-const SignUpNavigation = () => {
+const SignUp = () => {
 	const { Navigator, Screen } = createStackNavigator()
 	const { screenOptions, screenList } = getSignUpOptions()
 
@@ -17,4 +17,4 @@ const SignUpNavigation = () => {
 	)
 }
 
-export default SignUpNavigation
+export default SignUp

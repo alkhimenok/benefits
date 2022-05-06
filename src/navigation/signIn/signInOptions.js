@@ -1,5 +1,5 @@
 import { TransitionPresets } from '@react-navigation/stack'
-import BottomTabNavigation from 'navigation/bottomTabNavigation/BottomTabNavigation'
+import BottomTab from 'navigation/bottomTab/BottomTab'
 
 const getSignInOptions = () => {
 	const screenOptions = {
@@ -7,7 +7,7 @@ const getSignInOptions = () => {
 		...TransitionPresets.SlideFromRightIOS
 	}
 
-	const screenList = [{ name: 'main', component: BottomTabNavigation }]
+	const screenList = [{ name: 'main', component: BottomTab }]
 
 	return { screenOptions, screenList }
 }
