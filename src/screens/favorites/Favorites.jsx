@@ -26,7 +26,7 @@ const Favorites = observer(() => {
 						data={favoritesList}
 						renderItem={(item) => <RenderItem item={item} />}
 						listHeader={isEmptyList ? null : <HeaderFavorites />}
-						listFooter={isEmptyList ? null : <FooterFavorites />}
+						listFooter={isEmptyList ? null : <FooterFavorites list={favoritesList} />}
 						listEmpty={<EmptyFavorites />}
 						onRefresh={handleRefresh}
 					/>
@@ -40,7 +40,7 @@ const getFavoritesList = (data) => {
 	return data
 		.map(({ data }) => data)
 		.flat()
-		.filter((item) => item.isFavorites)
+		.filter(({ isFavorites }) => isFavorites)
 }
 
 export default Favorites

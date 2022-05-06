@@ -4,23 +4,28 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import List from 'components/common/List'
 import Button from 'components/UI/button/Button'
 import Icon from 'components/UI/icon/Icon'
-import { UNITS, calculateBase } from 'styles/units'
+import { UNITS } from 'styles/units'
 import COLORS from 'styles/colors'
 import * as S from './styledFilterBar'
 
 const FilterBar = observer(() => {
-	const { optionList, focused } = useStore().filtration
 	const { top } = useSafeAreaInsets()
+	const { optionList, focused } = useStore().filtration
 	const { length } = optionList
 
+	const handleFocus = (title, index, scrollToItem) => {
+		focused(title)
+		scrollToItem(index)
+	}
+
 	return (
-		<S.FilterBarWrapper insetsTop={top} insetsLeft={UNITS.baseX4}>
+		<S.FilterBarWrapper indentTop={top} insetsLeft={UNITS.baseX4}>
 			<S.FilterBarIconWrapper>
 				<Icon
 					variation={'middle'}
 					name={'search'}
-					width={calculateBase(15, true)}
-					height={calculateBase(15, true)}
+					designWidth={15}
+					designHeight={15}
 					color={COLORS.dark}
 					backgroundColor={COLORS.neutral}
 				/>
@@ -34,10 +39,7 @@ const FilterBar = observer(() => {
 							type={isFocused ? 'primary' : 'default'}
 							title={title}
 							icon={icon}
-							onPress={() => {
-								focused(title)
-								scrollToItem(index)
-							}}
+							onPress={() => handleFocus(title, index, scrollToItem)}
 						/>
 					</S.FilterBarOptionWrapper>
 				)}

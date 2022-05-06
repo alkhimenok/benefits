@@ -7,7 +7,7 @@ const HeaderFavorites = () => {
 	const { top } = useSafeAreaInsets()
 
 	return (
-		<S.HeaderFavoritesWrapper insetsTop={top}>
+		<S.HeaderFavoritesWrapper indentTop={top}>
 			<Text variation={'h1'} fontWeight={WEIGHT.bold}>
 				Избранное
 			</Text>
