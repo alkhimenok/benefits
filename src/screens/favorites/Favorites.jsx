@@ -12,7 +12,7 @@ import EmptyFavorites from './emptyFavorites/EmptyFavorites'
 const Favorites = observer(() => {
 	const { data } = useStore().filtration
 	const favoritesList = getFavoritesList(data)
-	const isEmptyList = favoritesList.length >= 0
+	const isEmptyList = !favoritesList.length
 
 	const handleRefresh = () => {
 		console.log('refresh')
