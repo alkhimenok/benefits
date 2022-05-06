@@ -11,11 +11,8 @@ import EmptyFavorites from './emptyFavorites/EmptyFavorites'
 
 const Favorites = observer(() => {
 	const { data } = useStore().filtration
-
-	const favoritesList = data
-		.map(({ data }) => data)
-		.flat()
-		.filter((item) => item.isFavorites)
+	const favoritesList = getFavoritesList(data)
+	const isEmptyList = favoritesList.length >= 0
 
 	const handleRefresh = () => {
 		console.log('refresh')
@@ -28,8 +25,8 @@ const Favorites = observer(() => {
 					<List
 						data={favoritesList}
 						renderItem={(item) => <RenderItem item={item} />}
-						listHeader={<HeaderFavorites />}
-						listFooter={<FooterFavorites />}
+						listHeader={isEmptyList ? null : <HeaderFavorites />}
+						listFooter={isEmptyList ? null : <FooterFavorites />}
 						listEmpty={<EmptyFavorites />}
 						onRefresh={handleRefresh}
 					/>
@@ -38,5 +35,12 @@ const Favorites = observer(() => {
 		</Fade>
 	)
 })
+
+const getFavoritesList = (data) => {
+	return data
+		.map(({ data }) => data)
+		.flat()
+		.filter((item) => item.isFavorites)
+}
 
 export default Favorites
