@@ -1,6 +1,8 @@
+import { calculateBase } from './units'
+
 export default {
-	thin: '1px',
-	thick: '3px',
+	thin: calculateBase(1, true),
+	thick: calculateBase(3, true),
 	radiusCircle: '100px',
 	radiusOval: '100px',
 	radiusSuperellipse: '12px'
