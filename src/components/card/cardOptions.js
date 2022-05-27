@@ -1,4 +1,3 @@
-import { sizeInProportion } from 'helpers/utils'
 import { UNITS_PX } from 'styles/units'
 import COLORS from 'styles/colors'
 
@@ -9,7 +8,8 @@ const getCardOptions = (variation, isFavorites) => {
 			right: UNITS_PX.baseX3,
 			bottom: UNITS_PX.baseX3,
 			left: UNITS_PX.baseX3,
-			...sizeInProportion(304, 170, true),
+			width: 304,
+			height: 170,
 			marginTop: '0'
 		},
 		middle: {
@@ -17,7 +17,8 @@ const getCardOptions = (variation, isFavorites) => {
 			right: UNITS_PX.baseX1,
 			bottom: UNITS_PX.baseX2,
 			left: UNITS_PX.baseX2,
-			...sizeInProportion(225, 127, true),
+			width: 225,
+			height: 127,
 			marginTop: UNITS_PX.baseX2
 		},
 		full: {
@@ -25,7 +26,8 @@ const getCardOptions = (variation, isFavorites) => {
 			right: UNITS_PX.baseX3,
 			bottom: UNITS_PX.baseX3,
 			left: UNITS_PX.baseX3,
-			...sizeInProportion(225, 127, true, true),
+			width: 225,
+			height: 127,
 			marginTop: UNITS_PX.baseX4
 		}
 	}[variation]

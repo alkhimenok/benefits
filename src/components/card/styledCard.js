@@ -1,20 +1,18 @@
 import styled from 'styled-components/native'
-import { UNITS_PX } from 'styles/units'
+import { UNITS_PX, withPX } from 'styles/units'
 import COLORS from 'styles/colors'
 import BORDERS from 'styles/borders'
 
 const CardWrapper = styled.View`
-	width: ${({ cardWidth }) => cardWidth};
+	/* width: ${({ cardWidth }) => withPX(cardWidth)}; */
 `
 const CardImageWrapper = styled.TouchableOpacity`
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	height: ${({ imageHeight }) => imageHeight};
-	border: ${({ isContour }) =>
-		isContour ? `${BORDERS.thin} ${COLORS.neutralDark}` : 'none'};
-	border-radius: ${({ isContour }) =>
-		isContour ? BORDERS.radiusSuperellipse : 0};
+	/* height: ${({ imageHeight }) => imageHeight}; */
+	border: ${({ isContour }) => (isContour ? `${BORDERS.thin} ${COLORS.neutralDark}` : 'none')};
+	border-radius: ${({ isContour }) => (isContour ? BORDERS.radiusSuperellipse : 0)};
 `
 const CardFavoritesIconWrapper = styled.View`
 	position: absolute;

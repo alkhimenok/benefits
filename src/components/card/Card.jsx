@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types'
-import * as S from './styledCard'
 import Icon from 'components/UI/icon/Icon'
 import Image from 'components/UI/image/Image'
 import Label from 'components/UI/label/Label'
@@ -7,6 +6,7 @@ import Text from 'components/UI/text/Text'
 import COLORS from 'styles/colors'
 import WEIGHT from 'styles/weight'
 import { getCardOptions } from './cardOptions'
+import * as S from './styledCard'
 
 const Card = ({
 	variation,
@@ -19,18 +19,20 @@ const Card = ({
 	isImportant,
 	isFavorites,
 	isContainsMore,
-	onImagePres
+	onImagePress,
+	onToggleFavorites,
+	onShowMore
 }) => {
 	const isFull = variation === 'full'
 	const isLarge = variation === 'large'
 	const titleVariation = isFull ? 'h3' : 'text2'
 	const titleWeight = isFull ? WEIGHT.bold : WEIGHT.semiBold
 	const favoritesIconName = isFavorites ? 'favoritesFill' : 'favorites'
-	const labelIcon = isImportant
-		? { name: 'importantFill', position: 'start' }
-		: {}
-	const { top, right, bottom, left, width, height, marginTop, color } =
-		getCardOptions(variation, isFavorites)
+	const labelIcon = isImportant ? { name: 'importantFill', position: 'start' } : {}
+	const { top, right, bottom, left, width, height, marginTop, color } = getCardOptions(
+		variation,
+		isFavorites
+	)
 
 	return (
 		<S.CardWrapper cardWidth={width}>
@@ -39,29 +41,33 @@ const Card = ({
 				//
 				imageHeight={height}
 				isContour={isEmpty}
-				onPress={onImagePres}
+				onPress={onImagePress}
 			>
 				{isEmpty ? (
-					<Text
-						variation={titleVariation}
-						fontWeight={titleWeight}
-						color={COLORS.paragraph}
-					>
+					<Text variation={titleVariation} fontWeight={titleWeight} color={COLORS.paragraph}>
 						{title}
 					</Text>
 				) : (
 					<>
-						<Image name={name} resizeMode={'contain'} isRounded={true} />
+						<Image
+							name={name}
+							designWidth={width}
+							designHeight={height}
+							resizeMode={'contain'}
+							isRounded={true}
+							isFull={isFull}
+						/>
 						{(isFavorites || isFull) && (
 							<S.CardFavoritesIconWrapper top={top} right={right}>
 								<Icon
 									variation={'middle'}
 									name={favoritesIconName}
-									width={'16px'}
-									height={'15px'}
+									designWidth={16}
+									designHeight={15}
 									color={color}
 									backgroundColor={COLORS.lightTransparent}
 									isCircle={true}
+									onPress={onToggleFavorites}
 								/>
 							</S.CardFavoritesIconWrapper>
 						)}
@@ -72,11 +78,12 @@ const Card = ({
 									<Icon
 										variation={'small'}
 										name={'more'}
-										width={'6px'}
-										height={'13px'}
+										designWidth={6}
+										designHeight={13}
 										color={COLORS.light}
 										backgroundColor={COLORS.dark}
 										isCircle={true}
+										onPress={onShowMore}
 									/>
 								</S.CardMoreIconWrapper>
 							)}
@@ -118,7 +125,9 @@ Card.defaultProps = {
 	isImportant: false,
 	isFavorites: false,
 	isContainsMore: false,
-	onImagePres: () => console.log('card press')
+	onImagePress: () => console.log('card press'),
+	onToggleFavorites: () => console.log('favorite press'),
+	onShowMore: () => console.log('more press')
 }
 Card.propTypes = {
 	variation: PropTypes.string,
@@ -131,7 +140,9 @@ Card.propTypes = {
 	isImportant: PropTypes.bool,
 	isFavorites: PropTypes.bool,
 	isContainsMore: PropTypes.bool,
-	onImagePres: PropTypes.func
+	onImagePress: PropTypes.func,
+	onToggleFavorites: PropTypes.func,
+	onShowMore: PropTypes.func
 }
 
 export default Card
